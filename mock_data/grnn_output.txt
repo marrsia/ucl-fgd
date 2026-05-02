@@ -1,0 +1,48 @@
+Requested backend docker is not compatible with model Official<GRNN at docker://docker.io/cpllab/language-models:grnn>; using DockerBackend instead
+sentence_id	token_id	token	surprisal
+1	1	I	0.0
+1	2	know	6.278276
+1	3	what	4.561374
+1	4	the	3.557633
+1	5	lion	14.748716
+1	6	devoured	15.573889
+1	7	yesterday	11.039667
+1	8	<eos>	24.507677
+2	1	I	0.0
+2	2	know	6.278276
+2	3	what	4.561374
+2	4	the	3.557633
+2	5	lion	14.748716
+2	6	devoured	15.573889
+2	7	a	7.801432
+2	8	<unk>	4.690822
+2	9	yesterday	13.515928
+2	10	<eos>	25.043615
+3	1	I	0.0
+3	2	know	6.278276
+3	3	that	2.352433
+3	4	the	2.35511
+3	5	lion	13.763021
+3	6	devoured	13.183076
+3	7	a	4.8783
+3	8	<unk>	4.881872
+3	9	yesterday	15.774069
+3	10	<eos>	24.519913
+4	1	I	0.0
+4	2	know	6.278276
+4	3	that	2.352433
+4	4	the	2.35511
+4	5	lion	13.763021
+4	6	devoured	13.183076
+4	7	yesterday	16.361565
+4	8	<eos>	25.15889
+/opt/conda/lib/python3.6/site-packages/torch/serialization.py:493: SourceChangeWarning: source code of class 'model.RNNModel' has changed. you can retrieve the original source code by accessing the object's source attribute or set `torch.nn.Module.dump_patches = True` and use the patch tool to revert the changes.
+  warnings.warn(msg, SourceChangeWarning)
+/opt/conda/lib/python3.6/site-packages/torch/serialization.py:493: SourceChangeWarning: source code of class 'torch.nn.modules.dropout.Dropout' has changed. you can retrieve the original source code by accessing the object's source attribute or set `torch.nn.Module.dump_patches = True` and use the patch tool to revert the changes.
+  warnings.warn(msg, SourceChangeWarning)
+/opt/conda/lib/python3.6/site-packages/torch/serialization.py:493: SourceChangeWarning: source code of class 'torch.nn.modules.sparse.Embedding' has changed. you can retrieve the original source code by accessing the object's source attribute or set `torch.nn.Module.dump_patches = True` and use the patch tool to revert the changes.
+  warnings.warn(msg, SourceChangeWarning)
+/opt/conda/lib/python3.6/site-packages/torch/serialization.py:493: SourceChangeWarning: source code of class 'torch.nn.modules.rnn.LSTM' has changed. you can retrieve the original source code by accessing the object's source attribute or set `torch.nn.Module.dump_patches = True` and use the patch tool to revert the changes.
+  warnings.warn(msg, SourceChangeWarning)
+/opt/conda/lib/python3.6/site-packages/torch/serialization.py:493: SourceChangeWarning: source code of class 'torch.nn.modules.linear.Linear' has changed. you can retrieve the original source code by accessing the object's source attribute or set `torch.nn.Module.dump_patches = True` and use the patch tool to revert the changes.
+  warnings.warn(msg, SourceChangeWarning)
