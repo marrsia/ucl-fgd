@@ -1,4 +1,4 @@
-I know what the lion devoured yesterday
-I know what the lion devoured a gazelle yesterday
-I know that the lion devoured a gazelle yesterday
-I know that the lion devoured yesterday
+I know what the lion devoured yesterday.
+I know what the lion devoured a gazelle yesterday.
+I know that the lion devoured yesterday.
+I know that the lion devoured a gazelle yesterday.

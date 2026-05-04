@@ -1,4 +1,7 @@
+import sys
 from utils.text_utils import *
 
-compute_region_indices("mock_data/table_data.csv")
-build_sentences("mock_data/table_data.csv", "mock_data/sentences.txt")
+input_csv = sys.argv[1]
+output_txt = sys.argv[2]
+
+build_sentences(input_csv, output_txt)

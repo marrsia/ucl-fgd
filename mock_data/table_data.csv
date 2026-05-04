@@ -1,5 +1,5 @@
-sent_id,gap,filler,levels_of_embedding,condition,mc_subject,mc_verb,comp,ec1_subject,ec1_verb,ec1_object,continuation,complementiser_indices,gap_indices,post_gap_indices
-1,yes,no,1,gap_no_filler,I,know,what,the lion,devoured,,yesterday,"(2, 2)",,"(6, 6)"
-1,yes,yes,1,gap_filler,I,know,what,the lion,devoured,a gazelle,yesterday,"(2, 2)","(6, 7)","(8, 8)"
-1,no,yes,1,no_gap_filler,I,know,that,the lion,devoured,a gazelle,yesterday,"(2, 2)","(6, 7)","(8, 8)"
-1,yes,no,1,no_gap_no_filler,I,know,that,the lion,devoured,,yesterday,"(2, 2)",,"(6, 6)"
+sentence_group,gap,filler,levels_of_embedding,condition,main_clause,complementiser,embedding_1,embedding_2,embedding_3,subject,verb,object,continuation
+1,yes,no,0,gap_no_filler,I know,what,,,,the lion,devoured,,yesterday.
+1,yes,yes,0,gap_filler,I know,what,,,,the lion,devoured,"a gazelle","yesterday."
+1,no,no,0,no_gap_no_filler,I know,that ,,,,the lion,devoured,,"yesterday."
+1,no,yes,0,no_gap_filler,I know,that,,,,the lion,devoured,"a gazelle",yesterday.

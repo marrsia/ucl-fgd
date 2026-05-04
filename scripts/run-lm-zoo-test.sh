@@ -1,13 +1,17 @@
 #!/bin/bash
 
+INPUT_FILE=$1
+OUTPUT_DIR=$2
+AFFIX=$3
+
 echo "getting ngram surprisals"
-lm-zoo get-surprisals ngram ../mock_data/sentences.txt > ../mock_data/ngram_output.txt 2>&1
+lm-zoo get-surprisals ngram $INPUT_FILE > $OUTPUT_DIR/ngram_$AFFIX.txt 2>/dev/null
 
 echo "getting gpt2 surprisals"
-lm-zoo get-surprisals gpt2 ../mock_data/sentences.txt > ../mock_data/gpt2_output.txt 2>&1
+lm-zoo get-surprisals gpt2 $INPUT_FILE > $OUTPUT_DIR/gpt2_$AFFIX.txt 2>/dev/null
 
 echo "getting grnn surprisals"
-lm-zoo get-surprisals GRNN ../mock_data/sentences.txt > ../mock_data/grnn_output.txt 2>&1
+lm-zoo get-surprisals GRNN $INPUT_FILE > $OUTPUT_DIR/grnn_$AFFIX.txt 2>/dev/null
 
 echo "getting jrnn surprisals"
-lm-zoo get-surprisals JRNN ../mock_data/sentences.txt > ../mock_data/jrnn_output.txt 2>&1
+lm-zoo get-surprisals JRNN $INPUT_FILE > $OUTPUT_DIR/jrnn_$AFFIX.txt 2>/dev/null
