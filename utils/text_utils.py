@@ -7,19 +7,21 @@ SENTENCE_COLUMNS = [
 ]
 
 # Regions relevant for computing FGD surprisals.
-RELEVANT_REGIONS = {
-    "comp":  "complementiser",
-    "object":  "object_gap",  # this might be missing
-    "subject": "subject_gap",
-    "continuation": "post_gap"
-}
+RELEVANT_REGIONS = [
+    "complementiser", #complementiser
+    "object",  #object_gap"
+    "subject", #subject_gap",
+    "continuation" #post gap
+]
 
 gpt2_tokenizer =  GPT2TokenizerFast.from_pretrained("openai-community/gpt2", add_prefix_space=True)
 
 # TODO: write a data verifier 
-# 1. check that sentences are all correct (grammar spelling etc), 2. check that in each sentence group each column either always has the same thing or has nothing in it.
-# 3. check that gap and filler columns match the condition column 3. check that object column in empty if gap=yes and gap_type = object
-# 4. 
+# 1. check that sentences are all correct (grammar spelling etc), 
+# 2. check that in each sentence group each column either always has the same thing or has nothing in it.
+# 3. check that gap and filler columns match the condition column 
+# 3. check that object column in empty if gap=yes and gap_type = object, same for subject
+# 4. check that number of embeddings matches the condition
 
 
 def build_sentences(input_csv, output_txt):
@@ -142,7 +144,6 @@ def get_region_token_ids(df, region, sentence_id, model_name):
 
     value = str(row[region]).strip() if pd.notna(row[region]) else ""
     if not value:
-        print(f"Warning: region '{region}' is None for sentence {sentence_id}")
         return None
 
     # compute word offset of this region in the full sentence
@@ -175,3 +176,38 @@ def get_region_token_ids(df, region, sentence_id, model_name):
         token_ids = (start_id + 1, end_id + 1)
 
     return first_word, token_ids
+
+
+def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name, regions):
+    """
+    For each sentence in the stimuli, computes the surprisal of the first token
+    of each specified region and saves results to a CSV.
+
+    Args:
+        stimuli_csv: path to original stimuli CSV
+        surprisal_csv: path to parsed lm-zoo surprisal CSV
+        output_csv: path to save results
+        model_name: model name string e.g. "grnn"
+        regions: list of region names e.g. ["complementiser", "gap", "post_gap"]
+    """
+    stimuli_df = pd.read_csv(stimuli_csv)
+    surprisal_df = pd.read_csv(surprisal_csv)
+
+    results = stimuli_df.copy()
+
+    for region in regions:
+        results[f"{region}_surprisal"] = None
+
+    for sentence_id, _ in stimuli_df.iterrows():
+        for region in regions:
+            region_info = get_region_token_ids(stimuli_df, region, sentence_id, model_name)
+
+            if region_info is None:
+                continue
+
+            _, token_range = region_info
+            surprisal = get_token_surprisal(surprisal_df, sentence_id, token_range[0])
+            results.at[sentence_id, f"{region}_surprisal"] = surprisal
+
+    results.to_csv(output_csv, index=False)
+    print(f"Saved to {output_csv}")

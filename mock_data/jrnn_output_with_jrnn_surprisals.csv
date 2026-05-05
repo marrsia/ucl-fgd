@@ -1,0 +1,5 @@
+sentence_group,gap,filler,levels_of_embedding,condition,main_clause,complementiser,embedding_1,embedding_2,embedding_3,subject,verb,object,continuation,complementiser_surprisal,object_surprisal,subject_surprisal,continuation_surprisal
+1,yes,no,0,gap_no_filler,I know,what,,,,the lion,devoured,,yesterday.,3.134954,,4.333603,9.906542
+1,yes,yes,0,gap_filler,I know,what,,,,the lion,devoured,a gazelle,yesterday.,3.134954,8.596311,4.333603,10.007428
+1,no,yes,0,no_gap_filler,I know,that ,,,,the lion,devoured,a gazelle,yesterday.,6.375424,4.956087,5.707442,9.249345
+1,no,no,0,no_gap_no_filler,I know,that,,,,the lion,devoured,,yesterday.,6.375424,,5.707442,12.115354

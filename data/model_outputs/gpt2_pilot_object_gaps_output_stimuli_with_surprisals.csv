@@ -1,0 +1,49 @@
+sentence_group,gap,filler,levels_of_embedding,condition,main_clause,complementiser,embedding_1,embedding_2,embedding_3,subject,verb,object,continuation,complementiser_surprisal,object_surprisal,subject_surprisal,continuation_surprisal
+1,yes,no,0,gap_no_filler,The assistant knew,who,,,,the secretary,introduced,,to her friend.,6.747474,,3.798539,1.873882
+1,yes,yes,0,gap_filler,The assistant knew,who,,,,the secretary,introduced,her partner,to her friend.,6.747474,4.295585,3.798539,1.395767
+1,no,no,0,no_gap_no_filler,The assistant knew,that,,,,the secretary,introduced,,to her friend.,3.218776,,3.439892,7.745109
+1,no,yes,0,no_gap_filler,The assistant knew,that,,,,the secretary,introduced,her partner,to her friend.,3.218776,2.850313,3.439892,1.891158
+1,yes,no,1,gap_no_filler,The assistant knew,who,the security guard said,,,the secretary,introduced,,to her friend.,6.747629,,5.823729,1.430659
+1,yes,yes,1,gap_filler,The assistant knew,who,the security guard said,,,the secretary,introduced,her partner,to her friend.,6.747629,4.185199,5.823729,1.493732
+1,no,no,1,no_gap_no_filler,The assistant knew,that,the security guard said,,,the secretary,introduced,,to her friend.,3.218776,,3.803254,8.221761
+1,no,yes,1,no_gap_filler,The assistant knew,that,the security guard said,,,the secretary,introduced,her partner,to her friend.,3.218776,2.878279,3.803254,1.600936
+1,yes,no,2,gap_no_filler,The assistant knew,who,the security guard said,his manager believed,,the secretary,introduced,,to her friend.,6.747629,,7.776745,1.655827
+1,yes,yes,2,gap_filler,The assistant knew,who,the security guard said,his manager believed,,the secretary,introduced,her partner,to her friend.,6.747629,4.197791,7.776745,1.135877
+1,no,no,2,no_gap_no_filler,The assistant knew,that,the security guard said,his manager believed,,the secretary,introduced,,to her friend.,3.218776,,2.533421,8.023932
+1,no,yes,2,no_gap_filler,The assistant knew,that,the security guard said,his manager believed,,the secretary,introduced,her partner,to her friend.,3.218776,2.942195,2.533421,1.077361
+1,yes,no,3,gap_no_filler,The assistant knew,who,the security guard said,his manager believed,the junior associate claimed,the secretary,introduced,,to her friend.,6.747629,,6.729325,3.908267
+1,yes,yes,3,gap_filler,The assistant knew,who,the security guard said,his manager believed,the junior associate claimed,the secretary,introduced,her partner,to her friend.,6.747629,2.657874,6.729325,1.087603
+1,no,no,3,no_gap_no_filler,The assistant knew,that,the security guard said,his manager believed,the junior associate claimed,the secretary,introduced,,to her friend.,3.218776,,4.167671,7.500949
+1,no,yes,3,no_gap_filler,The assistant knew,that,the security guard said,his manager believed,the junior associate claimed,the secretary,introduced,her partner,to her friend.,3.218776,2.598525,4.167671,1.094482
+2,yes,no,0,gap_no_filler,The teacher reported,who,,,,the student,hit,,in art class.,12.867662,,4.384059,4.623034
+2,yes,yes,0,gap_filler,The teacher reported,who,,,,the student,hit,her classmate,in art class.,12.867662,6.948834,4.384059,3.169133
+2,no,no,0,no_gap_no_filler,The teacher reported,that,,,,the student,hit,,in art class.,1.940011,,2.810861,7.125513
+2,no,yes,0,no_gap_filler,The teacher reported,that,,,,the student,hit,her classmate,in art class.,1.940011,1.44052,2.810861,2.637684
+2,yes,no,1,gap_no_filler,The teacher reported,who,the other children claimed,,,the student,hit,,in art class.,12.867736,,6.821746,4.772396
+2,yes,yes,1,gap_filler,The teacher reported,who,the other children claimed,,,the student,hit,her classmate,in art class.,12.867736,2.657785,6.821746,2.808721
+2,no,no,1,no_gap_no_filler,The teacher reported,that,the other children claimed,,,the student,hit,,in art class.,1.939998,,4.481481,9.312918
+2,no,yes,1,no_gap_filler,The teacher reported,that,the other children claimed,,,the student,hit,her classmate,in art class.,1.939998,1.416432,4.481481,2.779472
+2,yes,no,2,gap_no_filler,The teacher reported,who,the other children claimed,their friends claimed,,the student,hit,,in art class.,12.867736,,5.999684,6.43685
+2,yes,yes,2,gap_filler,The teacher reported,who,the other children claimed,their friends claimed,,the student,hit,her classmate,in art class.,12.867736,2.007072,5.999684,2.610919
+2,no,no,2,no_gap_no_filler,The teacher reported,that,the other children claimed,their friends claimed,,the student,hit,,in art class.,1.939998,,4.466371,9.958452
+2,no,yes,2,no_gap_filler,The teacher reported,that,the other children claimed,their friends claimed,,the student,hit,her classmate,in art class.,1.939998,2.273738,4.466371,2.903347
+2,yes,no,3,gap_no_filler,The teacher reported,who,the other children claimed,their friends claimed,the teaching assistant stated,the student,hit,,in art class.,12.867736,,4.694518,8.846293
+2,yes,yes,3,gap_filler,The teacher reported,who,the other children claimed,their friends claimed,the teaching assistant stated,the student,hit,her classmate,in art class.,12.867736,1.500041,4.694518,2.306387
+2,no,no,3,no_gap_no_filler,The teacher reported,that,the other children claimed,their friends claimed,the teaching assistant stated,the student,hit,,in art class.,1.939998,,5.098092,9.66462
+2,no,yes,3,no_gap_filler,The teacher reported,that,the other children claimed,their friends claimed,the teaching assistant stated,the student,hit,her classmate,in art class.,1.939998,1.712539,5.098092,2.502125
+3,yes,no,0,gap_no_filler,I know,what,,,,the burglar,stole,,the other night.,4.510479,,6.346878,7.78074
+3,yes,yes,0,gap_filler,I know,what,,,,the burglar,stole,the jewels,the other night.,4.510466,7.78074,6.346878,9.245525
+3,no,no,0,no_gap_no_filler,I know,that,,,,the burglar,stole,,the other night.,2.74974,,4.424285,3.408626
+3,no,yes,0,no_gap_filler,I know,that,,,,the burglar,stole,the jewels,the other night.,2.749727,3.408626,4.424285,9.221791
+3,yes,no,1,gap_no_filler,I know,what,my mother thinks,,,the burglar,stole,,the other night.,4.510481,,10.087496,7.359742
+3,yes,yes,1,gap_filler,I know,what,my mother thinks,,,the burglar,stole,the jewels,the other night.,4.510475,7.359755,10.087462,9.56802
+3,no,no,1,no_gap_no_filler,I know,that,my mother thinks,,,the burglar,stole,,the other night.,2.74972,,5.106788,3.448648
+3,no,yes,1,no_gap_filler,I know,that,my mother thinks,,,the burglar,stole,the jewels,the other night.,2.749692,3.44864,5.106794,9.716486
+3,yes,no,2,gap_no_filler,I know,what,my mother thinks,the reporter said,,the burglar,stole,,the other night.,4.510475,,9.018994,4.877341
+3,yes,yes,2,gap_filler,I know,what,my mother thinks,the reporter said,,the burglar,stole,the jewels,the other night.,4.510475,4.877341,9.018994,9.468185
+3,no,no,2,no_gap_no_filler,I know,that,my mother thinks,the reporter said,,the burglar,stole,,the other night.,2.749692,,4.148107,2.990677
+3,no,yes,2,no_gap_filler,I know,that,my mother thinks,the reporter said,,the burglar,stole,the jewels,the other night.,2.749692,2.990677,4.148107,9.70673
+3,yes,no,3,gap_no_filler,I know,what,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,,the other night.,4.510475,,5.87636,3.574184
+3,yes,yes,3,gap_filler,I know,what,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,the jewels,the other night.,4.510475,3.574184,5.87636,9.466723
+3,no,no,3,no_gap_no_filler,I know,that,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,,the other night.,2.749692,,3.012498,2.915688
+3,no,yes,3,no_gap_filler,I know,that,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,the jewels,the other night.,2.749692,2.915688,3.012498,9.728783

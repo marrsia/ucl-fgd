@@ -1,10 +1,26 @@
+import sys
 from utils.text_utils import *
 
+all_model_names = ["grnn", "ngram", "jrnn", "gpt2"]
 
-parse_lmzoo_output("mock_data/ngram_output.txt", "mock_data/ngram_output.csv")
+stimuli_file = sys.argv[1]
+files = sys.argv[2:]
 
-parse_lmzoo_output("mock_data/grnn_output.txt", "mock_data/grnn_output.csv")
+for file in files:
+    output = file.replace(".txt", ".csv")
+    parse_lmzoo_output(file, output)
 
-parse_lmzoo_output("mock_data/jrnn_output.txt", "mock_data/jrnn_output.csv")
+    model_name = next((m for m in all_model_names if m in file.lower()), None)
+    if model_name is None:
+        print(f"Warning: could not identify model from filename {file}, skipping.")
+        continue
 
-parse_lmzoo_output("mock_data/gpt2_output.txt", "mock_data/gpt2_output.csv")
+    results_file = file.replace(".txt", f"_stimuli_with_surprisals.csv")
+    
+    compute_region_surprisals(
+        stimuli_csv=stimuli_file,
+        surprisal_csv=output,
+        output_csv=results_file,
+        model_name=model_name,
+        regions=list(RELEVANT_REGIONS)
+    )
