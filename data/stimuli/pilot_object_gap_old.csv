@@ -1,0 +1,49 @@
+sentence_group,gap,filler,levels_of_embedding,condition,main_clause,complementiser,embedding_1,embedding_2,embedding_3,subject,verb,object,continuation
+1,yes,no,0,gap_no_filler,The assistant knew,who,,,,the secretary,introduced,,to her friend.
+1,yes,yes,0,gap_filler,The assistant knew,who,,,,the secretary,introduced,her partner,to her friend.
+1,no,no,0,no_gap_no_filler,The assistant knew,that,,,,the secretary,introduced,,to her friend.
+1,no,yes,0,no_gap_filler,The assistant knew,that,,,,the secretary,introduced,her partner,to her friend.
+1,yes,no,1,gap_no_filler,The assistant knew,who,the security guard said,,,the secretary,introduced,,to her friend.
+1,yes,yes,1,gap_filler,The assistant knew,who,the security guard said,,,the secretary,introduced,her partner,to her friend.
+1,no,no,1,no_gap_no_filler,The assistant knew,that,the security guard said,,,the secretary,introduced,,to her friend.
+1,no,yes,1,no_gap_filler,The assistant knew,that,the security guard said,,,the secretary,introduced,her partner,to her friend.
+1,yes,no,2,gap_no_filler,The assistant knew,who,the security guard said,his manager believed,,the secretary,introduced,,to her friend.
+1,yes,yes,2,gap_filler,The assistant knew,who,the security guard said,his manager believed,,the secretary,introduced,her partner,to her friend.
+1,no,no,2,no_gap_no_filler,The assistant knew,that,the security guard said,his manager believed,,the secretary,introduced,,to her friend.
+1,no,yes,2,no_gap_filler,The assistant knew,that,the security guard said,his manager believed,,the secretary,introduced,her partner,to her friend.
+1,yes,no,3,gap_no_filler,The assistant knew,who,the security guard said,his manager believed,the junior associate claimed,the secretary,introduced,,to her friend.
+1,yes,yes,3,gap_filler,The assistant knew,who,the security guard said,his manager believed,the junior associate claimed,the secretary,introduced,her partner,to her friend.
+1,no,no,3,no_gap_no_filler,The assistant knew,that,the security guard said,his manager believed,the junior associate claimed,the secretary,introduced,,to her friend.
+1,no,yes,3,no_gap_filler,The assistant knew,that,the security guard said,his manager believed,the junior associate claimed,the secretary,introduced,her partner,to her friend.
+2,yes,no,0,gap_no_filler,The teacher reported,who,,,,the student,hit,,in art class.
+2,yes,yes,0,gap_filler,The teacher reported,who,,,,the student,hit,her classmate,in art class.
+2,no,no,0,no_gap_no_filler,The teacher reported,that,,,,the student,hit,,in art class.
+2,no,yes,0,no_gap_filler,The teacher reported,that,,,,the student,hit,her classmate,in art class.
+2,yes,no,1,gap_no_filler,The teacher reported,who,the other children claimed,,,the student,hit,,in art class.
+2,yes,yes,1,gap_filler,The teacher reported,who,the other children claimed,,,the student,hit,her classmate,in art class.
+2,no,no,1,no_gap_no_filler,The teacher reported,that,the other children claimed,,,the student,hit,,in art class.
+2,no,yes,1,no_gap_filler,The teacher reported,that,the other children claimed,,,the student,hit,her classmate,in art class.
+2,yes,no,2,gap_no_filler,The teacher reported,who,the other children claimed,their friends claimed,,the student,hit,,in art class.
+2,yes,yes,2,gap_filler,The teacher reported,who,the other children claimed,their friends claimed,,the student,hit,her classmate,in art class.
+2,no,no,2,no_gap_no_filler,The teacher reported,that,the other children claimed,their friends claimed,,the student,hit,,in art class.
+2,no,yes,2,no_gap_filler,The teacher reported,that,the other children claimed,their friends claimed,,the student,hit,her classmate,in art class.
+2,yes,no,3,gap_no_filler,The teacher reported,who,the other children claimed,their friends claimed,the teaching assistant stated,the student,hit,,in art class.
+2,yes,yes,3,gap_filler,The teacher reported,who,the other children claimed,their friends claimed,the teaching assistant stated,the student,hit,her classmate,in art class.
+2,no,no,3,no_gap_no_filler,The teacher reported,that,the other children claimed,their friends claimed,the teaching assistant stated,the student,hit,,in art class.
+2,no,yes,3,no_gap_filler,The teacher reported,that,the other children claimed,their friends claimed,the teaching assistant stated,the student,hit,her classmate,in art class.
+3,yes,no,0,gap_no_filler,I know,what,,,,the burglar,stole,,the other night.
+3,yes,yes,0,gap_filler,I know,what,,,,the burglar,stole,the jewels,the other night.
+3,no,no,0,no_gap_no_filler,I know,that,,,,the burglar,stole,,the other night.
+3,no,yes,0,no_gap_filler,I know,that,,,,the burglar,stole,the jewels,the other night.
+3,yes,no,1,gap_no_filler,I know,what,my mother thinks,,,the burglar,stole,,the other night.
+3,yes,yes,1,gap_filler,I know,what,my mother thinks,,,the burglar,stole,the jewels,the other night.
+3,no,no,1,no_gap_no_filler,I know,that,my mother thinks,,,the burglar,stole,,the other night.
+3,no,yes,1,no_gap_filler,I know,that,my mother thinks,,,the burglar,stole,the jewels,the other night.
+3,yes,no,2,gap_no_filler,I know,what,my mother thinks,the reporter said,,the burglar,stole,,the other night.
+3,yes,yes,2,gap_filler,I know,what,my mother thinks,the reporter said,,the burglar,stole,the jewels,the other night.
+3,no,no,2,no_gap_no_filler,I know,that,my mother thinks,the reporter said,,the burglar,stole,,the other night.
+3,no,yes,2,no_gap_filler,I know,that,my mother thinks,the reporter said,,the burglar,stole,the jewels,the other night.
+3,yes,no,3,gap_no_filler,I know,what,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,,the other night.
+3,yes,yes,3,gap_filler,I know,what,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,the jewels,the other night.
+3,no,no,3,no_gap_no_filler,I know,that,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,,the other night.
+3,no,yes,3,no_gap_filler,I know,that,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,the jewels,the other night.

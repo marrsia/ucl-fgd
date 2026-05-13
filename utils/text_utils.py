@@ -6,6 +6,11 @@ SENTENCE_COLUMNS = [
     "embedding_3", "subject", "verb", "object" , "continuation"
 ]
 
+SENTENCE_COLUMNS_FOR_SAMPLING_CONTINUATIONS = [
+    "main_clause", "complementiser", "embedding_1" , "embedding_2",  
+    "embedding_3", "subject", "verb"
+]
+
 # Regions relevant for computing FGD surprisals.
 RELEVANT_REGIONS = [
     "complementiser", #complementiser
@@ -24,7 +29,7 @@ gpt2_tokenizer =  GPT2TokenizerFast.from_pretrained("openai-community/gpt2", add
 # 4. check that number of embeddings matches the condition
 
 
-def build_sentences(input_csv, output_txt):
+def build_sentences_for_surprisals(input_csv, output_txt):
     """
     Reads the CSV and writes one reconstructed sentence per line to a text file.
     """
@@ -41,7 +46,35 @@ def build_sentences(input_csv, output_txt):
             f.write(sentence + "\n")
 
     print(f"Saved {input_csv} to {output_txt}")
-    
+
+
+def build_sentence_starts_for_sampling(input_csv):
+    """
+    Builds sentence starts for continuation sampling from gap_filler and 
+    no_gap_no_filler conditions only.
+
+    Returns:
+        dict of {row_number: {sentence_start, condition, levels_of_embedding}}
+    """
+    df = pd.read_csv(input_csv)
+    df = df[df["condition"].isin(["gap_filler", "no_gap_no_filler"])]
+
+    result = {}
+
+    for idx, row in df.iterrows():
+        words = []
+        for col in SENTENCE_COLUMNS_FOR_SAMPLING_CONTINUATIONS:
+            value = str(row[col]).strip() if pd.notna(row[col]) else ""
+            if value:
+                words.append(value)
+        
+        result[idx] = {
+            "sentence_start": " ".join(words),
+            "condition": row["condition"],
+            "levels_of_embedding": row["levels_of_embedding"]
+        }
+
+    return result
     
 def parse_lmzoo_output(input_txt, output_csv):
     """
