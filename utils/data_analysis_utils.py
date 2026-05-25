@@ -4,16 +4,18 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 from scipy import stats
 
-
-def plot_surprisal_lines(csv_path, configs):
+def plot_surprisal_lines(csv_path, configs, use_mean=True):
     """
-    Plots mean surprisal across regions for a list of sentence configs.
+    Plots surprisal across regions for a list of sentence configs.
 
     Args:
         csv_path: path to surprisal CSV
         configs: list of dicts with keys sentence_group, condition, levels_of_embedding
+        use_mean: if True, uses mean surprisal over region; if False, uses first token surprisal
     """
-    
+    suffix = '_mean' if use_mean else ''
+    ylabel = 'Mean by-word Surprisal in Region' if use_mean else 'First Token Surprisal in Region'
+
     df = pd.read_csv(csv_path)
 
     fig, ax = plt.subplots(figsize=(12, 5))
@@ -34,21 +36,21 @@ def plot_surprisal_lines(csv_path, configs):
 
         row = row.iloc[0]
 
-        active_columns = ['main_clause_surprisal_mean', 'complementiser_surprisal_mean']
+        active_columns = [f'main_clause_surprisal{suffix}', f'complementiser_surprisal{suffix}']
         active_labels  = ['main_clause', 'complementiser']
 
         for lvl in range(1, config['levels_of_embedding'] + 1):
-            active_columns.append(f'embedding_{lvl}_surprisal_mean')
+            active_columns.append(f'embedding_{lvl}_surprisal{suffix}')
             active_labels.append(f'embedding_{lvl}')
 
-        active_columns += ['subject_surprisal_mean', 'verb_surprisal_mean',
-                           'object_surprisal_mean', 'continuation_surprisal_mean']
+        active_columns += [f'subject_surprisal{suffix}', f'verb_surprisal{suffix}',
+                           f'object_surprisal{suffix}', f'continuation_surprisal{suffix}']
         active_labels  += ['subject', 'verb', 'object', 'continuation']
-     
+
         surprisals = [row[col] if pd.notna(row[col]) else None for col in active_columns]
-        
-        x_vals  = [j for j, s in enumerate(surprisals) if s is not None]
-        y_vals  = [s for s in surprisals if s is not None]
+
+        x_vals   = [j for j, s in enumerate(surprisals) if s is not None]
+        y_vals   = [s for s in surprisals if s is not None]
         x_labels = [active_labels[j] for j in x_vals]
 
         label = f"sg{config['sentence_group']} | {config['condition']} | emb{config['levels_of_embedding']}"
@@ -59,7 +61,7 @@ def plot_surprisal_lines(csv_path, configs):
 
     ax.set_xticks(range(len(max_active_labels)))
     ax.set_xticklabels(max_active_labels, rotation=15, ha='right')
-    ax.set_ylabel('Mean by-word Surprisal in Region')
+    ax.set_ylabel(ylabel)
     ax.set_xlabel('Region')
     ax.set_title('Surprisal Across Regions')
     ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left', fontsize=8)
@@ -69,37 +71,51 @@ def plot_surprisal_lines(csv_path, configs):
     plt.show()
 
 
-def get_wh_effect(surprisal_df, sentence_group, embedding_level, condition):
+def get_wh_effect(surprisal_df, sentence_group, embedding_level, condition, surprisal_type):
     """
     Computes the wh-effect for a given sentence group and embedding level.
     
-    For gap condition: surprisal(+wh_gap) - surprisal(-wh_gap) at first token of continuation
-    For no_gap condition: surprisal(+wh_no_gap) - surprisal(-wh_no_gap) at first token of object
+    For gap condition: surprisal(+wh_gap) - surprisal(-wh_gap) at continuation
+    For no_gap condition: surprisal(+wh_no_gap) - surprisal(-wh_no_gap) at object
     
     Args:
         surprisal_df: dataframe with surprisal columns
         sentence_group: int
         embedding_level: int
         condition: "gap" or "no_gap"
+        surprisal_type: "local" (first token), "semi_local" (object+continuation mean),
+                        or "global" (full sentence mean)
     
     Returns:
         wh_effect as float, or None if data missing
     """
+    if surprisal_type == 'local':
+        gap_col    = 'continuation_surprisal'
+        no_gap_col = 'object_surprisal'
+    elif surprisal_type == 'semi_local':
+        gap_col    = 'semi_local_surprisal_mean'
+        no_gap_col = 'semi_local_surprisal_mean'
+    elif surprisal_type == 'global':
+        gap_col    = 'global_surprisal_mean'
+        no_gap_col = 'global_surprisal_mean'
+    else:
+        raise ValueError(f"surprisal_type must be 'local', 'semi_local' or 'global', got '{surprisal_type}'")
+
     base = surprisal_df[
         (surprisal_df['sentence_group'] == sentence_group) &
         (surprisal_df['levels_of_embedding'] == embedding_level)
     ]
 
     if condition == "gap":
-        plus_wh  = base[base['condition'] == '+wh_gap']['continuation_surprisal'].values
-        minus_wh = base[base['condition'] == '-wh_gap']['continuation_surprisal'].values
+        plus_wh  = base[base['condition'] == '+wh_gap'][gap_col].values
+        minus_wh = base[base['condition'] == '-wh_gap'][gap_col].values
         if len(plus_wh) == 0 or len(minus_wh) == 0:
             return None
         return plus_wh[0] - minus_wh[0]
 
     elif condition == "no_gap":
-        plus_wh  = base[base['condition'] == '+wh_no_gap']['object_surprisal'].values
-        minus_wh = base[base['condition'] == '-wh_no_gap']['object_surprisal'].values
+        plus_wh  = base[base['condition'] == '+wh_no_gap'][no_gap_col].values
+        minus_wh = base[base['condition'] == '-wh_no_gap'][no_gap_col].values
         if len(plus_wh) == 0 or len(minus_wh) == 0:
             return None
         return plus_wh[0] - minus_wh[0]
@@ -108,37 +124,51 @@ def get_wh_effect(surprisal_df, sentence_group, embedding_level, condition):
         raise ValueError(f"condition must be 'gap' or 'no_gap', got '{condition}'")
 
 
-def get_local_filler_offloading_effect(surprisal_df, sentence_group, embedding_level, condition):
+def get_filler_offloading_effect(surprisal_df, sentence_group, embedding_level, condition, surprisal_type):
     """
-    Computes the local filler offloading effect for a given sentence group and embedding level.
+    Computes the filler offloading effect for a given sentence group and embedding level.
     
-    For +wh condition: surprisal(+wh_gap at continuation) - surprisal(+wh_no_gap at object)
-    For -wh condition: surprisal(-wh_gap at continuation) - surprisal(-wh_no_gap at object)
+    For +wh condition: surprisal(+wh_gap) - surprisal(+wh_no_gap)
+    For -wh condition: surprisal(-wh_gap) - surprisal(-wh_no_gap)
     
     Args:
         surprisal_df: dataframe with surprisal columns
         sentence_group: int
         embedding_level: int
         condition: "+wh" or "-wh"
+        surprisal_type: "local" (first token of continuation/object), "semi_local" 
+                        (object+continuation mean), or "global" (full sentence mean)
     
     Returns:
         filler_offloading_effect as float, or None if data missing
     """
+    if surprisal_type == 'local':
+        gap_col    = 'continuation_surprisal'
+        no_gap_col = 'object_surprisal'
+    elif surprisal_type == 'semi_local':
+        gap_col    = 'semi_local_surprisal_mean'
+        no_gap_col = 'semi_local_surprisal_mean'
+    elif surprisal_type == 'global':
+        gap_col    = 'global_surprisal_mean'
+        no_gap_col = 'global_surprisal_mean'
+    else:
+        raise ValueError(f"surprisal_type must be 'local', 'semi_local' or 'global', got '{surprisal_type}'")
+
     base = surprisal_df[
         (surprisal_df['sentence_group'] == sentence_group) &
         (surprisal_df['levels_of_embedding'] == embedding_level)
     ]
 
     if condition == "+wh":
-        gap_row    = base[base['condition'] == '+wh_gap']['continuation_surprisal'].values
-        no_gap_row = base[base['condition'] == '+wh_no_gap']['object_surprisal'].values
+        gap_row    = base[base['condition'] == '+wh_gap'][gap_col].values
+        no_gap_row = base[base['condition'] == '+wh_no_gap'][no_gap_col].values
         if len(gap_row) == 0 or len(no_gap_row) == 0:
             return None
         return gap_row[0] - no_gap_row[0]
 
     elif condition == "-wh":
-        gap_row    = base[base['condition'] == '-wh_gap']['continuation_surprisal'].values
-        no_gap_row = base[base['condition'] == '-wh_no_gap']['object_surprisal'].values
+        gap_row    = base[base['condition'] == '-wh_gap'][gap_col].values
+        no_gap_row = base[base['condition'] == '-wh_no_gap'][no_gap_col].values
         if len(gap_row) == 0 or len(no_gap_row) == 0:
             return None
         return gap_row[0] - no_gap_row[0]
@@ -164,7 +194,7 @@ def mean_ci_95(values):
   # 3. try to normalise by token frequency???
   
 
-def compute_effect_across_groups(surprisal_df, effect_fn, condition, embedding_levels=None):
+def compute_effect_across_groups(surprisal_df, effect_fn, condition, surprisal_type, embedding_levels=None):
     """
     Computes an effect across all sentence groups and embedding levels.
 
@@ -186,14 +216,14 @@ def compute_effect_across_groups(surprisal_df, effect_fn, condition, embedding_l
 
     for level in embedding_levels:
         for group in sentence_groups:
-            effect = effect_fn(surprisal_df, group, level, condition)
+            effect = effect_fn(surprisal_df, group, level, condition, surprisal_type)
             if effect is not None:
                 results[level].append(effect)
 
     return results
 
 
-def plot_effect_bar_chart(surprisal_df, effect_fn, conditions, title, ylabel, 
+def plot_effect_bar_chart(surprisal_df, effect_fn, conditions, title, ylabel, surprisal_type,
                           condition_labels=None, embedding_levels=None,):
     """
     Plots a grouped bar chart of an effect across embedding levels and conditions.
@@ -217,7 +247,7 @@ def plot_effect_bar_chart(surprisal_df, effect_fn, conditions, title, ylabel,
     all_cis   = {}
     for condition in conditions:
         results = compute_effect_across_groups(
-            surprisal_df, effect_fn, condition, embedding_levels
+            surprisal_df, effect_fn, condition, surprisal_type, embedding_levels,
         )
         all_means[condition] = []
         all_cis[condition]   = []
@@ -259,3 +289,55 @@ def plot_effect_bar_chart(surprisal_df, effect_fn, conditions, title, ylabel,
 
     plt.tight_layout()
     plt.show()
+    
+def plot_metrics(surprisal_df, surprisal_type='local'):
+    """
+    Plots wh-effect and filler offloading metrics for each sentence group and embedding level.
+
+    Args:
+        surprisal_df: dataframe with surprisal columns
+        surprisal_type: "local", "semi_local", or "global"
+    """
+    sentence_groups  = sorted(surprisal_df['sentence_group'].unique())
+    embedding_levels = sorted(surprisal_df['levels_of_embedding'].unique())
+
+    for group_id in sentence_groups:
+        n_levels = len(embedding_levels)
+        fig, axes = plt.subplots(1, n_levels, figsize=(4 * n_levels, 4))
+
+        if n_levels == 1:
+            axes = [axes]
+
+        fig.suptitle(f"Sentence Group {group_id}", fontsize=14)
+
+        for ax, level in zip(axes, embedding_levels):
+            level_metrics = {
+                'wh_effect_gap':         get_wh_effect(surprisal_df, group_id, level, 'gap',    surprisal_type),
+                'wh_effect_no_gap':      get_wh_effect(surprisal_df, group_id, level, 'no_gap', surprisal_type),
+                'filler_offloading_+wh': get_filler_offloading_effect(surprisal_df, group_id, level, '+wh', surprisal_type),
+                'filler_offloading_-wh': get_filler_offloading_effect(surprisal_df, group_id, level, '-wh', surprisal_type),
+            }
+
+            labels      = list(level_metrics.keys())
+            values      = [v if v is not None else 0 for v in level_metrics.values()]
+            colors      = ['#5bbcd6' if 'wh_effect' in l else '#f98400' for l in labels]
+            short_labels = [l.replace('wh_effect_', '').replace('filler_offloading_', '') for l in labels]
+
+            x    = np.arange(len(labels))
+            bars = ax.bar(x, values, color=colors, alpha=0.85)
+            ax.set_title(f"Embedding level {level}")
+            ax.set_xticks(x)
+            ax.set_xticklabels(short_labels, rotation=30, ha='right', fontsize=8)
+            ax.axhline(0, color='black', linewidth=0.8, linestyle='--')
+
+            # add value labels above/below bars
+            for bar, val in zip(bars, values):
+                ax.text(
+                    bar.get_x() + bar.get_width() / 2,
+                    bar.get_height() + (0.05 if val >= 0 else -0.15),
+                    f'{val:.2f}',
+                    ha='center', va='bottom', fontsize=7.5
+                )
+
+        plt.tight_layout()
+        plt.show()

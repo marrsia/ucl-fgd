@@ -210,9 +210,51 @@ def get_region_token_ids(df, region, sentence_id, model_name):
         start_id, end_id = token_ids
         token_ids = (start_id + 1, end_id + 1)
 
-    return first_word, token_ids
+    return token_ids
 
-def get_region_mean_surprisal(surprisal_df, sentence_id, token_range):
+
+
+def get_multi_region_token_ids(df, regions, sentence_id, model_name):
+    """
+    Returns token id range spanning all tokens across a group of adjacent regions.
+    Fails if regions are not adjacent in SENTENCE_COLUMNS.
+
+    Args:
+        df: dataframe read from original stimuli CSV
+        regions: list of region names e.g. ["embedding_1", "embedding_2", "embedding_3"]
+        sentence_id: the sentence number (0-indexed)
+        model_name: model name string e.g. "grnn"
+
+    Returns:
+        (first word from first region, (start_token_id, end_token_id))
+        or None if any region is empty
+    """
+    # check regions are adjacent in SENTENCE_COLUMNS
+    indices = [SENTENCE_COLUMNS.index(r) for r in regions]
+    if indices != list(range(min(indices), max(indices) + 1)):
+        raise ValueError(f"Regions {regions} are not adjacent in SENTENCE_COLUMNS")
+
+    # get token range for each region, skipping empty ones
+    token_ranges = []
+    
+
+    for region in regions:
+        result = get_region_token_ids(df, region, sentence_id, model_name)
+        if result is None:
+            continue
+        token_range = result
+        token_ranges.append(token_range)
+
+    if not token_ranges:
+        return None
+    # span from start of first to end of last
+    start = min(r[0] for r in token_ranges)
+    end   = max(r[1] for r in token_ranges)
+
+    return (start, end)
+
+
+def get_range_mean_surprisal(surprisal_df, sentence_id, token_range):
     """
     Returns mean surprisal over all tokens in a region.
 
@@ -256,21 +298,31 @@ def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name
     for region in regions:
         results[f"{region}_surprisal"] = None
         results[f"{region}_surprisal_mean"] = None
+    results["semi_local_surprisal_mean"] = None
+    results["global_surprisal_mean"] = None
 
     for sentence_id, _ in stimuli_df.iterrows():
         for region in regions:
-            region_info = get_region_token_ids(stimuli_df, region, sentence_id, model_name)
+            token_range = get_region_token_ids(stimuli_df, region, sentence_id, model_name)
 
-            if region_info is None:
+            if token_range is None:
                 continue
 
-            _, token_range = region_info
             results.at[sentence_id, f"{region}_surprisal"] = get_token_surprisal(
                 surprisal_df, sentence_id, token_range[0]
             )
-            results.at[sentence_id, f"{region}_surprisal_mean"] = get_region_mean_surprisal(
+            results.at[sentence_id, f"{region}_surprisal_mean"] = get_range_mean_surprisal(
                 surprisal_df, sentence_id, token_range
             )
+        
+        results.at[sentence_id, "semi_local_surprisal_mean"] = get_range_mean_surprisal(
+            surprisal_df, sentence_id, get_multi_region_token_ids(stimuli_df, ["object", "continuation"], sentence_id, model_name)
+        )
+        results.at[sentence_id, "global_surprisal_mean"] = get_range_mean_surprisal(
+            surprisal_df, sentence_id, get_multi_region_token_ids(stimuli_df, regions, sentence_id, model_name)
+        )
+        
+        
            
     results.to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
