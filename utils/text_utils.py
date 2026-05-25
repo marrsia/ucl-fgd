@@ -50,14 +50,14 @@ def build_sentences_for_surprisals(input_csv, output_txt):
 
 def build_sentence_starts_for_sampling(input_csv):
     """
-    Builds sentence starts for continuation sampling from gap_filler and 
-    no_gap_no_filler conditions only.
+    Builds sentence starts for continuation sampling from +wh_gap and 
+    -wh_no_gap conditions only.
 
     Returns:
         dict of {row_number: {sentence_start, condition, levels_of_embedding}}
     """
     df = pd.read_csv(input_csv)
-    df = df[df["condition"].isin(["gap_filler", "no_gap_no_filler"])]
+    df = df[df["condition"].isin(["+wh_gap", "-wh_no_gap"])]
 
     result = {}
 
@@ -129,7 +129,7 @@ def get_token_surprisal(surprisal_df, sentence_id, token_id):
 
 
 
-def get_gpt2_token_ids(sentence, word_idx, tokenizer):
+def get_gpt2_token_ids(sentence, start_word_idx, end_word_idx, tokenizer):
     """
     Returns token ids for a word at a given index in a sentence using GPT2 tokenizer.
     A word may map to multiple tokens.
@@ -147,9 +147,11 @@ def get_gpt2_token_ids(sentence, word_idx, tokenizer):
     
     word_ids = encoding.word_ids()
     
-    token_positions = [pos for pos, word_id in enumerate(word_ids) if word_id == word_idx]
+    # adding 1 to both tokens to match grnn and ngram which idx starting at 1
+    token_positions = [pos for pos, word_id in enumerate(word_ids) if word_id >= start_word_idx and word_id <= end_word_idx]
     
-    return (token_positions[0], token_positions[-1])
+    
+    return (token_positions[0] + 1, token_positions[-1] + 1)
 
 
 ONE_TOKEN_PER_WORD_MODELS = ["ngram", "grnn", "jrnn"]
@@ -199,7 +201,7 @@ def get_region_token_ids(df, region, sentence_id, model_name):
             for col in SENTENCE_COLUMNS
             if pd.notna(row[col]) and str(row[col]).strip()
         )
-        token_ids = get_gpt2_token_ids(sentence_string, word_offset, tokenizer = gpt2_tokenizer)
+        token_ids = get_gpt2_token_ids(sentence_string, word_offset, word_offset + len(region_words), tokenizer = gpt2_tokenizer)
     else:
         raise NotImplementedError(f"Unknown model {model_name}.")
 
@@ -210,6 +212,29 @@ def get_region_token_ids(df, region, sentence_id, model_name):
 
     return first_word, token_ids
 
+def get_region_mean_surprisal(surprisal_df, sentence_id, token_range):
+    """
+    Returns mean surprisal over all tokens in a region.
+
+    Args:
+        surprisal_df: dataframe read from lm-zoo surprisal CSV
+        sentence_id: the sentence number (1-indexed)
+        token_range: (start, end) tuple of token ids (end exclusive)
+
+    Returns:
+        mean surprisal as float, or None if no tokens found
+    """
+    start, end = token_range
+    rows = surprisal_df[
+        (surprisal_df["sentence_id"] == sentence_id) &
+        (surprisal_df["token_id"] >= start) &
+        (surprisal_df["token_id"] < end)
+    ]
+
+    if rows.empty:
+        return None
+
+    return rows["surprisal"].mean()
 
 def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name, regions):
     """
@@ -230,6 +255,7 @@ def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name
 
     for region in regions:
         results[f"{region}_surprisal"] = None
+        results[f"{region}_surprisal_mean"] = None
 
     for sentence_id, _ in stimuli_df.iterrows():
         for region in regions:
@@ -239,8 +265,13 @@ def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name
                 continue
 
             _, token_range = region_info
-            surprisal = get_token_surprisal(surprisal_df, sentence_id, token_range[0])
-            results.at[sentence_id, f"{region}_surprisal"] = surprisal
-
+            results.at[sentence_id, f"{region}_surprisal"] = get_token_surprisal(
+                surprisal_df, sentence_id, token_range[0]
+            )
+            results.at[sentence_id, f"{region}_surprisal_mean"] = get_region_mean_surprisal(
+                surprisal_df, sentence_id, token_range
+            )
+           
     results.to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
+    

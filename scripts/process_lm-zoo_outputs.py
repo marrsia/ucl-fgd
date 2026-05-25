@@ -22,5 +22,5 @@ for file in files:
         surprisal_csv=output,
         output_csv=results_file,
         model_name=model_name,
-        regions=list(RELEVANT_REGIONS)
+        regions=list(SENTENCE_COLUMNS)
     )

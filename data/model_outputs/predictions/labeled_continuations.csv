@@ -1,0 +1,336 @@
+sentence_id,condition,embedding_level,model,continuation_start_pos,sentence_start,continuation,label,notes,grammaticality
+1,+wh_gap,0,gpt2,ADP,The assistant knew who the secretary impressed,"on the floor of the Senate, but his wife was the one who had been the biggest cheerleader",gap,,grammatical
+1,+wh_gap,0,gpt2,CCONJ,The assistant knew who the secretary impressed,"and he called him. Mrs. H. said, ""Mr. Brown, how long ago you",gap,,grammatical
+1,+wh_gap,0,gpt2,ADP,The assistant knew who the secretary impressed,"with his performance in the first round, but he said there has nothing in evidence to support them saying",gap,,grammatical
+1,+wh_gap,0,gpt2,ADP,The assistant knew who the secretary impressed,on her last day. She knew that she was out of the White House to see his birthday present,gap,,grammatical
+1,+wh_gap,0,gpt2,PUNCT,The assistant knew who the secretary impressed,. He recognized it and asked if anyone had noticed. The president sat next to him and watched for,gap,,grammatical
+1,+wh_gap,0,grnn,PUNCT,The assistant knew who the secretary impressed,.,gap,,grammatical
+1,+wh_gap,0,grnn,PUNCT,The assistant knew who the secretary impressed,", and was in the process of investigating <unk> in <unk> .",gap,,grammatical
+1,+wh_gap,0,grnn,ADP,The assistant knew who the secretary impressed,by his skill .,gap,,grammatical
+1,+wh_gap,0,grnn,ADP,The assistant knew who the secretary impressed,with .,gap,,grammatical
+1,+wh_gap,0,grnn,PUNCT,The assistant knew who the secretary impressed,.,gap,,grammatical
+2,-wh_no_gap,0,gpt2,PRON,The assistant knew that the secretary impressed,"him so strongly that he accepted the appointment.
+
+At the same time, after taking the job",no_gap,,grammatical
+2,-wh_no_gap,0,gpt2,PRON,The assistant knew that the secretary impressed,"him so much he asked what was next.
+
+""Why wouldn't you know?"" he replied",no_gap,,grammatical
+2,-wh_no_gap,0,gpt2,PRON,The assistant knew that the secretary impressed,"her, with her wit, sense of humour, and ease of expression.
+
+""She was",no_gap,,grammatical
+2,-wh_no_gap,0,gpt2,PRON,The assistant knew that the secretary impressed,"her with his appearance and attitude while she was going there.
+
+""Please don't let this",no_gap,,grammatical
+2,-wh_no_gap,0,gpt2,PRON,The assistant knew that the secretary impressed,"his senior officers, who ordered him to work as soon as the military department ordered for him; the",no_gap,,grammatical
+2,-wh_no_gap,0,grnn,PUNCT,The assistant knew that the secretary impressed,.,gap,,ungrammatical
+2,-wh_no_gap,0,grnn,PUNCT,The assistant knew that the secretary impressed,", come to realize that the new figure neglected and destroyed the volume .",gap,,ungrammatical
+2,-wh_no_gap,0,grnn,PUNCT,The assistant knew that the secretary impressed,; in the first episode they made him turn a shadow .,gap,,ungrammatical
+2,-wh_no_gap,0,grnn,PROPN,The assistant knew that the secretary impressed,Otto the experience when he was studying staff probe .,no_gap,,grammatical
+2,-wh_no_gap,0,grnn,ADP,The assistant knew that the secretary impressed,by the progress he had made .,unclear,semantic ambiguity,ungrammatical
+5,+wh_gap,1,gpt2,SCONJ,The assistant knew who the security guard said the secretary impressed,"upon him. That security guard was Mike Rogers, a former FBI agents who had already been shot and",unclear,semantic ambiguity,ungrammatical
+5,+wh_gap,1,gpt2,PUNCT,The assistant knew who the security guard said the secretary impressed,". He's had a job where he's been a little bit under the radar, and I think",gap,,grammatical
+5,+wh_gap,1,gpt2,PUNCT,The assistant knew who the security guard said the secretary impressed,"(at least if she was one of the students at Yale).
+
+And, I suppose,",gap,,grammatical
+5,+wh_gap,1,gpt2,CCONJ,The assistant knew who the security guard said the secretary impressed,"and could not remember details of his interactions with a top state department employee.
+
+He asked for",gap,,grammatical
+5,+wh_gap,1,gpt2,PUNCT,The assistant knew who the security guard said the secretary impressed,", and he said he was going to ask her if she needed help figuring out what was going on",gap,,grammatical
+5,+wh_gap,1,grnn,ADV,The assistant knew who the security guard said the secretary impressed,instead by Collins .,unclear,semantic ambiguity,ungrammatical
+5,+wh_gap,1,grnn,PUNCT,The assistant knew who the security guard said the secretary impressed,.,gap,,grammatical
+5,+wh_gap,1,grnn,PUNCT,The assistant knew who the security guard said the secretary impressed,.,gap,,grammatical
+5,+wh_gap,1,grnn,PUNCT,The assistant knew who the security guard said the secretary impressed,", which he called "" a secure bribe "" , and later to the presidential strategy of his ultimate successor",gap,,grammatical
+5,+wh_gap,1,grnn,ADP,The assistant knew who the security guard said the secretary impressed,with him .,gap,,grammatical
+6,-wh_no_gap,1,gpt2,PRON,The assistant knew that the security guard said the secretary impressed,"her greatly and assured her she was prepared."" —Hanns, Office of the Secretary Of Health",no_gap,,grammatical
+6,-wh_no_gap,1,gpt2,PRON,The assistant knew that the security guard said the secretary impressed,"him so much and that he got up and explained to him what the problem was.
+
+As",no_gap,,grammatical
+6,-wh_no_gap,1,gpt2,PRON,The assistant knew that the security guard said the secretary impressed,"her with her ""wisdom and ability to learn quickly on the spot"" and that he was happy",no_gap,,grammatical
+6,-wh_no_gap,1,gpt2,PRON,The assistant knew that the security guard said the secretary impressed,himself by having to explain a few things in the manner that might cause the security guard to suspect something,no_gap,,grammatical
+6,-wh_no_gap,1,gpt2,PRON,The assistant knew that the security guard said the secretary impressed,"his superiors ""because I thought in this administration that I had to be very careful about this stuff.""",no_gap,,grammatical
+6,-wh_no_gap,1,grnn,ADP,The assistant knew that the security guard said the secretary impressed,about how he had got the nickname .,unclear,semantic ambiguity,ungrammatical
+6,-wh_no_gap,1,grnn,CCONJ,The assistant knew that the security guard said the secretary impressed,and agreed to appear on his desk at Bell Labs .,gap,,ungrammatical
+6,-wh_no_gap,1,grnn,ADP,The assistant knew that the security guard said the secretary impressed,by the first time .,gap,,ungrammatical
+6,-wh_no_gap,1,grnn,DET,The assistant knew that the security guard said the secretary impressed,the boys .,no_gap,,grammatical
+6,-wh_no_gap,1,grnn,PUNCT,The assistant knew that the security guard said the secretary impressed,", on his return , to <unk> 's Moscow office , apologizing to Cato for activities in a greater degree",gap,,ungrammatical
+9,+wh_gap,2,gpt2,PUNCT,The assistant knew who the security guard said his manager believed the secretary impressed,", and that he had paid her a visit to see if he could help her, he said.",gap,,grammatical
+9,+wh_gap,2,gpt2,PUNCT,The assistant knew who the security guard said his manager believed the secretary impressed,"— someone who works for the state, he said. But the assistant said nobody from the governor or",gap,,grammatical
+9,+wh_gap,2,gpt2,PUNCT,The assistant knew who the security guard said his manager believed the secretary impressed,". When he discovered it was that man, the assistant saw him standing at a door as if to",gap,,grammatical
+9,+wh_gap,2,gpt2,SCONJ,The assistant knew who the security guard said his manager believed the secretary impressed,after she found the car near his home that showed nothing other than that he had never seen an office,gap,,grammatical
+9,+wh_gap,2,gpt2,ADP,The assistant knew who the security guard said his manager believed the secretary impressed,at the gym. He then turned the girl in to the security guard and said he would not do,gap,,grammatical
+9,+wh_gap,2,grnn,ADP,The assistant knew who the security guard said his manager believed the secretary impressed,by his possibly voice on the acting ( which prompts <unk> to talk to his friends at one stage ),gap,,grammatical
+9,+wh_gap,2,grnn,SCONJ,The assistant knew who the security guard said his manager believed the secretary impressed,that he was actually responsible for talking .,gap,semantic ambiguity,ungrammatical
+9,+wh_gap,2,grnn,ADP,The assistant knew who the security guard said his manager believed the secretary impressed,by the size of the match .,gap,,grammatical
+9,+wh_gap,2,grnn,CCONJ,The assistant knew who the security guard said his manager believed the secretary impressed,"and worked a letter to "" Tom that he would have love you "" .",gap,,grammatical
+9,+wh_gap,2,grnn,PUNCT,The assistant knew who the security guard said his manager believed the secretary impressed,.,gap,,grammatical
+10,-wh_no_gap,2,gpt2,PROPN,The assistant knew that the security guard said his manager believed the secretary impressed,"Clinton's security detail by how well she'd dressed for the event.
+
+""It was all",no_gap,,grammatical
+10,-wh_no_gap,2,gpt2,PRON,The assistant knew that the security guard said his manager believed the secretary impressed,"him because she had ""some great credentials.""
+
+I have a job at the CIA because I",no_gap,,grammatical
+10,-wh_no_gap,2,gpt2,ADP,The assistant knew that the security guard said his manager believed the secretary impressed,with the dress; he was a better employee at the same place and would have been better served if,gap,passive,ungrammatical
+10,-wh_no_gap,2,gpt2,ADP,The assistant knew that the security guard said his manager believed the secretary impressed,"at the meeting, and he told him that he would like to meet her in person and check on",gap,might be a generic use meaning 'impressed (those who were there)',grammatical
+10,-wh_no_gap,2,gpt2,PRON,The assistant knew that the security guard said his manager believed the secretary impressed,"her so she ordered her out of the building without looking.
+
+'So, they didn't",no_gap,,grammatical
+10,-wh_no_gap,2,grnn,ADP,The assistant knew that the security guard said his manager believed the secretary impressed,with the fan threat .,gap,passive,ungrammatical
+10,-wh_no_gap,2,grnn,ADP,The assistant knew that the security guard said his manager believed the secretary impressed,about him For Orbison .,unclear,semanticaly incoherent,ungrammatical
+10,-wh_no_gap,2,grnn,CCONJ,The assistant knew that the security guard said his manager believed the secretary impressed,and threw his friends on the table .,gap,,ungrammatical
+10,-wh_no_gap,2,grnn,PUNCT,The assistant knew that the security guard said his manager believed the secretary impressed,.,gap,,ungrammatical
+10,-wh_no_gap,2,grnn,ADP,The assistant knew that the security guard said his manager believed the secretary impressed,by his exceptional performance and personal commitment .,gap,,ungrammatical
+13,+wh_gap,3,gpt2,PRON,The assistant knew who the security guard said his manager believed the junior associate claimed the secretary impressed,"her, the chief said Thursday.
+
+""They tried to calm her when she began to talk",no_gap,,ungrammatical
+13,+wh_gap,3,gpt2,PUNCT,The assistant knew who the security guard said his manager believed the junior associate claimed the secretary impressed,".
+
+The two were spotted at a Starbucks in the district shortly after midnight on the fourth morning",gap,,grammatical
+13,+wh_gap,3,gpt2,PUNCT,The assistant knew who the security guard said his manager believed the junior associate claimed the secretary impressed,", but insisted that he never met the deputy.
+
+""We don't know what happened to",gap,,grammatical
+13,+wh_gap,3,gpt2,SCONJ,The assistant knew who the security guard said his manager believed the junior associate claimed the secretary impressed,"when he met with her before her departure.
+
+His manager said he had never heard anyone say",gap,,grammatical
+13,+wh_gap,3,gpt2,ADP,The assistant knew who the security guard said his manager believed the junior associate claimed the secretary impressed,"on him. ""And all these people were trying to convince [the secretary] they were a couple",gap,,grammatical
+13,+wh_gap,3,grnn,ADP,The assistant knew who the security guard said his manager believed the junior associate claimed the secretary impressed,by his style and recalls his friend Alan <unk> .,gap,semantic ambiguity,ungrammatical
+13,+wh_gap,3,grnn,ADP,The assistant knew who the security guard said his manager believed the junior associate claimed the secretary impressed,"with his holdings of the same car accident by candidate counts in mixed and mixed books , asserting that an",gap,,grammatical
+13,+wh_gap,3,grnn,CCONJ,The assistant knew who the security guard said his manager believed the junior associate claimed the secretary impressed,"both with the information received by BP , and criticised her for using a humanoid alien flying under one of",gap,,grammatical
+13,+wh_gap,3,grnn,PUNCT,The assistant knew who the security guard said his manager believed the junior associate claimed the secretary impressed,.,gap,,grammatical
+13,+wh_gap,3,grnn,PUNCT,The assistant knew who the security guard said his manager believed the junior associate claimed the secretary impressed,.,gap,,grammatical
+14,-wh_no_gap,3,gpt2,PRON,The assistant knew that the security guard said his manager believed the junior associate claimed the secretary impressed,"her by posing with her and showing off she had been sent to Saudi Arabia.
+
+The assistant",no_gap,,grammatical
+14,-wh_no_gap,3,gpt2,PRON,The assistant knew that the security guard said his manager believed the junior associate claimed the secretary impressed,"his boss. But on Jan. 14, a few days after the incident she called his office demanding",no_gap,,grammatical
+14,-wh_no_gap,3,gpt2,DET,The assistant knew that the security guard said his manager believed the junior associate claimed the secretary impressed,a female employee at the White House for not informing a group of staffers that her daughter had a job,no_gap,,grammatical
+14,-wh_no_gap,3,gpt2,PRON,The assistant knew that the security guard said his manager believed the junior associate claimed the secretary impressed,him. She said the security guard told the student after the meeting that the associate was a former student,no_gap,,grammatical
+14,-wh_no_gap,3,gpt2,PRON,The assistant knew that the security guard said his manager believed the junior associate claimed the secretary impressed,"her. On top of that, the assistant admitted to his employer that the secretary had made multiple promises",no_gap,,grammatical
+14,-wh_no_gap,3,grnn,ADP,The assistant knew that the security guard said his manager believed the junior associate claimed the secretary impressed,with a member of the panel .,gap,,ungrammatical
+14,-wh_no_gap,3,grnn,PUNCT,The assistant knew that the security guard said his manager believed the junior associate claimed the secretary impressed,"; Michael <unk> of the "" Toronto Star "" felt the report was behind the Department for the Foreign Policy",no_gap,,grammatical
+14,-wh_no_gap,3,grnn,ADP,The assistant knew that the security guard said his manager believed the junior associate claimed the secretary impressed,by Kolbe 's outstanding performance over the first record .,gap,,ungrammatical
+14,-wh_no_gap,3,grnn,PUNCT,The assistant knew that the security guard said his manager believed the junior associate claimed the secretary impressed,"; Patrick "" left an unfinished <unk> , which is made up of short pieces of the High Heritage Museum",gap,,ungrammatical
+14,-wh_no_gap,3,grnn,ADP,The assistant knew that the security guard said his manager believed the junior associate claimed the secretary impressed,"by the "" roar to anger "" made by it who was told "" missed the new "" artist .",gap,,ungrammatical
+17,+wh_gap,0,gpt2,ADV,The teacher reported who the student hit,"first.
+
+Police say a white Hyundai Accent crashed into the school and the driver got into",gap,,grammatical
+17,+wh_gap,0,gpt2,PUNCT,The teacher reported who the student hit,". The principal also said three girls, and some students, struck the person they were carrying. The",gap,,grammatical
+17,+wh_gap,0,gpt2,PUNCT,The teacher reported who the student hit,": two male students, in their thirties and in their late twenties, and the principal and",gap,,grammatical
+17,+wh_gap,0,gpt2,PUNCT,The teacher reported who the student hit,".
+
+A man on the roof pointed a gun at the instructor and shot the man. The",gap,,grammatical
+17,+wh_gap,0,gpt2,PUNCT,The teacher reported who the student hit,. As she was in that position and struggling to move with a foot or some other form of resistance,gap,,grammatical
+17,+wh_gap,0,grnn,ADP,The teacher reported who the student hit,at the 2016 Olympic Games .,gap,,grammatical
+17,+wh_gap,0,grnn,PUNCT,The teacher reported who the student hit,.,gap,,grammatical
+17,+wh_gap,0,grnn,PUNCT,The teacher reported who the student hit,.,gap,,grammatical
+17,+wh_gap,0,grnn,NUM,The teacher reported who the student hit,one of the 10 .,no_gap,,ungrammatical
+17,+wh_gap,0,grnn,ADP,The teacher reported who the student hit,at a hype concerning the crowds wearing a <unk> wig shroud to play an old show to the point seen,gap,,grammatical
+18,-wh_no_gap,0,gpt2,DET,The teacher reported that the student hit,"the teacher the moment he was out of their classroom on the way out.
+
+The teacher's",no_gap,,grammatical
+18,-wh_no_gap,0,gpt2,DET,The teacher reported that the student hit,"the teacher on her buttocks.
+
+According to the student, the teacher went to her car to",no_gap,,grammatical
+18,-wh_no_gap,0,gpt2,ADP,The teacher reported that the student hit,"on another student as she was leaving the classroom, and she could not tell if this was the correct",no_gap,,grammatical
+18,-wh_no_gap,0,gpt2,ADV,The teacher reported that the student hit,so hard that other students couldn't push or try to pull him. When the teacher tried to pull,no_gap,,grammatical
+18,-wh_no_gap,0,gpt2,PRON,The teacher reported that the student hit,her with a rock before fleeing down the stairs as they left. The professor then brought out to find,no_gap,,grammatical
+18,-wh_no_gap,0,grnn,PUNCT,The teacher reported that the student hit,", "" a woman had said "" Perhaps her misfortune was the investigation of an <unk> comic that would ejected",gap,,ungrammatical
+18,-wh_no_gap,0,grnn,ADJ,The teacher reported that the student hit,"expensive weapons in their library , letter from a woman said , "" as an intimate pointless lawsuit , you",unclear,potentially considering hit as a misspell of hid?,ungrammatical
+18,-wh_no_gap,0,grnn,X,The teacher reported that the student hit,<unk> that characterised <unk> .,unclear,unk,ungrammatical
+18,-wh_no_gap,0,grnn,NOUN,The teacher reported that the student hit,"home runs , despite being a useful rather than a student earning .",no_gap,,grammatical
+18,-wh_no_gap,0,grnn,ADP,The teacher reported that the student hit,"on the <unk> , shortly before Olympic Stadium .",unclear,"semantic ambiguity: hit on, or maybe passive: the student was hit on the head, unks make it unclear",ungrammatical
+21,+wh_gap,1,gpt2,PRON,The teacher reported who the other children claimed the student hit,her. The teacher called investigators after he told them he heard the girl's attack. But the child,no_gap,,ungrammatical
+21,+wh_gap,1,gpt2,PUNCT,The teacher reported who the other children claimed the student hit,". The students were later able to flee the school.
+
+The teacher and other teacher staff were",gap,,grammatical
+21,+wh_gap,1,gpt2,PRON,The teacher reported who the other children claimed the student hit,her.,no_gap,,ungrammatical
+21,+wh_gap,1,gpt2,SCONJ,The teacher reported who the other children claimed the student hit,"while watching some sort of ""horror movie.""
+
+Another student allegedly heard this same word as",gap,,grammatical
+21,+wh_gap,1,gpt2,PRON,The teacher reported who the other children claimed the student hit,"him, but she said she called police later to report the case to the student's mother. After",no_gap,,ungrammatical
+21,+wh_gap,1,grnn,PUNCT,The teacher reported who the other children claimed the student hit,.,gap,,grammatical
+21,+wh_gap,1,grnn,PUNCT,The teacher reported who the other children claimed the student hit,.,gap,,grammatical
+21,+wh_gap,1,grnn,PUNCT,The teacher reported who the other children claimed the student hit,.,gap,,grammatical
+21,+wh_gap,1,grnn,PUNCT,The teacher reported who the other children claimed the student hit,", "" I 'm glad it was to be said ... But the high-school <unk> was questioned .",gap,,grammatical
+21,+wh_gap,1,grnn,PRON,The teacher reported who the other children claimed the student hit,who showed a reluctance to visit nearby children .,unclear,possibly trying to reinterpret student as goal of hit,ungrammatical
+22,-wh_no_gap,1,gpt2,PRON,The teacher reported that the other children claimed the student hit,"her with a pencil.
+
+She says she attempted to stop the attack when he walked up to",no_gap,,grammatical
+22,-wh_no_gap,1,gpt2,PRON,The teacher reported that the other children claimed the student hit,"them from behind.
+
+According to a school spokesperson, the principal of the school was informed that",no_gap,,grammatical
+22,-wh_no_gap,1,gpt2,PRON,The teacher reported that the other children claimed the student hit,"them with paintballs as a fight in the middle of a parking lot.
+
+There is another",no_gap,,grammatical
+22,-wh_no_gap,1,gpt2,PRON,The teacher reported that the other children claimed the student hit,"him and then yelled at him to leave the classroom.
+
+He said the teacher said the student",no_gap,,grammatical
+22,-wh_no_gap,1,gpt2,PRON,The teacher reported that the other children claimed the student hit,"them with a broomstick, then kicked them. Later at the school, police responded to the fire",no_gap,,grammatical
+22,-wh_no_gap,1,grnn,X,The teacher reported that the other children claimed the student hit,<unk> .,unclear,unk,ungrammatical
+22,-wh_no_gap,1,grnn,ADJ,The teacher reported that the other children claimed the student hit,"more than 50 points , as well .",no_gap,,grammatical
+22,-wh_no_gap,1,grnn,NOUN,The teacher reported that the other children claimed the student hit,"cup tapes soon after the race was stopped , but the referee stopped the race , but was thrown .",no_gap,,grammatical
+22,-wh_no_gap,1,grnn,PUNCT,The teacher reported that the other children claimed the student hit,.,gap,,ungrammatical
+22,-wh_no_gap,1,grnn,PUNCT,The teacher reported that the other children claimed the student hit,", while another had , as part of its debate , a large <unk> .",gap,,ungrammatical
+25,+wh_gap,2,gpt2,SCONJ,The teacher reported who the other children claimed their friends said the student hit,when saying that they were students. They all came forward saying that the teacher had not had any issues,gap,,grammatical
+25,+wh_gap,2,gpt2,PRON,The teacher reported who the other children claimed their friends said the student hit,"them, but that they were not sure. An hour later, the school district's public assistance program",no_gap,,ungrammatical
+25,+wh_gap,2,gpt2,PRON,The teacher reported who the other children claimed their friends said the student hit,him in the face. Police say they don't believe anyone else hit the other children.,no_gap,,ungrammatical
+25,+wh_gap,2,gpt2,PUNCT,The teacher reported who the other children claimed their friends said the student hit,".
+
+At one point, police asked the students for their identity information and asked the parents to",gap,,grammatical
+25,+wh_gap,2,gpt2,AUX,The teacher reported who the other children claimed their friends said the student hit,"was at least 17-years-old, and was about to go to college.
+
+They",gap,,grammatical
+25,+wh_gap,2,grnn,PUNCT,The teacher reported who the other children claimed their friends said the student hit,""" with which the telescope ends frightened , "" which nearly Vince were doing .",unclear,semantically incoherent,ungrammatical
+25,+wh_gap,2,grnn,ADJ,The teacher reported who the other children claimed their friends said the student hit,"beautiful , but too little was taken to take up the area ; and also marked the first time that",unclear,semantically incoherent,ungrammatical
+25,+wh_gap,2,grnn,PUNCT,The teacher reported who the other children claimed their friends said the student hit,.,gap,,grammatical
+25,+wh_gap,2,grnn,PUNCT,The teacher reported who the other children claimed their friends said the student hit,.,gap,,grammatical
+25,+wh_gap,2,grnn,ADV,The teacher reported who the other children claimed their friends said the student hit,aloud .,gap,,grammatical
+26,-wh_no_gap,2,gpt2,PRON,The teacher reported that the other children claimed their friends said the student hit,"them, so they started a social media search.
+
+At least 30 people were arrested and 11",no_gap,,grammatical
+26,-wh_no_gap,2,gpt2,ADP,The teacher reported that the other children claimed their friends said the student hit,on them outside the room. The teacher also reported that the school's principal was the suspect in the,no_gap,semantic ambiguity: hit-on,grammatical
+26,-wh_no_gap,2,gpt2,DET,The teacher reported that the other children claimed their friends said the student hit,the students and took his belongings but did not tell anyone else. A fourth student said the student had,no_gap,,grammatical
+26,-wh_no_gap,2,gpt2,PRON,The teacher reported that the other children claimed their friends said the student hit,them on the head with a chair. They also reported being sexually abused during the fight. Three additional,no_gap,,grammatical
+26,-wh_no_gap,2,gpt2,CCONJ,The teacher reported that the other children claimed their friends said the student hit,"and killed one of them.
+
+According to the report, several other children said that when they",no_gap,,grammatical
+26,-wh_no_gap,2,grnn,DET,The teacher reported that the other children claimed their friends said the student hit,each other .,unclear,anomaly: each other used with singular subject,ungrammatical
+26,-wh_no_gap,2,grnn,PUNCT,The teacher reported that the other children claimed their friends said the student hit,", a few thousand , in a helicopter as the students marched his body shaft from the derelict hospital at",unclear,semantically incoherent,ungrammatical
+26,-wh_no_gap,2,grnn,NOUN,The teacher reported that the other children claimed their friends said the student hit,making 's <unk> .,unclear,semantically incoherent,ungrammatical
+26,-wh_no_gap,2,grnn,PUNCT,The teacher reported that the other children claimed their friends said the student hit,", and the teachers and professors had been left alive after learning that the school could not be read .",gap,,ungrammatical
+26,-wh_no_gap,2,grnn,AUX,The teacher reported that the other children claimed their friends said the student hit,will in a <unk> is part of a prank euphemism for the fact that someone who is working never really,unclear,semantically incoherent,ungrammatical
+29,+wh_gap,3,gpt2,PRON,The teacher reported who the other children claimed their friends said the teaching assistant stated the student hit,"her, so her teacher left after she said the teacher had her back.
+
+They are charged",no_gap,,ungrammatical
+29,+wh_gap,3,gpt2,PRON,The teacher reported who the other children claimed their friends said the teaching assistant stated the student hit,"her, and told reporters that that report was false. The teacher continued:
+
+""I want",no_gap,,ungrammatical
+29,+wh_gap,3,gpt2,DET,The teacher reported who the other children claimed their friends said the teaching assistant stated the student hit,the teacher again a third time. The students continued to hit the teacher and he went to the bathroom,no_gap,,ungrammatical
+29,+wh_gap,3,gpt2,PRON,The teacher reported who the other children claimed their friends said the teaching assistant stated the student hit,"them, and had ""hit her and knocked her around [and] hit her on the head""",no_gap,,ungrammatical
+29,+wh_gap,3,gpt2,PRON,The teacher reported who the other children claimed their friends said the teaching assistant stated the student hit,"her on the face, neck, and thighs and was thrown to the ground. After a few minutes",no_gap,,ungrammatical
+29,+wh_gap,3,grnn,PUNCT,The teacher reported who the other children claimed their friends said the teaching assistant stated the student hit,.,gap,,grammatical
+29,+wh_gap,3,grnn,DET,The teacher reported who the other children claimed their friends said the teaching assistant stated the student hit,"those whose books "" <unk> an eight <unk> box at the same time "" and "" at least one funny",no_gap,,ungrammatical
+29,+wh_gap,3,grnn,ADP,The teacher reported who the other children claimed their friends said the teaching assistant stated the student hit,"in the previous day , and questioned it .",gap,,grammatical
+29,+wh_gap,3,grnn,PUNCT,The teacher reported who the other children claimed their friends said the teaching assistant stated the student hit,.,gap,,grammatical
+29,+wh_gap,3,grnn,PUNCT,The teacher reported who the other children claimed their friends said the teaching assistant stated the student hit,.,gap,,grammatical
+30,-wh_no_gap,3,gpt2,DET,The teacher reported that the other children claimed their friends said the teaching assistant stated the student hit,"a wall.
+
+As the two younger children tried to escape, two other children said the teacher",no_gap,,grammatical
+30,-wh_no_gap,3,gpt2,PRON,The teacher reported that the other children claimed their friends said the teaching assistant stated the student hit,"their teacher with his broom before jumping into the ground.
+
+He added the police had asked the",no_gap,,grammatical
+30,-wh_no_gap,3,gpt2,PRON,The teacher reported that the other children claimed their friends said the teaching assistant stated the student hit,"her.
+
+The teacher also told the mother they are having an affair, that her partner is",no_gap,,grammatical
+30,-wh_no_gap,3,gpt2,DET,The teacher reported that the other children claimed their friends said the teaching assistant stated the student hit,"a child with a baseball bat but that was never found.
+
+Both students complained the teacher said",no_gap,,grammatical
+30,-wh_no_gap,3,gpt2,PRON,The teacher reported that the other children claimed their friends said the teaching assistant stated the student hit,"them with a bottle of water.
+
+
+The teacher, who was not identified, testified that the",no_gap,,grammatical
+30,-wh_no_gap,3,grnn,DET,The teacher reported that the other children claimed their friends said the teaching assistant stated the student hit,"the developer , and that he loved that night .",no_gap,,grammatical
+30,-wh_no_gap,3,grnn,PUNCT,The teacher reported that the other children claimed their friends said the teaching assistant stated the student hit,.,gap,,ungrammatical
+30,-wh_no_gap,3,grnn,PUNCT,The teacher reported that the other children claimed their friends said the teaching assistant stated the student hit,.,gap,,ungrammatical
+30,-wh_no_gap,3,grnn,PUNCT,The teacher reported that the other children claimed their friends said the teaching assistant stated the student hit,""" Charles "" in the previous quote : They discover the saddle for every tower , and count in a",no_gap,,grammatical
+30,-wh_no_gap,3,grnn,PUNCT,The teacher reported that the other children claimed their friends said the teaching assistant stated the student hit,.,gap,,ungrammatical
+33,+wh_gap,0,gpt2,CCONJ,I know what the burglar stole,"and what I went to check.
+
+He had my wallet, the credit card number, and",gap,,grammatical
+33,+wh_gap,0,gpt2,PUNCT,I know what the burglar stole,", for it is out in the open, there is no sign of anyone doing anything. Even if",gap,,grammatical
+33,+wh_gap,0,gpt2,SCONJ,I know what the burglar stole,"when he put his head in the refrigerator, but I did not see the refrigerator before I got there",gap,,grammatical
+33,+wh_gap,0,gpt2,PUNCT,I know what the burglar stole,", but I'm a complete mystery, but I know it's nothing. So we'll do our",gap,,grammatical
+33,+wh_gap,0,gpt2,ADP,I know what the burglar stole,"from you, and don't get caught!"" I said to him.
+
+""No sir,""",gap,,grammatical
+33,+wh_gap,0,grnn,ADP,I know what the burglar stole,from his father .,gap,,grammatical
+33,+wh_gap,0,grnn,PUNCT,I know what the burglar stole,"... for a moment , the instant alters them towards Israel in proportion to their distribution .",gap,,grammatical
+33,+wh_gap,0,grnn,PUNCT,I know what the burglar stole,.,gap,,grammatical
+33,+wh_gap,0,grnn,ADP,I know what the burglar stole,"from the inventory of the raven ; it was cast in front of him , and was in his lodgings",gap,,grammatical
+33,+wh_gap,0,grnn,PUNCT,I know what the burglar stole,", green and black and white and red teenagers .",gap,,grammatical
+34,-wh_no_gap,0,gpt2,DET,I know that the burglar stole,"a knife, so I knew they were here, too.
+
+So I took the money,",no_gap,,grammatical
+34,-wh_no_gap,0,gpt2,PRON,I know that the burglar stole,"his property in the meantime. So I want to set his head free.""
+
+According to the",no_gap,,grammatical
+34,-wh_no_gap,0,gpt2,SYM,I know that the burglar stole,"$5 from an ATM without turning the switch, and he could have bought me another $5 if",no_gap,,grammatical
+34,-wh_no_gap,0,gpt2,NOUN,I know that the burglar stole,"money from our computers, we have to put it in the way. I am not happy in any",no_gap,,grammatical
+34,-wh_no_gap,0,gpt2,PRON,I know that the burglar stole,"my $60 in money; the burglar gave me $180 for my $40, and after",no_gap,,grammatical
+34,-wh_no_gap,0,grnn,ADJ,I know that the burglar stole,other users .,no_gap,somewhat semantically anomalous?,grammatical
+34,-wh_no_gap,0,grnn,DET,I know that the burglar stole,a gun .,no_gap,,grammatical
+34,-wh_no_gap,0,grnn,PRON,I know that the burglar stole,your weapon so that it was it long ... that is an shock a turn to plunge up into heaven,no_gap,,grammatical
+34,-wh_no_gap,0,grnn,DET,I know that the burglar stole,"the note , and put the first wall of the crowd in and around the picture and organ sent to",no_gap,,grammatical
+34,-wh_no_gap,0,grnn,DET,I know that the burglar stole,"the diamonds from the previous smoke signal , transported back by <unk> to landfill , and presented sides with police",no_gap,,grammatical
+37,+wh_gap,1,gpt2,ADP,I know what my mother thinks the burglar stole,"from my house, that I had been there for 3 years in the summer and still didn't know",gap,,grammatical
+37,+wh_gap,1,gpt2,ADP,I know what my mother thinks the burglar stole,"from her. What is going on here."" He paused for a long moment and then added, """,gap,,grammatical
+37,+wh_gap,1,gpt2,CCONJ,I know what my mother thinks the burglar stole,and what her mom thinks she stole. I know her mom might feel the need to run for governor,gap,,grammatical
+37,+wh_gap,1,gpt2,ADP,I know what my mother thinks the burglar stole,"from the mailbox but I will never hear from her about my friend's disappearance.
+
+I was",gap,,grammatical
+37,+wh_gap,1,gpt2,PUNCT,I know what my mother thinks the burglar stole,","" he added, holding up a cardboard copy of the pamphlet. It says:"" ""No one should",gap,,grammatical
+37,+wh_gap,1,grnn,PUNCT,I know what my mother thinks the burglar stole,"-- this is all a manner , thanks in part to ... the hopes they shall expected lies at good",gap,,grammatical
+37,+wh_gap,1,grnn,PUNCT,I know what my mother thinks the burglar stole,.,gap,,grammatical
+37,+wh_gap,1,grnn,PRON,I know what my mother thinks the burglar stole,"us , Well , I 'll start earning this country .",unclear,somewhat semantically anomalous,ungrammatical
+37,+wh_gap,1,grnn,PROPN,I know what my mother thinks the burglar stole,"Pixar ' , but copper <unk> immediately got started might be wrong if Lead product was able to board .",unclear,semantically incoherent,ungrammatical
+37,+wh_gap,1,grnn,ADP,I know what my mother thinks the burglar stole,"from Jonathan through the way to the police station , Jan <unk> were the foremost leaders in carving their denim",gap,,grammatical
+38,-wh_no_gap,1,gpt2,PRON,I know that my mother thinks the burglar stole,"my shoes, and that they would be more likely to have had my bags stolen. They didn't",no_gap,,grammatical
+38,-wh_no_gap,1,gpt2,SYM,I know that my mother thinks the burglar stole,"$300 worth of valuables, but I can't hear them, so I'm thinking I",no_gap,,grammatical
+38,-wh_no_gap,1,gpt2,PRON,I know that my mother thinks the burglar stole,"everything. He thinks I've stolen our house; he thinks I've stolen his money — like,",no_gap,,grammatical
+38,-wh_no_gap,1,gpt2,DET,I know that my mother thinks the burglar stole,"a few things and doesn't know what I did. Her reaction is to leave her, but I",no_gap,,grammatical
+38,-wh_no_gap,1,gpt2,DET,I know that my mother thinks the burglar stole,the money. All she has to do is check her bank statements and report to the police. I,no_gap,,grammatical
+38,-wh_no_gap,1,grnn,ADP,I know that my mother thinks the burglar stole,from your shop .,gap,"Intransitive use, grammatical but rare. Excluding from analysis.",grammatical
+38,-wh_no_gap,1,grnn,PRON,I know that my mother thinks the burglar stole,them from the people .,no_gap,,grammatical
+38,-wh_no_gap,1,grnn,NOUN,I know that my mother thinks the burglar stole,work from the woman and was burning it when cold and no were needed .,no_gap,,grammatical
+38,-wh_no_gap,1,grnn,ADP,I know that my mother thinks the burglar stole,from me who then is rich and big enough to kill it .,gap,intransitive use of steal.,grammatical
+38,-wh_no_gap,1,grnn,DET,I know that my mother thinks the burglar stole,the last paragraph .,no_gap,,grammatical
+41,+wh_gap,2,gpt2,SCONJ,I know what my mother thinks the reporter said the burglar stole,"when they left, but I feel like a lot of good people who have not done well by now",gap,,grammatical
+41,+wh_gap,2,gpt2,DET,I know what my mother thinks the reporter said the burglar stole,a $100 bill and a half. I know what my mother says. It's a real shame,no_gap,,ungrammatical
+41,+wh_gap,2,gpt2,PUNCT,I know what my mother thinks the reporter said the burglar stole,", and it was a complete lie.""
+
+The article continues:
+
+In the months leading",gap,,grammatical
+41,+wh_gap,2,gpt2,PRON,I know what my mother thinks the reporter said the burglar stole,his wallet. But they were just the kind of story you'd expect us to tell. It was,no_gap,,ungrammatical
+41,+wh_gap,2,gpt2,PUNCT,I know what my mother thinks the reporter said the burglar stole,? Does she make fun of me for saying so? Or am I better off knowing this story is,gap,,grammatical
+41,+wh_gap,2,grnn,ADV,I know what my mother thinks the reporter said the burglar stole,somewhere away from him .,gap,,grammatical
+41,+wh_gap,2,grnn,PUNCT,I know what my mother thinks the reporter said the burglar stole,.,gap,,grammatical
+41,+wh_gap,2,grnn,PRON,I know what my mother thinks the reporter said the burglar stole,"your ideas and , we also came to the insurance purchase , the <unk> 're going to make you feel",no_gap,,ungrammatical
+41,+wh_gap,2,grnn,CCONJ,I know what my mother thinks the reporter said the burglar stole,and he came from a coal bed .,gap,,grammatical
+41,+wh_gap,2,grnn,PUNCT,I know what my mother thinks the reporter said the burglar stole,", "" she said .",gap,,grammatical
+42,-wh_no_gap,2,gpt2,PRON,I know that my mother thinks the reporter said the burglar stole,"everything. The story isn't true but it is my theory that it could be.
+
+How",no_gap,,grammatical
+42,-wh_no_gap,2,gpt2,DET,I know that my mother thinks the reporter said the burglar stole,"the house from her,"" he said.
+
+""We should all be angry. That was really",no_gap,,grammatical
+42,-wh_no_gap,2,gpt2,DET,I know that my mother thinks the reporter said the burglar stole,"the cameras of the TV show. But even that is a little far. For me, at least",no_gap,,grammatical
+42,-wh_no_gap,2,gpt2,PRON,I know that my mother thinks the reporter said the burglar stole,her purse and she was pretty sure not to use it because it made her think the burglars were,no_gap,,grammatical
+42,-wh_no_gap,2,gpt2,PRON,I know that my mother thinks the reporter said the burglar stole,"his belongings. This is not true. It makes everything that I have seen, hear and tasted about",no_gap,,grammatical
+42,-wh_no_gap,2,grnn,ADP,I know that my mother thinks the reporter said the burglar stole,off a police car while not from his position .,unclear,semantically incoherent,ungrammatical
+42,-wh_no_gap,2,grnn,DET,I know that my mother thinks the reporter said the burglar stole,the <unk> telephone .,no_gap,,grammatical
+42,-wh_no_gap,2,grnn,DET,I know that my mother thinks the reporter said the burglar stole,"a secondary piece beyond the legitimate vision despite the fact that possible then <unk> from the man , probably shot",no_gap,,grammatical
+42,-wh_no_gap,2,grnn,ADP,I know that my mother thinks the reporter said the burglar stole,from the other box business .,gap,intransitive use,grammatical
+42,-wh_no_gap,2,grnn,DET,I know that my mother thinks the reporter said the burglar stole,"the joke at Douglass "" , a pun on Horace <unk> 's words and deliberately removed McLaughlin from his father",no_gap,,grammatical
+45,+wh_gap,3,gpt2,CCONJ,I know what my mother thinks the reporter said the homeowners claimed the burglar stole,"and he has that in his mind.
+
+But let me ask you about my father. You",gap,,grammatical
+45,+wh_gap,3,gpt2,NUM,I know what my mother thinks the reporter said the homeowners claimed the burglar stole,"three packages, one containing a car, one containing jewelry, one containing jewelry, and one containing cash",no_gap,,ungrammatical
+45,+wh_gap,3,gpt2,PRON,I know what my mother thinks the reporter said the homeowners claimed the burglar stole,their keys... she thinks the homeowner will kill her. This is what I say when I hear someone,no_gap,,ungrammatical
+45,+wh_gap,3,gpt2,ADP,I know what my mother thinks the reporter said the homeowners claimed the burglar stole,"from a jewelry store. (But she did what she thought was the reporter's job, which was",gap,,grammatical
+45,+wh_gap,3,gpt2,PUNCT,I know what my mother thinks the reporter said the homeowners claimed the burglar stole,", but I am a bit of a big fan of his reporting, and I have to agree with",gap,,grammatical
+45,+wh_gap,3,grnn,PRON,I know what my mother thinks the reporter said the homeowners claimed the burglar stole,"it from the crowd “ and every very <unk> price of the is met in times , ” “ it",no_gap,,ungrammatical
+45,+wh_gap,3,grnn,ADP,I know what my mother thinks the reporter said the homeowners claimed the burglar stole,from her congruence .,gap,,grammatical
+45,+wh_gap,3,grnn,ADP,I know what my mother thinks the reporter said the homeowners claimed the burglar stole,from their workers and actually smashed it into the apartments .,gap,,grammatical
+45,+wh_gap,3,grnn,ADP,I know what my mother thinks the reporter said the homeowners claimed the burglar stole,from them .,gap,,grammatical
+45,+wh_gap,3,grnn,ADP,I know what my mother thinks the reporter said the homeowners claimed the burglar stole,from their friends .,gap,,grammatical
+46,-wh_no_gap,3,gpt2,ADP,I know that my mother thinks the reporter said the homeowners claimed the burglar stole,"from them before the burglar did. And so, they have no way of explaining to their readers",gap,,grammatical
+46,-wh_no_gap,3,gpt2,PRON,I know that my mother thinks the reporter said the homeowners claimed the burglar stole,"her purse and that is wrong.
+
+""She was at work. She was at the office",no_gap,,grammatical
+46,-wh_no_gap,3,gpt2,SYM,I know that my mother thinks the reporter said the homeowners claimed the burglar stole,"$100,000 in jewelry from her home. But this is a piece of shit article, it",no_gap,,grammatical
+46,-wh_no_gap,3,gpt2,PRON,I know that my mother thinks the reporter said the homeowners claimed the burglar stole,their home but I don't. I also understand that my father is upset but his wife is not,no_gap,,grammatical
+46,-wh_no_gap,3,gpt2,DET,I know that my mother thinks the reporter said the homeowners claimed the burglar stole,the whole house and when my mom told me it was true when I told her I don't believe,no_gap,,grammatical
+46,-wh_no_gap,3,grnn,DET,I know that my mother thinks the reporter said the homeowners claimed the burglar stole,the tape would fill him in his closet .,no_gap,,grammatical
+46,-wh_no_gap,3,grnn,CCONJ,I know that my mother thinks the reporter said the homeowners claimed the burglar stole,"and a deal they did with a <unk> to decide what was happening in the mansion , leaving strange to",gap,,ungrammatical
+46,-wh_no_gap,3,grnn,CCONJ,I know that my mother thinks the reporter said the homeowners claimed the burglar stole,and kept him .,no_gap,combined verbs: [stole and kept] him,grammatical
+46,-wh_no_gap,3,grnn,DET,I know that my mother thinks the reporter said the homeowners claimed the burglar stole,a book that would authorize a barber who knew when he retired .,no_gap,,grammatical
+46,-wh_no_gap,3,grnn,PRON,I know that my mother thinks the reporter said the homeowners claimed the burglar stole,her name .,no_gap,,grammatical
