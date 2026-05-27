@@ -28,3 +28,14 @@ Three models are used in this study: an n-gram model (SRILM), the Gulordava RNN 
 - [Hugging Face transformers](https://huggingface.co/docs/transformers)
 - spaCy
 - See `requirements.txt` for full list
+
+## Reproduction
+- scripts/preprocess_for_continuation_sampling.py and scripts/preprocess_for_surprisal_studies.py used to turn stimuli files into inputs for lm-zoo
+- scripts/run-lm-zoo-surprisals.sh and scripts/run-lm-zoo-get-predictions to run lm-zoo 
+- scripts/process_lm-zoo-outputs.py to process surprisal outputs into readable CSV files
+- Surprisal studies: the processed lm zoo outputs are analysed in notebooks notebooks/pilot_object_surprisals.ipynb and notebooks/subject_gap_surprisals.ipynb
+- Continuations are generated and analysed in notebooks/subject_next_token_sampling_analysis.ipynb, notebooks/subject_generating_continuations.ipynb, 
+  notebooks/generated_continuation_analysis.ipynb, notebooks/generating_continuations.ipynb, notebooks/next_token_sampling_analysis.ipynb
+
+Note: grnn and ngram weights and vocabs extracted from lm-zoo were too large to commit to github. All results should be reproductible with jupyter notebooks and the existing files in data/model_outputs. 
+Some python code was also extracted from lm-zoo's docker container for GRNN and that code is included in models/grnn.
