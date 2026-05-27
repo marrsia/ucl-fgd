@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from utils.ngram_utils import *
 
 if __name__ == "__main__":

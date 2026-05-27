@@ -9,6 +9,10 @@ stimuli_file = sys.argv[1]
 files = sys.argv[2:]
 
 for file in files:
+    
+   
+    gap_type = "object" if "object" in stimuli_file.lower() else "subject"
+    
     output = file.replace(".txt", ".csv")
     parse_lmzoo_output(file, output)
 
@@ -17,6 +21,7 @@ for file in files:
         print(f"Warning: could not identify model from filename {file}, skipping.")
         continue
 
+
     results_file = file.replace(".txt", f"_stimuli_with_surprisals.csv")
     
     compute_region_surprisals(
@@ -24,5 +29,6 @@ for file in files:
         surprisal_csv=output,
         output_csv=results_file,
         model_name=model_name,
-        regions=list(SENTENCE_COLUMNS)
+        regions=list(SENTENCE_COLUMNS),
+        gap_type = gap_type
     )

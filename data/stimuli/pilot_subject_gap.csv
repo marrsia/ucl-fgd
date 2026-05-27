@@ -1,0 +1,49 @@
+sentence_group,wh,gap,levels_of_embedding,condition,main_clause,complementiser,embedding_1,embedding_2,embedding_3,subject,verb,object,continuation
+1,yes,yes,0,+wh_gap,The assistant knew,who,,,,,impressed,the director,at the meeting.
+1,yes,no,0,+wh_no_gap,The assistant knew,who,,,,the secretary,impressed,the director,at the meeting.
+1,no,yes,0,-wh_gap,The assistant knew,that,,,,,impressed,the director,at the meeting.
+1,no,no,0,-wh_no_gap,The assistant knew,that,,,,the secretary,impressed,the director,at the meeting.
+1,yes,yes,1,+wh_gap,The assistant knew,who,the security guard said,,,,impressed,the director,at the meeting.
+1,yes,no,1,+wh_no_gap,The assistant knew,who,the security guard said,,,the secretary,impressed,the director,at the meeting.
+1,no,yes,1,-wh_gap,The assistant knew,that,the security guard said,,,,impressed,the director,at the meeting.
+1,no,no,1,-wh_no_gap,The assistant knew,that,the security guard said,,,the secretary,impressed,the director,at the meeting.
+1,yes,yes,2,+wh_gap,The assistant knew,who,the security guard said,his manager believed,,,impressed,the director,at the meeting.
+1,yes,no,2,+wh_no_gap,The assistant knew,who,the security guard said,his manager believed,,the secretary,impressed,the director,at the meeting.
+1,no,yes,2,-wh_gap,The assistant knew,that,the security guard said,his manager believed,,,impressed,the director,at the meeting.
+1,no,no,2,-wh_no_gap,The assistant knew,that,the security guard said,his manager believed,,the secretary,impressed,the director,at the meeting.
+1,yes,yes,3,+wh_gap,The assistant knew,who,the security guard said,his manager believed,the junior associate claimed,,impressed,the director,at the meeting.
+1,yes,no,3,+wh_no_gap,The assistant knew,who,the security guard said,his manager believed,the junior associate claimed,the secretary,impressed,the director,at the meeting.
+1,no,yes,3,-wh_gap,The assistant knew,that,the security guard said,his manager believed,the junior associate claimed,,impressed,the director,at the meeting.
+1,no,no,3,-wh_no_gap,The assistant knew,that,the security guard said,his manager believed,the junior associate claimed,the secretary,impressed,the director,at the meeting.
+2,yes,yes,0,+wh_gap,The teacher reported,who,,,,,hit,a classmate,in art class.
+2,yes,no,0,+wh_no_gap,The teacher reported,who,,,,the student,hit,a classmate,in art class.
+2,no,yes,0,-wh_gap,The teacher reported,that,,,,,hit,a classmate,in art class.
+2,no,no,0,-wh_no_gap,The teacher reported,that,,,,the student,hit,a classmate,in art class.
+2,yes,yes,1,+wh_gap,The teacher reported,who,the other children claimed,,,,hit,a classmate,in art class.
+2,yes,no,1,+wh_no_gap,The teacher reported,who,the other children claimed,,,the student,hit,a classmate,in art class.
+2,no,yes,1,-wh_gap,The teacher reported,that,the other children claimed,,,,hit,a classmate,in art class.
+2,no,no,1,-wh_no_gap,The teacher reported,that,the other children claimed,,,the student,hit,a classmate,in art class.
+2,yes,yes,2,+wh_gap,The teacher reported,who,the other children claimed,their friends said,,,hit,a classmate,in art class.
+2,yes,no,2,+wh_no_gap,The teacher reported,who,the other children claimed,their friends said,,the student,hit,a classmate,in art class.
+2,no,yes,2,-wh_gap,The teacher reported,that,the other children claimed,their friends said,,,hit,a classmate,in art class.
+2,no,no,2,-wh_no_gap,The teacher reported,that,the other children claimed,their friends said,,the student,hit,a classmate,in art class.
+2,yes,yes,3,+wh_gap,The teacher reported,who,the other children claimed,their friends said,the teaching assistant stated,,hit,a classmate,in art class.
+2,yes,no,3,+wh_no_gap,The teacher reported,who,the other children claimed,their friends said,the teaching assistant stated,the student,hit,a classmate,in art class.
+2,no,yes,3,-wh_gap,The teacher reported,that,the other children claimed,their friends said,the teaching assistant stated,,hit,a classmate,in art class.
+2,no,no,3,-wh_no_gap,The teacher reported,that,the other children claimed,their friends said,the teaching assistant stated,the student,hit,a classmate,in art class.
+3,yes,yes,0,+wh_gap,I know,who,,,,,stole,the jewels,yesterday.
+3,yes,no,0,+wh_no_gap,I know,who,,,,the burglar,stole,the jewels,yesterday.
+3,no,yes,0,-wh_gap,I know,that,,,,,stole,the jewels,yesterday.
+3,no,no,0,-wh_no_gap,I know,that,,,,the burglar,stole,the jewels,yesterday.
+3,yes,yes,1,+wh_gap,I know,who,my mother thinks,,,,stole,the jewels,yesterday.
+3,yes,no,1,+wh_no_gap,I know,who,my mother thinks,,,the burglar,stole,the jewels,yesterday.
+3,no,yes,1,-wh_gap,I know,that,my mother thinks,,,,stole,the jewels,yesterday.
+3,no,no,1,-wh_no_gap,I know,that,my mother thinks,,,the burglar,stole,the jewels,yesterday.
+3,yes,yes,2,+wh_gap,I know,who,my mother thinks,the reporter said,,,stole,the jewels,yesterday.
+3,yes,no,2,+wh_no_gap,I know,who,my mother thinks,the reporter said,,the burglar,stole,the jewels,yesterday.
+3,no,yes,2,-wh_gap,I know,that,my mother thinks,the reporter said,,,stole,the jewels,yesterday.
+3,no,no,2,-wh_no_gap,I know,that,my mother thinks,the reporter said,,the burglar,stole,the jewels,yesterday.
+3,yes,yes,3,+wh_gap,I know,who,my mother thinks,the reporter said,the homeowners claimed,,stole,the jewels,yesterday.
+3,yes,no,3,+wh_no_gap,I know,who,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,the jewels,yesterday.
+3,no,yes,3,-wh_gap,I know,that,my mother thinks,the reporter said,the homeowners claimed,,stole,the jewels,yesterday.
+3,no,no,3,-wh_no_gap,I know,that,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,the jewels,yesterday.

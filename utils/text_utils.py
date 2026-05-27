@@ -6,9 +6,14 @@ SENTENCE_COLUMNS = [
     "embedding_3", "subject", "verb", "object" , "continuation"
 ]
 
-SENTENCE_COLUMNS_FOR_SAMPLING_CONTINUATIONS = [
+SENTENCE_COLUMNS_FOR_SAMPLING_CONTINUATIONS_OBJECT_GAPS = [
     "main_clause", "complementiser", "embedding_1" , "embedding_2",  
     "embedding_3", "subject", "verb"
+]
+
+SENTENCE_COLUMNS_FOR_SAMPLING_CONTINUATIONS_SUBJECT_GAPS = [
+    "main_clause", "complementiser", "embedding_1" , "embedding_2",  
+    "embedding_3"
 ]
 
 # Regions relevant for computing FGD surprisals.
@@ -48,7 +53,7 @@ def build_sentences_for_surprisals(input_csv, output_txt):
     print(f"Saved {input_csv} to {output_txt}")
 
 
-def build_sentence_starts_for_sampling(input_csv):
+def build_sentence_starts_for_sampling(input_csv, gap_type):
     """
     Builds sentence starts for continuation sampling from +wh_gap and 
     -wh_no_gap conditions only.
@@ -60,10 +65,10 @@ def build_sentence_starts_for_sampling(input_csv):
     df = df[df["condition"].isin(["+wh_gap", "-wh_no_gap"])]
 
     result = {}
-
+    columns = SENTENCE_COLUMNS_FOR_SAMPLING_CONTINUATIONS_OBJECT_GAPS if gap_type == 'object' else SENTENCE_COLUMNS_FOR_SAMPLING_CONTINUATIONS_SUBJECT_GAPS
     for idx, row in df.iterrows():
         words = []
-        for col in SENTENCE_COLUMNS_FOR_SAMPLING_CONTINUATIONS:
+        for col in columns:
             value = str(row[col]).strip() if pd.notna(row[col]) else ""
             if value:
                 words.append(value)
@@ -155,7 +160,7 @@ def get_gpt2_token_ids(sentence, start_word_idx, end_word_idx, tokenizer):
 
 
 ONE_TOKEN_PER_WORD_MODELS = ["ngram", "grnn", "jrnn"]
-PADDED_MODELS = ["jrnn", "gpt2"]
+PADDED_MODELS = ["gpt2"]
 
 def get_region_token_ids(df, region, sentence_id, model_name):
     """
@@ -204,11 +209,6 @@ def get_region_token_ids(df, region, sentence_id, model_name):
         token_ids = get_gpt2_token_ids(sentence_string, word_offset, word_offset + len(region_words), tokenizer = gpt2_tokenizer)
     else:
         raise NotImplementedError(f"Unknown model {model_name}.")
-
-    # lm-zoo adds EOS tokens as boundries at the start and end of each sentence for some models.
-    if model_name.lower() in PADDED_MODELS:
-        start_id, end_id = token_ids
-        token_ids = (start_id + 1, end_id + 1)
 
     return token_ids
 
@@ -278,7 +278,7 @@ def get_range_mean_surprisal(surprisal_df, sentence_id, token_range):
 
     return rows["surprisal"].mean()
 
-def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name, regions):
+def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name, regions, gap_type):
     """
     For each sentence in the stimuli, computes the surprisal of the first token
     of each specified region and saves results to a CSV.
@@ -289,6 +289,7 @@ def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name
         output_csv: path to save results
         model_name: model name string e.g. "grnn"
         regions: list of region names e.g. ["complementiser", "gap", "post_gap"]
+        gap_type: can be 'subject' or 'object'
     """
     stimuli_df = pd.read_csv(stimuli_csv)
     surprisal_df = pd.read_csv(surprisal_csv)
@@ -315,8 +316,10 @@ def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name
                 surprisal_df, sentence_id, token_range
             )
         
+        semi_local_regions = ["object", "continuation"] if gap_type == 'object' else ["subject", "verb", "object", "continuation"]
+        
         results.at[sentence_id, "semi_local_surprisal_mean"] = get_range_mean_surprisal(
-            surprisal_df, sentence_id, get_multi_region_token_ids(stimuli_df, ["object", "continuation"], sentence_id, model_name)
+            surprisal_df, sentence_id, get_multi_region_token_ids(stimuli_df, semi_local_regions, sentence_id, model_name)
         )
         results.at[sentence_id, "global_surprisal_mean"] = get_range_mean_surprisal(
             surprisal_df, sentence_id, get_multi_region_token_ids(stimuli_df, regions, sentence_id, model_name)

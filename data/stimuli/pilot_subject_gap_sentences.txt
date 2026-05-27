@@ -1,0 +1,48 @@
+The assistant knew who impressed the director at the meeting.
+The assistant knew who the secretary impressed the director at the meeting.
+The assistant knew that impressed the director at the meeting.
+The assistant knew that the secretary impressed the director at the meeting.
+The assistant knew who the security guard said impressed the director at the meeting.
+The assistant knew who the security guard said the secretary impressed the director at the meeting.
+The assistant knew that the security guard said impressed the director at the meeting.
+The assistant knew that the security guard said the secretary impressed the director at the meeting.
+The assistant knew who the security guard said his manager believed impressed the director at the meeting.
+The assistant knew who the security guard said his manager believed the secretary impressed the director at the meeting.
+The assistant knew that the security guard said his manager believed impressed the director at the meeting.
+The assistant knew that the security guard said his manager believed the secretary impressed the director at the meeting.
+The assistant knew who the security guard said his manager believed the junior associate claimed impressed the director at the meeting.
+The assistant knew who the security guard said his manager believed the junior associate claimed the secretary impressed the director at the meeting.
+The assistant knew that the security guard said his manager believed the junior associate claimed impressed the director at the meeting.
+The assistant knew that the security guard said his manager believed the junior associate claimed the secretary impressed the director at the meeting.
+The teacher reported who hit a classmate in art class.
+The teacher reported who the student hit a classmate in art class.
+The teacher reported that hit a classmate in art class.
+The teacher reported that the student hit a classmate in art class.
+The teacher reported who the other children claimed hit a classmate in art class.
+The teacher reported who the other children claimed the student hit a classmate in art class.
+The teacher reported that the other children claimed hit a classmate in art class.
+The teacher reported that the other children claimed the student hit a classmate in art class.
+The teacher reported who the other children claimed their friends said hit a classmate in art class.
+The teacher reported who the other children claimed their friends said the student hit a classmate in art class.
+The teacher reported that the other children claimed their friends said hit a classmate in art class.
+The teacher reported that the other children claimed their friends said the student hit a classmate in art class.
+The teacher reported who the other children claimed their friends said the teaching assistant stated hit a classmate in art class.
+The teacher reported who the other children claimed their friends said the teaching assistant stated the student hit a classmate in art class.
+The teacher reported that the other children claimed their friends said the teaching assistant stated hit a classmate in art class.
+The teacher reported that the other children claimed their friends said the teaching assistant stated the student hit a classmate in art class.
+I know who stole the jewels yesterday.
+I know who the burglar stole the jewels yesterday.
+I know that stole the jewels yesterday.
+I know that the burglar stole the jewels yesterday.
+I know who my mother thinks stole the jewels yesterday.
+I know who my mother thinks the burglar stole the jewels yesterday.
+I know that my mother thinks stole the jewels yesterday.
+I know that my mother thinks the burglar stole the jewels yesterday.
+I know who my mother thinks the reporter said stole the jewels yesterday.
+I know who my mother thinks the reporter said the burglar stole the jewels yesterday.
+I know that my mother thinks the reporter said stole the jewels yesterday.
+I know that my mother thinks the reporter said the burglar stole the jewels yesterday.
+I know who my mother thinks the reporter said the homeowners claimed stole the jewels yesterday.
+I know who my mother thinks the reporter said the homeowners claimed the burglar stole the jewels yesterday.
+I know that my mother thinks the reporter said the homeowners claimed stole the jewels yesterday.
+I know that my mother thinks the reporter said the homeowners claimed the burglar stole the jewels yesterday.

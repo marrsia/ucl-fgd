@@ -31,19 +31,19 @@ sentence_group,wh,gap,levels_of_embedding,condition,main_clause,complementiser,e
 2,yes,no,3,+wh_no_gap,The teacher reported,who,the other children claimed,their friends said,the teaching assistant stated,the student,hit,her classmate,in art class.
 2,no,yes,3,-wh_gap,The teacher reported,that,the other children claimed,their friends said,the teaching assistant stated,the student,hit,,in art class.
 2,no,no,3,-wh_no_gap,The teacher reported,that,the other children claimed,their friends said,the teaching assistant stated,the student,hit,her classmate,in art class.
-3,yes,yes,0,+wh_gap,I know,what,,,,the burglar,stole,,the other night.
-3,yes,no,0,+wh_no_gap,I know,what,,,,the burglar,stole,the jewels,the other night.
-3,no,yes,0,-wh_gap,I know,that,,,,the burglar,stole,,the other night.
-3,no,no,0,-wh_no_gap,I know,that,,,,the burglar,stole,the jewels,the other night.
-3,yes,yes,1,+wh_gap,I know,what,my mother thinks,,,the burglar,stole,,the other night.
-3,yes,no,1,+wh_no_gap,I know,what,my mother thinks,,,the burglar,stole,the jewels,the other night.
-3,no,yes,1,-wh_gap,I know,that,my mother thinks,,,the burglar,stole,,the other night.
-3,no,no,1,-wh_no_gap,I know,that,my mother thinks,,,the burglar,stole,the jewels,the other night.
-3,yes,yes,2,+wh_gap,I know,what,my mother thinks,the reporter said,,the burglar,stole,,the other night.
-3,yes,no,2,+wh_no_gap,I know,what,my mother thinks,the reporter said,,the burglar,stole,the jewels,the other night.
-3,no,yes,2,-wh_gap,I know,that,my mother thinks,the reporter said,,the burglar,stole,,the other night.
-3,no,no,2,-wh_no_gap,I know,that,my mother thinks,the reporter said,,the burglar,stole,the jewels,the other night.
-3,yes,yes,3,+wh_gap,I know,what,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,,the other night.
-3,yes,no,3,+wh_no_gap,I know,what,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,the jewels,the other night.
-3,no,yes,3,-wh_gap,I know,that,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,,the other night.
-3,no,no,3,-wh_no_gap,I know,that,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,the jewels,the other night.
+3,yes,yes,0,+wh_gap,I know,what,,,,the burglar,stole,,yesterday.
+3,yes,no,0,+wh_no_gap,I know,what,,,,the burglar,stole,the jewels,yesterday.
+3,no,yes,0,-wh_gap,I know,that,,,,the burglar,stole,,yesterday.
+3,no,no,0,-wh_no_gap,I know,that,,,,the burglar,stole,the jewels,yesterday.
+3,yes,yes,1,+wh_gap,I know,what,my mother thinks,,,the burglar,stole,,yesterday.
+3,yes,no,1,+wh_no_gap,I know,what,my mother thinks,,,the burglar,stole,the jewels,yesterday.
+3,no,yes,1,-wh_gap,I know,that,my mother thinks,,,the burglar,stole,,yesterday.
+3,no,no,1,-wh_no_gap,I know,that,my mother thinks,,,the burglar,stole,the jewels,yesterday.
+3,yes,yes,2,+wh_gap,I know,what,my mother thinks,the reporter said,,the burglar,stole,,yesterday.
+3,yes,no,2,+wh_no_gap,I know,what,my mother thinks,the reporter said,,the burglar,stole,the jewels,yesterday.
+3,no,yes,2,-wh_gap,I know,that,my mother thinks,the reporter said,,the burglar,stole,,yesterday.
+3,no,no,2,-wh_no_gap,I know,that,my mother thinks,the reporter said,,the burglar,stole,the jewels,yesterday.
+3,yes,yes,3,+wh_gap,I know,what,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,,yesterday.
+3,yes,no,3,+wh_no_gap,I know,what,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,the jewels,yesterday.
+3,no,yes,3,-wh_gap,I know,that,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,,yesterday.
+3,no,no,3,-wh_no_gap,I know,that,my mother thinks,the reporter said,the homeowners claimed,the burglar,stole,the jewels,yesterday.

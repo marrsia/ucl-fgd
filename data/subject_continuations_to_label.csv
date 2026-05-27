@@ -1,0 +1,324 @@
+sentence_id,condition,embedding_level,model,continuation_start_pos,sentence_start,continuation
+0,+wh_gap,0,gpt2,VERB,The assistant knew who,"went to where.
+
+""There's only one car there... I did it and got there"
+0,+wh_gap,0,gpt2,AUX,The assistant knew who,"was behind the shooting but did not take action.
+
+The FBI said they have taken action after"
+0,+wh_gap,0,gpt2,PUNCT,The assistant knew who,", or what, to search for her. ""I could get her to her place (so I"
+0,+wh_gap,0,gpt2,DET,The assistant knew who,"the person that was behind the suicide attack was.
+
+Bryan
+
+Cheryl"
+0,+wh_gap,0,gpt2,PRON,The assistant knew who,"he was. She recognized him instantly from his expression on the ground.
+
+""My name is"
+0,+wh_gap,0,grnn,AUX,The assistant knew who,had killed the single <unk> for death in a <unk> station .
+0,+wh_gap,0,grnn,AUX,The assistant knew who,had taken her place .
+0,+wh_gap,0,grnn,AUX,The assistant knew who,"was going to assign him a play , "" Levy "" ."
+0,+wh_gap,0,grnn,AUX,The assistant knew who,had been a Messenger was buried in the cave ; he would take up been a priest in Byzantine Armenia
+0,+wh_gap,0,grnn,DET,The assistant knew who,"every one "" <unk> "" had to live in ."
+3,-wh_no_gap,0,gpt2,PRON,The assistant knew that,"they would get their revenge. Even though she is her true brother, the two were never friends with"
+3,-wh_no_gap,0,gpt2,SCONJ,The assistant knew that,"because it was her.
+
+She said he didn't know her. That the whole point of"
+3,-wh_no_gap,0,gpt2,PRON,The assistant knew that,"I would have to get to know her a couple of months earlier, but she didn't hesitate to"
+3,-wh_no_gap,0,gpt2,PRON,The assistant knew that,I told him to tell others he was doing it. I knew nothing of the fact he had done
+3,-wh_no_gap,0,gpt2,PRON,The assistant knew that,"he had to change their minds. He couldn't move his head.
+
+""No way,"""
+3,-wh_no_gap,0,grnn,PROPN,The assistant knew that,Robert <unk> had worked with him for something he intended to produce .
+3,-wh_no_gap,0,grnn,AUX,The assistant knew that,was n't over .
+3,-wh_no_gap,0,grnn,PROPN,The assistant knew that,White Swan jar is wiped by a dock .
+3,-wh_no_gap,0,grnn,X,The assistant knew that,"<unk> was alive , not too often ; two older children and his daughter were the child ( Clarissa )"
+3,-wh_no_gap,0,grnn,AUX,The assistant knew that,was necessary .
+4,+wh_gap,1,gpt2,AUX,The assistant knew who the security guard said,"was responsible for the attack but could not remember how.
+
+The two men were seen wearing jeans"
+4,+wh_gap,1,gpt2,PRON,The assistant knew who the security guard said,"there was but the man on the top left was just sitting, probably trying to go up and help"
+4,+wh_gap,1,gpt2,AUX,The assistant knew who the security guard said,"was coming.
+
+""He was at night walking down the street to the corner,"" Brien"
+4,+wh_gap,1,gpt2,AUX,The assistant knew who the security guard said,"was on duty, and the assistant was able to locate the culprit while investigating.
+
+A woman"
+4,+wh_gap,1,gpt2,AUX,The assistant knew who the security guard said,"was sitting beside her while it was going on. And she said ""It's not a fight that"
+4,+wh_gap,1,grnn,PRON,The assistant knew who the security guard said,"he was "" a gift for my employees "" ."
+4,+wh_gap,1,grnn,PRON,The assistant knew who the security guard said,this was false but rather hurt .
+4,+wh_gap,1,grnn,DET,The assistant knew who the security guard said,the policemen would drag him down upon arrest .
+4,+wh_gap,1,grnn,PUNCT,The assistant knew who the security guard said,.
+4,+wh_gap,1,grnn,SCONJ,The assistant knew who the security guard said,that <unk> would make no money or stop doing so .
+7,-wh_no_gap,1,gpt2,PRON,The assistant knew that the security guard said,"he was the victim of a gun robbery and ""had no idea where to find the suspect."" ("
+7,-wh_no_gap,1,gpt2,PRON,The assistant knew that the security guard said,"it could be an imminent threat.
+
+One of the witnesses who reported the incident to the prosecutor"
+7,-wh_no_gap,1,gpt2,PRON,The assistant knew that the security guard said,"anything to him and he was asked to call his family.
+
+""It's very serious,"""
+7,-wh_no_gap,1,gpt2,SCONJ,The assistant knew that the security guard said,"that someone had been on the premises, and would be there to take them in, so that they"
+7,-wh_no_gap,1,gpt2,SCONJ,The assistant knew that the security guard said,that the man in front of him and the second man in front of him were men in their 40
+7,-wh_no_gap,1,grnn,PUNCT,The assistant knew that the security guard said,", "" The small , Jewish man said that "" , and that this water has been systematically <unk> ,"
+7,-wh_no_gap,1,grnn,SCONJ,The assistant knew that the security guard said,that he was a member of the ' First Blood Club ' of the Order or it had been asserted
+7,-wh_no_gap,1,grnn,SCONJ,The assistant knew that the security guard said,that there was a change to Washington 's Army Factory system the conduct of the war .
+7,-wh_no_gap,1,grnn,PUNCT,The assistant knew that the security guard said,""" The Germans had talked what they said "" ."
+7,-wh_no_gap,1,grnn,X,The assistant knew that the security guard said,<unk> will kill him and cause him blood to remain removed .
+8,+wh_gap,2,gpt2,PUNCT,The assistant knew who the security guard said his manager believed,". He then followed that manager into a small office on the roof, and waited for him in the"
+8,+wh_gap,2,gpt2,PART,The assistant knew who the security guard said his manager believed,"to be the same manager that was in the company at the same time.
+
+He said the"
+8,+wh_gap,2,gpt2,AUX,The assistant knew who the security guard said his manager believed,was responsible but he couldn't get it to him because the guard wanted him fired. He had to
+8,+wh_gap,2,gpt2,PART,The assistant knew who the security guard said his manager believed,to be involved in the attacks but said he had no idea if anyone had come forward. He said
+8,+wh_gap,2,gpt2,PART,The assistant knew who the security guard said his manager believed,to be. It would be easy to have a different look about this guy. The police had been
+8,+wh_gap,2,grnn,PUNCT,The assistant knew who the security guard said his manager believed,.
+8,+wh_gap,2,grnn,PUNCT,The assistant knew who the security guard said his manager believed,.
+8,+wh_gap,2,grnn,PUNCT,The assistant knew who the security guard said his manager believed,.
+8,+wh_gap,2,grnn,PRON,The assistant knew who the security guard said his manager believed,he was a good leader or major supporter in the matter .
+8,+wh_gap,2,grnn,SCONJ,The assistant knew who the security guard said his manager believed,that the Argos ' needs returned .
+11,-wh_no_gap,2,gpt2,DET,The assistant knew that the security guard said his manager believed,the gunman had carried out an attack in San Bernardino in 2015 and had been followed by law enforcement.
+11,-wh_no_gap,2,gpt2,DET,The assistant knew that the security guard said his manager believed,the man had committed suicide from his seat. The police said he was not known to police. The
+11,-wh_no_gap,2,gpt2,SCONJ,The assistant knew that the security guard said his manager believed,"that the man to be a member of a different faction of the Muslim Brotherhood.
+
+But the"
+11,-wh_no_gap,2,gpt2,PRON,The assistant knew that the security guard said his manager believed,him. Now the assistant has no explanation. The manager of the fire department also didn't know him
+11,-wh_no_gap,2,gpt2,PRON,The assistant knew that the security guard said his manager believed,"he was involved in something that was serious, which, according to the complaint, is considered to have"
+11,-wh_no_gap,2,grnn,SCONJ,The assistant knew that the security guard said his manager believed,"that the suspect could not persuade the other eight victims of the attack , but that , after correcting for"
+11,-wh_no_gap,2,grnn,PUNCT,The assistant knew that the security guard said his manager believed,.
+11,-wh_no_gap,2,grnn,PUNCT,The assistant knew that the security guard said his manager believed,", with all of them staying injured , with a breathing knife , shot down in a pub , and"
+11,-wh_no_gap,2,grnn,PUNCT,The assistant knew that the security guard said his manager believed,.
+11,-wh_no_gap,2,grnn,ADP,The assistant knew that the security guard said his manager believed,in a double soup .
+12,+wh_gap,3,gpt2,PART,The assistant knew who the security guard said his manager believed the junior associate claimed,"to be from a private security firm. The man's name has been withheld.
+
+""The"
+12,+wh_gap,3,gpt2,PART,The assistant knew who the security guard said his manager believed the junior associate claimed,"to be a student.
+
+In the same email, a second senior guard identified the unidentified security"
+12,+wh_gap,3,gpt2,AUX,The assistant knew who the security guard said his manager believed the junior associate claimed,"was to blame. The assistant is said to still be involved in the incident.
+
+On Tuesday"
+12,+wh_gap,3,gpt2,PRON,The assistant knew who the security guard said his manager believed the junior associate claimed,"he was playing for the Gators.
+
+It was a rare incident for his office, where he"
+12,+wh_gap,3,gpt2,PART,The assistant knew who the security guard said his manager believed the junior associate claimed,"to be.
+
+The assistant knew who the security guard said his manager believed the junior associate claimed"
+12,+wh_gap,3,grnn,PART,The assistant knew who the security guard said his manager believed the junior associate claimed,"to have been charged similar in 1981 with "" WBA hip "" quarterback Steve Taylor at <unk> and "" Ring"
+12,+wh_gap,3,grnn,PRON,The assistant knew who the security guard said his manager believed the junior associate claimed,he was volunteers .
+12,+wh_gap,3,grnn,PART,The assistant knew who the security guard said his manager believed the junior associate claimed,"to be a <unk> , but financial trouble was broken by the employee 's body unsuitable for cost and cost"
+12,+wh_gap,3,grnn,PART,The assistant knew who the security guard said his manager believed the junior associate claimed,to have been stabbed four times in his life .
+12,+wh_gap,3,grnn,SCONJ,The assistant knew who the security guard said his manager believed the junior associate claimed,that <unk> 's company might have been planning it .
+15,-wh_no_gap,3,gpt2,DET,The assistant knew that the security guard said his manager believed the junior associate claimed,"the school was the culprit. Neither party agreed to meet with either on the record.
+
+S"
+15,-wh_no_gap,3,gpt2,PRON,The assistant knew that the security guard said his manager believed the junior associate claimed,"she was a transgender person and had been sexually assaulted before.
+
+Katherine Jones
+
+The"
+15,-wh_no_gap,3,gpt2,PART,The assistant knew that the security guard said his manager believed the junior associate claimed,"to be a man who had sexually assaulted two other women.
+
+After the hearing, the assistant"
+15,-wh_no_gap,3,gpt2,PRON,The assistant knew that the security guard said his manager believed the junior associate claimed,"he had stolen from a store and not a truck, and said the associate is still involved in a"
+15,-wh_no_gap,3,gpt2,PART,The assistant knew that the security guard said his manager believed the junior associate claimed,"to have beaten his teacher. When his assistant, a former teacher at a nearby college, realized they"
+15,-wh_no_gap,3,grnn,PART,The assistant knew that the security guard said his manager believed the junior associate claimed,to be Irina .
+15,-wh_no_gap,3,grnn,ADJ,The assistant knew that the security guard said his manager believed the junior associate claimed,more than one percent of the U.S. government that he had lied about .
+15,-wh_no_gap,3,grnn,SCONJ,The assistant knew that the security guard said his manager believed the junior associate claimed,that he wanted to go to Georgia the story takes about a dollar to erase his connection with some of
+15,-wh_no_gap,3,grnn,DET,The assistant knew that the security guard said his manager believed the junior associate claimed,the position had been handed over to the Baltimore Orioles .
+15,-wh_no_gap,3,grnn,SCONJ,The assistant knew that the security guard said his manager believed the junior associate claimed,that he would have killed him .
+16,+wh_gap,0,gpt2,VERB,The teacher reported who,"taught the boy, and what sort of teacher. He said he'd never heard from him before and"
+16,+wh_gap,0,gpt2,PRON,The teacher reported who,he had lied to at their meetings in January. The teacher also noted that she had no evidence for
+16,+wh_gap,0,gpt2,DET,The teacher reported who,"the teacher was.
+
+The teacher is seen at the incident and the suspect, 19-year"
+16,+wh_gap,0,gpt2,VERB,The teacher reported who,said that the teacher was a very nice fellow and asked him if he had ever watched a movie or
+16,+wh_gap,0,gpt2,PRON,The teacher reported who,"he was.
+
+The following day, Kebab asked his teacher if his parents knew about"
+16,+wh_gap,0,grnn,AUX,The teacher reported who,was trying to make a home run .
+16,+wh_gap,0,grnn,VERB,The teacher reported who,died The <unk> <unk> did ... woke up in normal life : he wrote about the opinions and opinions about
+16,+wh_gap,0,grnn,AUX,The teacher reported who,was as well as young me saw them killed .
+16,+wh_gap,0,grnn,VERB,The teacher reported who,"spent In the taverns observing ' Melody ' , scaffolding at night caused himself to tear down and care for"
+16,+wh_gap,0,grnn,VERB,The teacher reported who,grew up into real estate .
+19,-wh_no_gap,0,gpt2,DET,The teacher reported that,"the students started complaining a lot. She said that as soon as they noticed their behavior, they told"
+19,-wh_no_gap,0,gpt2,PRON,The teacher reported that,"he could use the money for counseling, however he did not like the idea of using funds to make"
+19,-wh_no_gap,0,gpt2,DET,The teacher reported that,the student had not been properly screened for diabetes or diabetes-related diseases and that while a screening screening
+19,-wh_no_gap,0,gpt2,PRON,The teacher reported that,"she was scared because she had watched the ""gay movie"" and was a girl. She said she"
+19,-wh_no_gap,0,gpt2,PRON,The teacher reported that,"she did not mention Sanders's potential for the Democratic nomination by name, saying that even now the senator"
+19,-wh_no_gap,0,grnn,NOUN,The teacher reported that,"year when developing a large edifice and the size associated with his death , he had no idea what one"
+19,-wh_no_gap,0,grnn,ADJ,The teacher reported that,"particular day was "" 50 100 years old ."
+19,-wh_no_gap,0,grnn,NOUN,The teacher reported that,work was interrupted and a straight page prevented a person either qualified or <unk> to stop the Alpha bombings .
+19,-wh_no_gap,0,grnn,DET,The teacher reported that,"the allegations of violating Project Mercury were in violation of the <unk> "" The MAX Factor "" , the line"
+19,-wh_no_gap,0,grnn,NOUN,The teacher reported that,e-mail would not endangered or after failing to satisfy any factual condition .
+20,+wh_gap,1,gpt2,PART,The teacher reported who the other children claimed,"to be her parents.
+
+A second school teacher at the same school also claimed her son's"
+20,+wh_gap,1,gpt2,AUX,The teacher reported who the other children claimed,"were from nearby schools.
+
+The teacher then tried to explain to the student that he had been"
+20,+wh_gap,1,gpt2,AUX,The teacher reported who the other children claimed,"was his best friend. Then there were the students, who seemed to be from different families, and"
+20,+wh_gap,1,gpt2,PART,The teacher reported who the other children claimed,"to be.
+
+I was so disgusted at school that I left the office. Everyone else was"
+20,+wh_gap,1,gpt2,PART,The teacher reported who the other children claimed,"to be their sister.
+
+At the time of the raid, investigators said the children were unaware"
+20,+wh_gap,1,grnn,PUNCT,The teacher reported who the other children claimed,.
+20,+wh_gap,1,grnn,PUNCT,The teacher reported who the other children claimed,.
+20,+wh_gap,1,grnn,AUX,The teacher reported who the other children claimed,"were examples of <unk> , for example , reading books telling him to "" write up the ideas of a"
+20,+wh_gap,1,grnn,DET,The teacher reported who the other children claimed,a special gun .
+20,+wh_gap,1,grnn,CCONJ,The teacher reported who the other children claimed,or killed in the shooting .
+23,-wh_no_gap,1,gpt2,PRON,The teacher reported that the other children claimed,they were 'having problems'. He also alleged that the teacher's words appeared to make them'sc
+23,-wh_no_gap,1,gpt2,PART,The teacher reported that the other children claimed,"to know her because ""they used to joke around."" Some parents gave the teachers a ""shame"
+23,-wh_no_gap,1,gpt2,PART,The teacher reported that the other children claimed,"to have been raped by the boy, as well as that an adult had raped him, ""which"
+23,-wh_no_gap,1,gpt2,PART,The teacher reported that the other children claimed,"to have been ""unemployed"".
+
+A day after the child's death, the school principal"
+23,-wh_no_gap,1,gpt2,PART,The teacher reported that the other children claimed,to know the two children's identities but could not recall their names without the parents knowing.
+23,-wh_no_gap,1,grnn,DET,The teacher reported that the other children claimed,a child as mother and child .
+23,-wh_no_gap,1,grnn,SCONJ,The teacher reported that the other children claimed,that they had been residing in Germany .
+23,-wh_no_gap,1,grnn,PROPN,The teacher reported that the other children claimed,"syphilis , Martha <unk> was born in New York City in the <unk> district , and her parents were 6"
+23,-wh_no_gap,1,grnn,SCONJ,The teacher reported that the other children claimed,that they were incorrect .
+23,-wh_no_gap,1,grnn,PRON,The teacher reported that the other children claimed,"all were at the best school , including three girls from a 1975 "" Ranger "" class then disfigured at"
+24,+wh_gap,2,gpt2,AUX,The teacher reported who the other children claimed their friends said,was the man who stabbed her. The student was hospitalized with a broken leg and had injuries to the
+24,+wh_gap,2,gpt2,AUX,The teacher reported who the other children claimed their friends said,"was in the ""black group,"" the teacher reported how the teacher felt the children's story helped the"
+24,+wh_gap,2,gpt2,AUX,The teacher reported who the other children claimed their friends said,were going to the playground after the game. She said the parents told her that their children are being
+24,+wh_gap,2,gpt2,AUX,The teacher reported who the other children claimed their friends said,"was the culprit behind their disappearance.
+
+On Jan. 9, police found the men responsible for"
+24,+wh_gap,2,gpt2,AUX,The teacher reported who the other children claimed their friends said,"were in school with them. ""They called the children 'girls,''shepits,' '"
+24,+wh_gap,2,grnn,DET,The teacher reported who the other children claimed their friends said,the boys contain hate mail and posted an e-mail apologies .
+24,+wh_gap,2,grnn,CCONJ,The teacher reported who the other children claimed their friends said,and won top prize .
+24,+wh_gap,2,grnn,PUNCT,The teacher reported who the other children claimed their friends said,": "" It 's been a live motorcycle on what they expect of your own life : sleep !"
+24,+wh_gap,2,grnn,PRON,The teacher reported who the other children claimed their friends said,"their intention to "" leave the pit , "" though she said the audience defined "" the artificial dance of"
+24,+wh_gap,2,grnn,VERB,The teacher reported who the other children claimed their friends said,had an effect on the people .
+27,-wh_no_gap,2,gpt2,PRON,The teacher reported that the other children claimed their friends said,"she made them lie about her name. On the day before she was supposed to leave, she says"
+27,-wh_no_gap,2,gpt2,PRON,The teacher reported that the other children claimed their friends said,"they too were crying.
+
+In the case of the teacher, the police reported that the student"
+27,-wh_no_gap,2,gpt2,PRON,The teacher reported that the other children claimed their friends said,"they were from the same tribe who had attacked her, which she dismissed out of hand. When asked"
+27,-wh_no_gap,2,gpt2,PRON,The teacher reported that the other children claimed their friends said,it to be as if someone was raping them. So it was not an attack on innocent children.
+27,-wh_no_gap,2,gpt2,PRON,The teacher reported that the other children claimed their friends said,"they were scared, and that the students' parents seemed to feel more pressure. The teacher said he"
+27,-wh_no_gap,2,grnn,SCONJ,The teacher reported that the other children claimed their friends said,"that "" <unk> !"
+27,-wh_no_gap,2,grnn,SCONJ,The teacher reported that the other children claimed their friends said,"that at nearby Indianapolis followed , "" what people now know is true can ?"
+27,-wh_no_gap,2,grnn,PUNCT,The teacher reported that the other children claimed their friends said,", ' Made up and humane ."
+27,-wh_no_gap,2,grnn,PRON,The teacher reported that the other children claimed their friends said,they had gone through diligently split themselves .
+27,-wh_no_gap,2,grnn,PRON,The teacher reported that the other children claimed their friends said,"their service ran – of course "" before dawn "" , and in keeping with "" The <unk> He 's"
+28,+wh_gap,3,gpt2,PRON,The teacher reported who the other children claimed their friends said the teaching assistant stated,"there would be no such thing without a teacher.
+
+One group complained that their teachers are often"
+28,+wh_gap,3,gpt2,PUNCT,The teacher reported who the other children claimed their friends said the teaching assistant stated,. He then told me someone came up to the school and asked where my room was and who had
+28,+wh_gap,3,gpt2,PART,The teacher reported who the other children claimed their friends said the teaching assistant stated,to work in the classroom was going to do and that he would be present at all times.
+28,+wh_gap,3,gpt2,PRON,The teacher reported who the other children claimed their friends said the teaching assistant stated,they were all female students. The teacher told the student he should not teach with the other children.
+28,+wh_gap,3,gpt2,DET,The teacher reported who the other children claimed their friends said the teaching assistant stated,"the other students were lying, but we are unsure how that worked out, which is why they're"
+28,+wh_gap,3,grnn,SCONJ,The teacher reported who the other children claimed their friends said the teaching assistant stated,"that the priests wrote "" from a animal ?"
+28,+wh_gap,3,grnn,PUNCT,The teacher reported who the other children claimed their friends said the teaching assistant stated,": "" "" No one can render only oral copyright before the rulings 's authorship ."
+28,+wh_gap,3,grnn,AUX,The teacher reported who the other children claimed their friends said the teaching assistant stated,was the greatest .
+28,+wh_gap,3,grnn,PUNCT,The teacher reported who the other children claimed their friends said the teaching assistant stated,", avoiding Oliver Rose lying former regulator ."
+28,+wh_gap,3,grnn,PUNCT,The teacher reported who the other children claimed their friends said the teaching assistant stated,.
+31,-wh_no_gap,3,gpt2,SCONJ,The teacher reported that the other children claimed their friends said the teaching assistant stated,"that she didn't think there was anything wrong. However, no information on this incident came up to"
+31,-wh_no_gap,3,gpt2,ADV,The teacher reported that the other children claimed their friends said the teaching assistant stated,so. The child's parents then reported that the teachers never questioned the children and that it was in
+31,-wh_no_gap,3,gpt2,SCONJ,The teacher reported that the other children claimed their friends said the teaching assistant stated,"that their friend, while they were teaching, ""would only go over the first level without any guidance"
+31,-wh_no_gap,3,gpt2,PUNCT,The teacher reported that the other children claimed their friends said the teaching assistant stated,", ""You are right, they said so"" (Mensch, 18). And he stated"
+31,-wh_no_gap,3,gpt2,SCONJ,The teacher reported that the other children claimed their friends said the teaching assistant stated,"that ""The child will stay up here.""
+
+One student said, ""I'm from Texas"
+31,-wh_no_gap,3,grnn,PUNCT,The teacher reported that the other children claimed their friends said the teaching assistant stated,""" that more I have living nails on his <unk> "" , this injury was necessitated in difficult ways ."
+31,-wh_no_gap,3,grnn,SCONJ,The teacher reported that the other children claimed their friends said the teaching assistant stated,"as "" they must ride a school "" , but rather "" generally teach the students very active at all"
+31,-wh_no_gap,3,grnn,PRON,The teacher reported that the other children claimed their friends said the teaching assistant stated,he was too large .
+31,-wh_no_gap,3,grnn,SCONJ,The teacher reported that the other children claimed their friends said the teaching assistant stated,that the school had neglected to be permitted from the school in order to pay for each school 's erection
+31,-wh_no_gap,3,grnn,SCONJ,The teacher reported that the other children claimed their friends said the teaching assistant stated,that Maggie was suffering from his suicide .
+32,+wh_gap,0,gpt2,AUX,I know who,"is going to die at this point, but I do know who will be buried.""
+
+In"
+32,+wh_gap,0,gpt2,PRON,I know who,"you are!""
+
+
+The two left the room and walked into his residence, where he had his"
+32,+wh_gap,0,gpt2,DET,I know who,"the father is—they might be wrong, but in this business, that's who I am;"
+32,+wh_gap,0,gpt2,AUX,I know who,is more qualified to handle such a situation. It looks like a bit of a ruse to me
+32,+wh_gap,0,gpt2,PART,I know who,"to trust. In the year before that, you will have to learn how to trust the people you"
+32,+wh_gap,0,grnn,VERB,I know who,"inspires Stan and <unk> , before he gets to the Master of another group walking back : <unk> can only"
+32,+wh_gap,0,grnn,AUX,I know who,'s coming .
+32,+wh_gap,0,grnn,AUX,I know who,was the acknowledged discoverer of the pole at the time of his death ( after which the Vail name suggests
+32,+wh_gap,0,grnn,AUX,I know who,was going to this day were able to deny <unk> ’s disloyalty to the queen and hence reward submission from
+32,+wh_gap,0,grnn,AUX,I know who,was recognized as the author .
+35,-wh_no_gap,0,gpt2,ADP,I know that,"by that time, you'll really need a drink. And you must also realize that you are more"
+35,-wh_no_gap,0,gpt2,DET,I know that,"the rest of the country, they don't really want to do anything, I guess."
+35,-wh_no_gap,0,gpt2,PRON,I know that,"it's important to start getting your head around the concept of ""diversity"". What's the most"
+35,-wh_no_gap,0,gpt2,PRON,I know that,they're on a pretty tight budget to build an empire that should only get more expensive when they get
+35,-wh_no_gap,0,gpt2,SCONJ,I know that,"when someone says 'we love animals, but that doesn't mean we're going to let animals go"
+35,-wh_no_gap,0,grnn,AUX,I know that,is the first scientific correction and would have been a serious case .
+35,-wh_no_gap,0,grnn,PRON,I know that,which became the standard version of how the scarlet Haddock has maintained its lead in conquest .
+35,-wh_no_gap,0,grnn,NOUN,I know that,"character is equal to the UK property "" him "" ."
+35,-wh_no_gap,0,grnn,AUX,I know that,"are called <unk> ( 24 or 13 ) , 365 is one of 12 "" extraordinary "" features , a"
+35,-wh_no_gap,0,grnn,ADV,I know that,"also has much more just a possibility , encompassing a few often very rapid social ."
+36,+wh_gap,1,gpt2,AUX,I know who my mother thinks,"was her, but I don't think that would ever really happen to me.""
+
+But when"
+36,+wh_gap,1,gpt2,PRON,I know who my mother thinks,"I am, and she is right—she is right about my feelings in general, and her right"
+36,+wh_gap,1,gpt2,AUX,I know who my mother thinks,"is more beautiful or more innocent. There are other people I think are more beautiful than others."""
+36,+wh_gap,1,gpt2,PRON,I know who my mother thinks,"who has this big problem, I'm going to get him. That's my choice. He's"
+36,+wh_gap,1,gpt2,PRON,I know who my mother thinks,she is when she sees the boy in the photo. How can I explain that she looks in the
+36,+wh_gap,1,grnn,PUNCT,I know who my mother thinks,.
+36,+wh_gap,1,grnn,PRON,I know who my mother thinks,someone ( for example ) all that should be done on it ?
+36,+wh_gap,1,grnn,AUX,I know who my mother thinks,"was literary but unknown obligation , paying the fine to the day necessary ."
+36,+wh_gap,1,grnn,ADP,I know who my mother thinks,about him where he can deal .
+36,+wh_gap,1,grnn,ADP,I know who my mother thinks,"on the air , and <unk> me ."
+39,-wh_no_gap,1,gpt2,PRON,I know that my mother thinks,I should say the things she thinks women want a man to do but I think she's wrong.
+39,-wh_no_gap,1,gpt2,PRON,I know that my mother thinks,"I'm a piece of meat because I went to high school with a couple of my idols, not"
+39,-wh_no_gap,1,gpt2,PRON,I know that my mother thinks,it must be some kind of way for her to go to see my father? And though my mother
+39,-wh_no_gap,1,gpt2,SCONJ,I know that my mother thinks,"that you are dangerous, that you are a child. The child knows that you are the child,"
+39,-wh_no_gap,1,gpt2,PRON,I know that my mother thinks,we need to have her as the first child so that we can have what she wants and live a
+39,-wh_no_gap,1,grnn,PRON,I know that my mother thinks,it to be hostile to the faith .
+39,-wh_no_gap,1,grnn,PRON,I know that my mother thinks,"I did n't want this one to eat , I did n't know how to do it in different ways"
+39,-wh_no_gap,1,grnn,SCONJ,I know that my mother thinks,that the people liked to sacrifice feathers and become a <unk> was just the place between the first thing and
+39,-wh_no_gap,1,grnn,PRON,I know that my mother thinks,he would respond and that 's soon .
+39,-wh_no_gap,1,grnn,ADP,I know that my mother thinks,about that moment .
+40,+wh_gap,2,gpt2,PUNCT,I know who my mother thinks the reporter said,"(in front of him). ""And she wouldn't say so."" That was that."
+40,+wh_gap,2,gpt2,PUNCT,I know who my mother thinks the reporter said,. She says she just liked his tone and that he was not the kind who would talk to us
+40,+wh_gap,2,gpt2,PUNCT,I know who my mother thinks the reporter said,".
+
+You see, not so long ago, there were plenty of people who said, """
+40,+wh_gap,2,gpt2,PRON,I know who my mother thinks the reporter said,you might be.
+40,+wh_gap,2,gpt2,ADP,I know who my mother thinks the reporter said,"to me was a Democrat, and I say I'm a Democrat because she came up against Clinton,"""
+40,+wh_gap,2,grnn,PRON,I know who my mother thinks the reporter said,I am about throwing me !
+40,+wh_gap,2,grnn,PUNCT,I know who my mother thinks the reporter said,""" You could scarcely make up my mind , as I had problems serious issues ."
+40,+wh_gap,2,grnn,SCONJ,I know who my mother thinks the reporter said,"that “ My servant in the <unk> certainly was John ” , but the local news Safety ' <unk> said"
+40,+wh_gap,2,grnn,SCONJ,I know who my mother thinks the reporter said,"that if man reported them all were the actors , the children see how all people celebrated taking your life"
+40,+wh_gap,2,grnn,PUNCT,I know who my mother thinks the reporter said,": "" This is to get <unk> those demands that make us look like people from your gut making it"
+43,-wh_no_gap,2,gpt2,DET,I know that my mother thinks the reporter said,the President has made a mistake in failing to understand. But why would she not know there might be
+43,-wh_no_gap,2,gpt2,PUNCT,I know that my mother thinks the reporter said,", 'I have an affair' – but that's not her position. Her view is that I"
+43,-wh_no_gap,2,gpt2,SCONJ,I know that my mother thinks the reporter said,"that, and I haven't told her. I don't think it is the truth as the reporters"
+43,-wh_no_gap,2,gpt2,PRON,I know that my mother thinks the reporter said,"it in the video. That it's a joke, and that I'm a bit more aware of"
+43,-wh_no_gap,2,gpt2,SCONJ,I know that my mother thinks the reporter said,"that I should be in jail for three years and $300,000, but I am doing a"
+43,-wh_no_gap,2,grnn,PUNCT,I know that my mother thinks the reporter said,""" Tim Smith is with his son ."
+43,-wh_no_gap,2,grnn,SCONJ,I know that my mother thinks the reporter said,"that the dolls consisted of them in Ville à la Mimi , and that they did so unless they were"
+43,-wh_no_gap,2,grnn,PROPN,I know that my mother thinks the reporter said,Brooker was dead .
+43,-wh_no_gap,2,grnn,ADP,I know that my mother thinks the reporter said,"to him all what happened , the secret , that was not really happening ... Yule said "" the name"
+43,-wh_no_gap,2,grnn,PRON,I know that my mother thinks the reporter said,"she had never attempted , and there 's some concern for most of them , not a war , that"
+44,+wh_gap,3,gpt2,PRON,I know who my mother thinks the reporter said the homeowners claimed,they would never have access to a gas pump before the building collapses and is now going to try to
+44,+wh_gap,3,gpt2,PUNCT,I know who my mother thinks the reporter said the homeowners claimed,. I'm not. A little bit of research should answer that question. I'm sure that what
+44,+wh_gap,3,gpt2,CCONJ,I know who my mother thinks the reporter said the homeowners claimed,"but there's no evidence that she was lying about me being the homeowner.
+
+If you can"
+44,+wh_gap,3,gpt2,AUX,I know who my mother thinks the reporter said the homeowners claimed,"was the original residence,"" Cogswald said.
+
+The judge sentenced her to an eight"
+44,+wh_gap,3,gpt2,PART,I know who my mother thinks the reporter said the homeowners claimed,"to have and who I assume have seen the reporter's report. And then, I don't know"
+44,+wh_gap,3,grnn,PUNCT,I know who my mother thinks the reporter said the homeowners claimed,.
+44,+wh_gap,3,grnn,PUNCT,I know who my mother thinks the reporter said the homeowners claimed,.
+44,+wh_gap,3,grnn,PUNCT,I know who my mother thinks the reporter said the homeowners claimed,.
+44,+wh_gap,3,grnn,PUNCT,I know who my mother thinks the reporter said the homeowners claimed,", "" That was a terrible beggar will never believe that anyone whose mission is in detail intact ."
+44,+wh_gap,3,grnn,AUX,I know who my mother thinks the reporter said the homeowners claimed,was a product of their childhood in his 20s .
+47,-wh_no_gap,3,gpt2,SCONJ,I know that my mother thinks the reporter said the homeowners claimed,"that they saw an intruder in a home,"" he said. ""We're told that all of people"
+47,-wh_no_gap,3,gpt2,PRON,I know that my mother thinks the reporter said the homeowners claimed,they had no problem with the property or had no problem obtaining a land transfer if they could not get
+47,-wh_no_gap,3,gpt2,DET,I know that my mother thinks the reporter said the homeowners claimed,no one was injured from the blaze but when I pressed her to tell me I could tell her there
+47,-wh_no_gap,3,gpt2,PRON,I know that my mother thinks the reporter said the homeowners claimed,"their property was theirs and that that's just false,"" Sheppard wrote.
+
+That was a"
+47,-wh_no_gap,3,gpt2,PRON,I know that my mother thinks the reporter said the homeowners claimed,it was a water-waste spill but it didn't seem like that. Maybe she could have
+47,-wh_no_gap,3,grnn,DET,I know that my mother thinks the reporter said the homeowners claimed,this territory by letting the girls decide how far they were born for him to take place .
+47,-wh_no_gap,3,grnn,SCONJ,I know that my mother thinks the reporter said the homeowners claimed,that they met with a pretty white woman .
+47,-wh_no_gap,3,grnn,SCONJ,I know that my mother thinks the reporter said the homeowners claimed,that the part of the property was worth six cents a day ; it gave a modest rent in the
+47,-wh_no_gap,3,grnn,SCONJ,I know that my mother thinks the reporter said the homeowners claimed,that prostitution was a good thing .
+47,-wh_no_gap,3,grnn,SCONJ,I know that my mother thinks the reporter said the homeowners claimed,"that eating anything from the floor had drawn an eye on the town and left , unsure about how large"
