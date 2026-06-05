@@ -94,7 +94,7 @@ def get_wh_effect(surprisal_df, sentence_group, embedding_level, condition, surp
     Returns:
         wh_effect as float, or None if data missing
     """
-    if surprisal_type == 'local':
+    if surprisal_type == 'local' or surprisal_type == 'local_continuation_only':
         if gap_type == 'object':
             gap_col    = 'continuation_surprisal'
             no_gap_col = 'object_surprisal'
@@ -162,6 +162,9 @@ def get_filler_offloading_effect(surprisal_df, sentence_group, embedding_level, 
             no_gap_col = 'subject_surprisal'
         else:
             raise ValueError(f"gap_type must be 'object' or 'subject', got {gap_type}")
+    elif surprisal_type == 'local_continuation_only':
+        gap_col = 'continuation_surprisal'
+        no_gap_col = 'continuation_surprisal'
     elif surprisal_type == 'semi_local':
         gap_col    = 'semi_local_surprisal_mean'
         no_gap_col = 'semi_local_surprisal_mean'
@@ -169,7 +172,7 @@ def get_filler_offloading_effect(surprisal_df, sentence_group, embedding_level, 
         gap_col    = 'global_surprisal_mean'
         no_gap_col = 'global_surprisal_mean'
     else:
-        raise ValueError(f"surprisal_type must be 'local', 'semi_local' or 'global', got '{surprisal_type}'")
+        raise ValueError(f"surprisal_type must be 'local', 'local_continuation_only', 'semi_local' or 'global', got '{surprisal_type}'")
 
     base = surprisal_df[
         (surprisal_df['sentence_group'] == sentence_group) &
