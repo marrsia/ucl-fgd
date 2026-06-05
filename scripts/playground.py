@@ -11,9 +11,8 @@ def classify_continuation(full_sentence, continuation):
         if doc[token.i:].text.startswith(cont):
             if token.pos_ == "ADP":
                 return "PP"
-            if token.pos_ == "ADV":
+            else:
                 return "ADV"
-            return "other"
     raise ValueError(f"Could not locate continuation '{cont}' in sentence '{full_sentence}'")
 
 
@@ -42,4 +41,4 @@ def rename_conditions(input_csv):
     df.to_csv(input_csv, index=False)
     
     
-classify_continuation("data/stimuli/wilcox2022_embed4_object_gap_updated.csv")
+tag_continuation_type("data/stimuli/wilcox2022_embed4_subject_gap_updated.csv")
