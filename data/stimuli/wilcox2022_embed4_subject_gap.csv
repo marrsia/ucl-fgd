@@ -1,0 +1,1081 @@
+sentence_group,wh,gap,levels_of_embedding,condition,main_clause,complementiser,embedding_1,embedding_2,embedding_3,embedding_4,subject,verb,object,continuation
+1,no,yes,0,-wh_gap,I know,that,,,,,your friend,threw,the plastic,into the trash can.
+1,no,no,0,-wh_no_gap,I know,that,,,,,,threw,the plastic,into the trash can.
+1,yes,yes,0,+wh_gap,I know,who,,,,,your friend,threw,the plastic,into the trash can.
+1,yes,no,0,+wh_no_gap,I know,who,,,,,,threw,the plastic,into the trash can.
+1,no,yes,1,-wh_gap,I know,that,our mother said,,,,your friend,threw,the plastic,into the trash can.
+1,no,no,1,-wh_no_gap,I know,that,our mother said,,,,,threw,the plastic,into the trash can.
+1,yes,yes,1,+wh_gap,I know,who,our mother said,,,,your friend,threw,the plastic,into the trash can.
+1,yes,no,1,+wh_no_gap,I know,who,our mother said,,,,,threw,the plastic,into the trash can.
+1,no,yes,2,-wh_gap,I know,that,our mother said,her friend remarked,,,your friend,threw,the plastic,into the trash can.
+1,no,no,2,-wh_no_gap,I know,that,our mother said,her friend remarked,,,,threw,the plastic,into the trash can.
+1,yes,yes,2,+wh_gap,I know,who,our mother said,her friend remarked,,,your friend,threw,the plastic,into the trash can.
+1,yes,no,2,+wh_no_gap,I know,who,our mother said,her friend remarked,,,,threw,the plastic,into the trash can.
+1,no,yes,3,-wh_gap,I know,that,our mother said,her friend remarked,the park attendant reported,,your friend,threw,the plastic,into the trash can.
+1,no,no,3,-wh_no_gap,I know,that,our mother said,her friend remarked,the park attendant reported,,,threw,the plastic,into the trash can.
+1,yes,yes,3,+wh_gap,I know,who,our mother said,her friend remarked,the park attendant reported,,your friend,threw,the plastic,into the trash can.
+1,yes,no,3,+wh_no_gap,I know,who,our mother said,her friend remarked,the park attendant reported,,,threw,the plastic,into the trash can.
+1,no,yes,4,-wh_gap,I know,that,our mother said,her friend remarked,the park attendant reported,the cop thinks,your friend,threw,the plastic,into the trash can.
+1,no,no,4,-wh_no_gap,I know,that,our mother said,her friend remarked,the park attendant reported,the cop thinks,,threw,the plastic,into the trash can.
+1,yes,yes,4,+wh_gap,I know,who,our mother said,her friend remarked,the park attendant reported,the cop thinks,your friend,threw,the plastic,into the trash can.
+1,yes,no,4,+wh_no_gap,I know,who,our mother said,her friend remarked,the park attendant reported,the cop thinks,,threw,the plastic,into the trash can.
+10,no,yes,0,-wh_gap,The newspaper reported,that,,,,,the boss,sold,a car,to his friend.
+10,no,no,0,-wh_no_gap,The newspaper reported,that,,,,,,sold,a car,to his friend.
+10,yes,yes,0,+wh_gap,The newspaper reported,who,,,,,the boss,sold,a car,to his friend.
+10,yes,no,0,+wh_no_gap,The newspaper reported,who,,,,,,sold,a car,to his friend.
+10,no,yes,1,-wh_gap,The newspaper reported,that,the investigator thought,,,,the boss,sold,a car,to his friend.
+10,no,no,1,-wh_no_gap,The newspaper reported,that,the investigator thought,,,,,sold,a car,to his friend.
+10,yes,yes,1,+wh_gap,The newspaper reported,who,the investigator thought,,,,the boss,sold,a car,to his friend.
+10,yes,no,1,+wh_no_gap,The newspaper reported,who,the investigator thought,,,,,sold,a car,to his friend.
+10,no,yes,2,-wh_gap,The newspaper reported,that,the investigator thought,the businessman believed,,,the boss,sold,a car,to his friend.
+10,no,no,2,-wh_no_gap,The newspaper reported,that,the investigator thought,the businessman believed,,,,sold,a car,to his friend.
+10,yes,yes,2,+wh_gap,The newspaper reported,who,the investigator thought,the businessman believed,,,the boss,sold,a car,to his friend.
+10,yes,no,2,+wh_no_gap,The newspaper reported,who,the investigator thought,the businessman believed,,,,sold,a car,to his friend.
+10,no,yes,3,-wh_gap,The newspaper reported,that,the investigator thought,the businessman believed,the banker said,,the boss,sold,a car,to his friend.
+10,no,no,3,-wh_no_gap,The newspaper reported,that,the investigator thought,the businessman believed,the banker said,,,sold,a car,to his friend.
+10,yes,yes,3,+wh_gap,The newspaper reported,who,the investigator thought,the businessman believed,the banker said,,the boss,sold,a car,to his friend.
+10,yes,no,3,+wh_no_gap,The newspaper reported,who,the investigator thought,the businessman believed,the banker said,,,sold,a car,to his friend.
+10,no,yes,4,-wh_gap,The newspaper reported,that,the investigator thought,the businessman believed,the banker said,his friend believes,the boss,sold,a car,to his friend.
+10,no,no,4,-wh_no_gap,The newspaper reported,that,the investigator thought,the businessman believed,the banker said,his friend believes,,sold,a car,to his friend.
+10,yes,yes,4,+wh_gap,The newspaper reported,who,the investigator thought,the businessman believed,the banker said,his friend believes,the boss,sold,a car,to his friend.
+10,yes,no,4,+wh_no_gap,The newspaper reported,who,the investigator thought,the businessman believed,the banker said,his friend believes,,sold,a car,to his friend.
+11,no,yes,0,-wh_gap,Her friend found out,that,,,,,the visitor,told,a story,to the guests.
+11,no,no,0,-wh_no_gap,Her friend found out,that,,,,,,told,a story,to the guests.
+11,yes,yes,0,+wh_gap,Her friend found out,who,,,,,the visitor,told,a story,to the guests.
+11,yes,no,0,+wh_no_gap,Her friend found out,who,,,,,,told,a story,to the guests.
+11,no,yes,1,-wh_gap,Her friend found out,that,my friend believed,,,,the visitor,told,a story,to the guests.
+11,no,no,1,-wh_no_gap,Her friend found out,that,my friend believed,,,,,told,a story,to the guests.
+11,yes,yes,1,+wh_gap,Her friend found out,who,my friend believed,,,,the visitor,told,a story,to the guests.
+11,yes,no,1,+wh_no_gap,Her friend found out,who,my friend believed,,,,,told,a story,to the guests.
+11,no,yes,2,-wh_gap,Her friend found out,that,my friend believed,the professor said,,,the visitor,told,a story,to the guests.
+11,no,no,2,-wh_no_gap,Her friend found out,that,my friend believed,the professor said,,,,told,a story,to the guests.
+11,yes,yes,2,+wh_gap,Her friend found out,who,my friend believed,the professor said,,,the visitor,told,a story,to the guests.
+11,yes,no,2,+wh_no_gap,Her friend found out,who,my friend believed,the professor said,,,,told,a story,to the guests.
+11,no,yes,3,-wh_gap,Her friend found out,that,my friend believed,the professor said,his colleague noticed,,the visitor,told,a story,to the guests.
+11,no,no,3,-wh_no_gap,Her friend found out,that,my friend believed,the professor said,his colleague noticed,,,told,a story,to the guests.
+11,yes,yes,3,+wh_gap,Her friend found out,who,my friend believed,the professor said,his colleague noticed,,the visitor,told,a story,to the guests.
+11,yes,no,3,+wh_no_gap,Her friend found out,who,my friend believed,the professor said,his colleague noticed,,,told,a story,to the guests.
+11,no,yes,4,-wh_gap,Her friend found out,that,my friend believed,the professor said,his colleague noticed,their students recalled,the visitor,told,a story,to the guests.
+11,no,no,4,-wh_no_gap,Her friend found out,that,my friend believed,the professor said,his colleague noticed,their students recalled,,told,a story,to the guests.
+11,yes,yes,4,+wh_gap,Her friend found out,who,my friend believed,the professor said,his colleague noticed,their students recalled,the visitor,told,a story,to the guests.
+11,yes,no,4,+wh_no_gap,Her friend found out,who,my friend believed,the professor said,his colleague noticed,their students recalled,,told,a story,to the guests.
+12,no,yes,0,-wh_gap,I realized,that,,,,,the suffering artist,saw,a painting,at the museum.
+12,no,no,0,-wh_no_gap,I realized,that,,,,,,saw,a painting,at the museum.
+12,yes,yes,0,+wh_gap,I realized,who,,,,,the suffering artist,saw,a painting,at the museum.
+12,yes,no,0,+wh_no_gap,I realized,who,,,,,,saw,a painting,at the museum.
+12,no,yes,1,-wh_gap,I realized,that,the painter believed,,,,the suffering artist,saw,a painting,at the museum.
+12,no,no,1,-wh_no_gap,I realized,that,the painter believed,,,,,saw,a painting,at the museum.
+12,yes,yes,1,+wh_gap,I realized,who,the painter believed,,,,the suffering artist,saw,a painting,at the museum.
+12,yes,no,1,+wh_no_gap,I realized,who,the painter believed,,,,,saw,a painting,at the museum.
+12,no,yes,2,-wh_gap,I realized,that,the painter believed,his rival suspected,,,the suffering artist,saw,a painting,at the museum.
+12,no,no,2,-wh_no_gap,I realized,that,the painter believed,his rival suspected,,,,saw,a painting,at the museum.
+12,yes,yes,2,+wh_gap,I realized,who,the painter believed,his rival suspected,,,the suffering artist,saw,a painting,at the museum.
+12,yes,no,2,+wh_no_gap,I realized,who,the painter believed,his rival suspected,,,,saw,a painting,at the museum.
+12,no,yes,3,-wh_gap,I realized,that,the painter believed,his rival suspected,the man said,,the suffering artist,saw,a painting,at the museum.
+12,no,no,3,-wh_no_gap,I realized,that,the painter believed,his rival suspected,the man said,,,saw,a painting,at the museum.
+12,yes,yes,3,+wh_gap,I realized,who,the painter believed,his rival suspected,the man said,,the suffering artist,saw,a painting,at the museum.
+12,yes,no,3,+wh_no_gap,I realized,who,the painter believed,his rival suspected,the man said,,,saw,a painting,at the museum.
+12,no,yes,4,-wh_gap,I realized,that,the painter believed,his rival suspected,the man said,his friend recalls,the suffering artist,saw,a painting,at the museum.
+12,no,no,4,-wh_no_gap,I realized,that,the painter believed,his rival suspected,the man said,his friend recalls,,saw,a painting,at the museum.
+12,yes,yes,4,+wh_gap,I realized,who,the painter believed,his rival suspected,the man said,his friend recalls,the suffering artist,saw,a painting,at the museum.
+12,yes,no,4,+wh_no_gap,I realized,who,the painter believed,his rival suspected,the man said,his friend recalls,,saw,a painting,at the museum.
+13,no,yes,0,-wh_gap,The novel revealed,that,,,,,the young politician,said,something,to his donors.
+13,no,no,0,-wh_no_gap,The novel revealed,that,,,,,,said,something,to his donors.
+13,yes,yes,0,+wh_gap,The novel revealed,who,,,,,the young politician,said,something,to his donors.
+13,yes,no,0,+wh_no_gap,The novel revealed,who,,,,,,said,something,to his donors.
+13,no,yes,1,-wh_gap,The novel revealed,that,our friend thought,,,,the young politician,said,something,to his donors.
+13,no,no,1,-wh_no_gap,The novel revealed,that,our friend thought,,,,,said,something,to his donors.
+13,yes,yes,1,+wh_gap,The novel revealed,who,our friend thought,,,,the young politician,said,something,to his donors.
+13,yes,no,1,+wh_no_gap,The novel revealed,who,our friend thought,,,,,said,something,to his donors.
+13,no,yes,2,-wh_gap,The novel revealed,that,our friend thought,the reporter knows,,,the young politician,said,something,to his donors.
+13,no,no,2,-wh_no_gap,The novel revealed,that,our friend thought,the reporter knows,,,,said,something,to his donors.
+13,yes,yes,2,+wh_gap,The novel revealed,who,our friend thought,the reporter knows,,,the young politician,said,something,to his donors.
+13,yes,no,2,+wh_no_gap,The novel revealed,who,our friend thought,the reporter knows,,,,said,something,to his donors.
+13,no,yes,3,-wh_gap,The novel revealed,that,our friend thought,the reporter knows,her contact said,,the young politician,said,something,to his donors.
+13,no,no,3,-wh_no_gap,The novel revealed,that,our friend thought,the reporter knows,her contact said,,,said,something,to his donors.
+13,yes,yes,3,+wh_gap,The novel revealed,who,our friend thought,the reporter knows,her contact said,,the young politician,said,something,to his donors.
+13,yes,no,3,+wh_no_gap,The novel revealed,who,our friend thought,the reporter knows,her contact said,,,said,something,to his donors.
+13,no,yes,4,-wh_gap,The novel revealed,that,our friend thought,the reporter knows,her contact said,his friend saw,the young politician,said,something,to his donors.
+13,no,no,4,-wh_no_gap,The novel revealed,that,our friend thought,the reporter knows,her contact said,his friend saw,,said,something,to his donors.
+13,yes,yes,4,+wh_gap,The novel revealed,who,our friend thought,the reporter knows,her contact said,his friend saw,the young politician,said,something,to his donors.
+13,yes,no,4,+wh_no_gap,The novel revealed,who,our friend thought,the reporter knows,her contact said,his friend saw,,said,something,to his donors.
+14,no,yes,0,-wh_gap,We all know,that,,,,,the young professional,assembled,the bed,for his parents.
+14,no,no,0,-wh_no_gap,We all know,that,,,,,,assembled,the bed,for his parents.
+14,yes,yes,0,+wh_gap,We all know,who,,,,,the young professional,assembled,the bed,for his parents.
+14,yes,no,0,+wh_no_gap,We all know,who,,,,,,assembled,the bed,for his parents.
+14,no,yes,1,-wh_gap,We all know,that,my neighbor said,,,,the young professional,assembled,the bed,for his parents.
+14,no,no,1,-wh_no_gap,We all know,that,my neighbor said,,,,,assembled,the bed,for his parents.
+14,yes,yes,1,+wh_gap,We all know,who,my neighbor said,,,,the young professional,assembled,the bed,for his parents.
+14,yes,no,1,+wh_no_gap,We all know,who,my neighbor said,,,,,assembled,the bed,for his parents.
+14,no,yes,2,-wh_gap,We all know,that,my neighbor said,her associate knew,,,the young professional,assembled,the bed,for his parents.
+14,no,no,2,-wh_no_gap,We all know,that,my neighbor said,her associate knew,,,,assembled,the bed,for his parents.
+14,yes,yes,2,+wh_gap,We all know,who,my neighbor said,her associate knew,,,the young professional,assembled,the bed,for his parents.
+14,yes,no,2,+wh_no_gap,We all know,who,my neighbor said,her associate knew,,,,assembled,the bed,for his parents.
+14,no,yes,3,-wh_gap,We all know,that,my neighbor said,her associate knew,a friend thinks,,the young professional,assembled,the bed,for his parents.
+14,no,no,3,-wh_no_gap,We all know,that,my neighbor said,her associate knew,a friend thinks,,,assembled,the bed,for his parents.
+14,yes,yes,3,+wh_gap,We all know,who,my neighbor said,her associate knew,a friend thinks,,the young professional,assembled,the bed,for his parents.
+14,yes,no,3,+wh_no_gap,We all know,who,my neighbor said,her associate knew,a friend thinks,,,assembled,the bed,for his parents.
+14,no,yes,4,-wh_gap,We all know,that,my neighbor said,her associate knew,a friend thinks,her sister believes,the young professional,assembled,the bed,for his parents.
+14,no,no,4,-wh_no_gap,We all know,that,my neighbor said,her associate knew,a friend thinks,her sister believes,,assembled,the bed,for his parents.
+14,yes,yes,4,+wh_gap,We all know,who,my neighbor said,her associate knew,a friend thinks,her sister believes,the young professional,assembled,the bed,for his parents.
+14,yes,no,4,+wh_no_gap,We all know,who,my neighbor said,her associate knew,a friend thinks,her sister believes,,assembled,the bed,for his parents.
+15,no,yes,0,-wh_gap,I know,that,,,,,the elderly lady,found,a quarter,on the bus.
+15,no,no,0,-wh_no_gap,I know,that,,,,,,found,a quarter,on the bus.
+15,yes,yes,0,+wh_gap,I know,who,,,,,the elderly lady,found,a quarter,on the bus.
+15,yes,no,0,+wh_no_gap,I know,who,,,,,,found,a quarter,on the bus.
+15,no,yes,1,-wh_gap,I know,that,their friend said,,,,the elderly lady,found,a quarter,on the bus.
+15,no,no,1,-wh_no_gap,I know,that,their friend said,,,,,found,a quarter,on the bus.
+15,yes,yes,1,+wh_gap,I know,who,their friend said,,,,the elderly lady,found,a quarter,on the bus.
+15,yes,no,1,+wh_no_gap,I know,who,their friend said,,,,,found,a quarter,on the bus.
+15,no,yes,2,-wh_gap,I know,that,their friend said,the secretary believed,,,the elderly lady,found,a quarter,on the bus.
+15,no,no,2,-wh_no_gap,I know,that,their friend said,the secretary believed,,,,found,a quarter,on the bus.
+15,yes,yes,2,+wh_gap,I know,who,their friend said,the secretary believed,,,the elderly lady,found,a quarter,on the bus.
+15,yes,no,2,+wh_no_gap,I know,who,their friend said,the secretary believed,,,,found,a quarter,on the bus.
+15,no,yes,3,-wh_gap,I know,that,their friend said,the secretary believed,the worker thinks,,the elderly lady,found,a quarter,on the bus.
+15,no,no,3,-wh_no_gap,I know,that,their friend said,the secretary believed,the worker thinks,,,found,a quarter,on the bus.
+15,yes,yes,3,+wh_gap,I know,who,their friend said,the secretary believed,the worker thinks,,the elderly lady,found,a quarter,on the bus.
+15,yes,no,3,+wh_no_gap,I know,who,their friend said,the secretary believed,the worker thinks,,,found,a quarter,on the bus.
+15,no,yes,4,-wh_gap,I know,that,their friend said,the secretary believed,the worker thinks,his boss reported,the elderly lady,found,a quarter,on the bus.
+15,no,no,4,-wh_no_gap,I know,that,their friend said,the secretary believed,the worker thinks,his boss reported,,found,a quarter,on the bus.
+15,yes,yes,4,+wh_gap,I know,who,their friend said,the secretary believed,the worker thinks,his boss reported,the elderly lady,found,a quarter,on the bus.
+15,yes,no,4,+wh_no_gap,I know,who,their friend said,the secretary believed,the worker thinks,his boss reported,,found,a quarter,on the bus.
+16,no,yes,0,-wh_gap,My friends all know,that,,,,,the single mother,described,her woes,to her friends.
+16,no,no,0,-wh_no_gap,My friends all know,that,,,,,,described,her woes,to her friends.
+16,yes,yes,0,+wh_gap,My friends all know,who,,,,,the single mother,described,her woes,to her friends.
+16,yes,no,0,+wh_no_gap,My friends all know,who,,,,,,described,her woes,to her friends.
+16,no,yes,1,-wh_gap,My friends all know,that,her friend knew,,,,the single mother,described,her woes,to her friends.
+16,no,no,1,-wh_no_gap,My friends all know,that,her friend knew,,,,,described,her woes,to her friends.
+16,yes,yes,1,+wh_gap,My friends all know,who,her friend knew,,,,the single mother,described,her woes,to her friends.
+16,yes,no,1,+wh_no_gap,My friends all know,who,her friend knew,,,,,described,her woes,to her friends.
+16,no,yes,2,-wh_gap,My friends all know,that,her friend knew,the delivery man believed,,,the single mother,described,her woes,to her friends.
+16,no,no,2,-wh_no_gap,My friends all know,that,her friend knew,the delivery man believed,,,,described,her woes,to her friends.
+16,yes,yes,2,+wh_gap,My friends all know,who,her friend knew,the delivery man believed,,,the single mother,described,her woes,to her friends.
+16,yes,no,2,+wh_no_gap,My friends all know,who,her friend knew,the delivery man believed,,,,described,her woes,to her friends.
+16,no,yes,3,-wh_gap,My friends all know,that,her friend knew,the delivery man believed,the cop said,,the single mother,described,her woes,to her friends.
+16,no,no,3,-wh_no_gap,My friends all know,that,her friend knew,the delivery man believed,the cop said,,,described,her woes,to her friends.
+16,yes,yes,3,+wh_gap,My friends all know,who,her friend knew,the delivery man believed,the cop said,,the single mother,described,her woes,to her friends.
+16,yes,no,3,+wh_no_gap,My friends all know,who,her friend knew,the delivery man believed,the cop said,,,described,her woes,to her friends.
+16,no,yes,4,-wh_gap,My friends all know,that,her friend knew,the delivery man believed,the cop said,his partner recalled,the single mother,described,her woes,to her friends.
+16,no,no,4,-wh_no_gap,My friends all know,that,her friend knew,the delivery man believed,the cop said,his partner recalled,,described,her woes,to her friends.
+16,yes,yes,4,+wh_gap,My friends all know,who,her friend knew,the delivery man believed,the cop said,his partner recalled,the single mother,described,her woes,to her friends.
+16,yes,no,4,+wh_no_gap,My friends all know,who,her friend knew,the delivery man believed,the cop said,his partner recalled,,described,her woes,to her friends.
+17,no,yes,0,-wh_gap,The visitor said,that,,,,,the human resources officer,talked with,the new manager,in her office.
+17,no,no,0,-wh_no_gap,The visitor said,that,,,,,,talked with,the new manager,in her office.
+17,yes,yes,0,+wh_gap,The visitor said,who,,,,,the human resources officer,talked with,the new manager,in her office.
+17,yes,no,0,+wh_no_gap,The visitor said,who,,,,,,talked with,the new manager,in her office.
+17,no,yes,1,-wh_gap,The visitor said,that,my friend said,,,,the human resources officer,talked with,the new manager,in her office.
+17,no,no,1,-wh_no_gap,The visitor said,that,my friend said,,,,,talked with,the new manager,in her office.
+17,yes,yes,1,+wh_gap,The visitor said,who,my friend said,,,,the human resources officer,talked with,the new manager,in her office.
+17,yes,no,1,+wh_no_gap,The visitor said,who,my friend said,,,,,talked with,the new manager,in her office.
+17,no,yes,2,-wh_gap,The visitor said,that,my friend said,her mother knew,,,the human resources officer,talked with,the new manager,in her office.
+17,no,no,2,-wh_no_gap,The visitor said,that,my friend said,her mother knew,,,,talked with,the new manager,in her office.
+17,yes,yes,2,+wh_gap,The visitor said,who,my friend said,her mother knew,,,the human resources officer,talked with,the new manager,in her office.
+17,yes,no,2,+wh_no_gap,The visitor said,who,my friend said,her mother knew,,,,talked with,the new manager,in her office.
+17,no,yes,3,-wh_gap,The visitor said,that,my friend said,her mother knew,the clerk stated,,the human resources officer,talked with,the new manager,in her office.
+17,no,no,3,-wh_no_gap,The visitor said,that,my friend said,her mother knew,the clerk stated,,,talked with,the new manager,in her office.
+17,yes,yes,3,+wh_gap,The visitor said,who,my friend said,her mother knew,the clerk stated,,the human resources officer,talked with,the new manager,in her office.
+17,yes,no,3,+wh_no_gap,The visitor said,who,my friend said,her mother knew,the clerk stated,,,talked with,the new manager,in her office.
+17,no,yes,4,-wh_gap,The visitor said,that,my friend said,her mother knew,the clerk stated,his friend saw,the human resources officer,talked with,the new manager,in her office.
+17,no,no,4,-wh_no_gap,The visitor said,that,my friend said,her mother knew,the clerk stated,his friend saw,,talked with,the new manager,in her office.
+17,yes,yes,4,+wh_gap,The visitor said,who,my friend said,her mother knew,the clerk stated,his friend saw,the human resources officer,talked with,the new manager,in her office.
+17,yes,no,4,+wh_no_gap,The visitor said,who,my friend said,her mother knew,the clerk stated,his friend saw,,talked with,the new manager,in her office.
+18,no,yes,0,-wh_gap,I know,that,,,,,the five star general,found,a gun,in the office.
+18,no,no,0,-wh_no_gap,I know,that,,,,,,found,a gun,in the office.
+18,yes,yes,0,+wh_gap,I know,who,,,,,the five star general,found,a gun,in the office.
+18,yes,no,0,+wh_no_gap,I know,who,,,,,,found,a gun,in the office.
+18,no,yes,1,-wh_gap,I know,that,the woman believed,,,,the five star general,found,a gun,in the office.
+18,no,no,1,-wh_no_gap,I know,that,the woman believed,,,,,found,a gun,in the office.
+18,yes,yes,1,+wh_gap,I know,who,the woman believed,,,,the five star general,found,a gun,in the office.
+18,yes,no,1,+wh_no_gap,I know,who,the woman believed,,,,,found,a gun,in the office.
+18,no,yes,2,-wh_gap,I know,that,the woman believed,the secretary said,,,the five star general,found,a gun,in the office.
+18,no,no,2,-wh_no_gap,I know,that,the woman believed,the secretary said,,,,found,a gun,in the office.
+18,yes,yes,2,+wh_gap,I know,who,the woman believed,the secretary said,,,the five star general,found,a gun,in the office.
+18,yes,no,2,+wh_no_gap,I know,who,the woman believed,the secretary said,,,,found,a gun,in the office.
+18,no,yes,3,-wh_gap,I know,that,the woman believed,the secretary said,her friend recalled,,the five star general,found,a gun,in the office.
+18,no,no,3,-wh_no_gap,I know,that,the woman believed,the secretary said,her friend recalled,,,found,a gun,in the office.
+18,yes,yes,3,+wh_gap,I know,who,the woman believed,the secretary said,her friend recalled,,the five star general,found,a gun,in the office.
+18,yes,no,3,+wh_no_gap,I know,who,the woman believed,the secretary said,her friend recalled,,,found,a gun,in the office.
+18,no,yes,4,-wh_gap,I know,that,the woman believed,the secretary said,her friend recalled,a colleague thinks,the five star general,found,a gun,in the office.
+18,no,no,4,-wh_no_gap,I know,that,the woman believed,the secretary said,her friend recalled,a colleague thinks,,found,a gun,in the office.
+18,yes,yes,4,+wh_gap,I know,who,the woman believed,the secretary said,her friend recalled,a colleague thinks,the five star general,found,a gun,in the office.
+18,yes,no,4,+wh_no_gap,I know,who,the woman believed,the secretary said,her friend recalled,a colleague thinks,,found,a gun,in the office.
+19,no,yes,0,-wh_gap,The colleagues realized,that,,,,,the journalist,discovered,the bribery,two weeks ago.
+19,no,no,0,-wh_no_gap,The colleagues realized,that,,,,,,discovered,the bribery,two weeks ago.
+19,yes,yes,0,+wh_gap,The colleagues realized,who,,,,,the journalist,discovered,the bribery,two weeks ago.
+19,yes,no,0,+wh_no_gap,The colleagues realized,who,,,,,,discovered,the bribery,two weeks ago.
+19,no,yes,1,-wh_gap,The colleagues realized,that,her mother stated,,,,the journalist,discovered,the bribery,two weeks ago.
+19,no,no,1,-wh_no_gap,The colleagues realized,that,her mother stated,,,,,discovered,the bribery,two weeks ago.
+19,yes,yes,1,+wh_gap,The colleagues realized,who,her mother stated,,,,the journalist,discovered,the bribery,two weeks ago.
+19,yes,no,1,+wh_no_gap,The colleagues realized,who,her mother stated,,,,,discovered,the bribery,two weeks ago.
+19,no,yes,2,-wh_gap,The colleagues realized,that,her mother stated,a friend said,,,the journalist,discovered,the bribery,two weeks ago.
+19,no,no,2,-wh_no_gap,The colleagues realized,that,her mother stated,a friend said,,,,discovered,the bribery,two weeks ago.
+19,yes,yes,2,+wh_gap,The colleagues realized,who,her mother stated,a friend said,,,the journalist,discovered,the bribery,two weeks ago.
+19,yes,no,2,+wh_no_gap,The colleagues realized,who,her mother stated,a friend said,,,,discovered,the bribery,two weeks ago.
+19,no,yes,3,-wh_gap,The colleagues realized,that,her mother stated,a friend said,her husband knew,,the journalist,discovered,the bribery,two weeks ago.
+19,no,no,3,-wh_no_gap,The colleagues realized,that,her mother stated,a friend said,her husband knew,,,discovered,the bribery,two weeks ago.
+19,yes,yes,3,+wh_gap,The colleagues realized,who,her mother stated,a friend said,her husband knew,,the journalist,discovered,the bribery,two weeks ago.
+19,yes,no,3,+wh_no_gap,The colleagues realized,who,her mother stated,a friend said,her husband knew,,,discovered,the bribery,two weeks ago.
+19,no,yes,4,-wh_gap,The colleagues realized,that,her mother stated,a friend said,her husband knew,his brother said,the journalist,discovered,the bribery,two weeks ago.
+19,no,no,4,-wh_no_gap,The colleagues realized,that,her mother stated,a friend said,her husband knew,his brother said,,discovered,the bribery,two weeks ago.
+19,yes,yes,4,+wh_gap,The colleagues realized,who,her mother stated,a friend said,her husband knew,his brother said,the journalist,discovered,the bribery,two weeks ago.
+19,yes,no,4,+wh_no_gap,The colleagues realized,who,her mother stated,a friend said,her husband knew,his brother said,,discovered,the bribery,two weeks ago.
+2,no,yes,0,-wh_gap,The accountant knew,that,,,,,the secretary,introduced,the new woman,to her friend.
+2,no,no,0,-wh_no_gap,The accountant knew,that,,,,,,introduced,the new woman,to her friend.
+2,yes,yes,0,+wh_gap,The accountant knew,who,,,,,the secretary,introduced,the new woman,to her friend.
+2,yes,no,0,+wh_no_gap,The accountant knew,who,,,,,,introduced,the new woman,to her friend.
+2,no,yes,1,-wh_gap,The accountant knew,that,the security guard believed,,,,the secretary,introduced,the new woman,to her friend.
+2,no,no,1,-wh_no_gap,The accountant knew,that,the security guard believed,,,,,introduced,the new woman,to her friend.
+2,yes,yes,1,+wh_gap,The accountant knew,who,the security guard believed,,,,the secretary,introduced,the new woman,to her friend.
+2,yes,no,1,+wh_no_gap,The accountant knew,who,the security guard believed,,,,,introduced,the new woman,to her friend.
+2,no,yes,2,-wh_gap,The accountant knew,that,the security guard believed,his friend knew,,,the secretary,introduced,the new woman,to her friend.
+2,no,no,2,-wh_no_gap,The accountant knew,that,the security guard believed,his friend knew,,,,introduced,the new woman,to her friend.
+2,yes,yes,2,+wh_gap,The accountant knew,who,the security guard believed,his friend knew,,,the secretary,introduced,the new woman,to her friend.
+2,yes,no,2,+wh_no_gap,The accountant knew,who,the security guard believed,his friend knew,,,,introduced,the new woman,to her friend.
+2,no,yes,3,-wh_gap,The accountant knew,that,the security guard believed,his friend knew,the assistant reported,,the secretary,introduced,the new woman,to her friend.
+2,no,no,3,-wh_no_gap,The accountant knew,that,the security guard believed,his friend knew,the assistant reported,,,introduced,the new woman,to her friend.
+2,yes,yes,3,+wh_gap,The accountant knew,who,the security guard believed,his friend knew,the assistant reported,,the secretary,introduced,the new woman,to her friend.
+2,yes,no,3,+wh_no_gap,The accountant knew,who,the security guard believed,his friend knew,the assistant reported,,,introduced,the new woman,to her friend.
+2,no,yes,4,-wh_gap,The accountant knew,that,the security guard believed,his friend knew,the assistant reported,her colleague suspected,the secretary,introduced,the new woman,to her friend.
+2,no,no,4,-wh_no_gap,The accountant knew,that,the security guard believed,his friend knew,the assistant reported,her colleague suspected,,introduced,the new woman,to her friend.
+2,yes,yes,4,+wh_gap,The accountant knew,who,the security guard believed,his friend knew,the assistant reported,her colleague suspected,the secretary,introduced,the new woman,to her friend.
+2,yes,no,4,+wh_no_gap,The accountant knew,who,the security guard believed,his friend knew,the assistant reported,her colleague suspected,,introduced,the new woman,to her friend.
+20,no,yes,0,-wh_gap,She said,that,,,,,the reporter,put,the microphone,on the table.
+20,no,no,0,-wh_no_gap,She said,that,,,,,,put,the microphone,on the table.
+20,yes,yes,0,+wh_gap,She said,who,,,,,the reporter,put,the microphone,on the table.
+20,yes,no,0,+wh_no_gap,She said,who,,,,,,put,the microphone,on the table.
+20,no,yes,1,-wh_gap,She said,that,the politician stated,,,,the reporter,put,the microphone,on the table.
+20,no,no,1,-wh_no_gap,She said,that,the politician stated,,,,,put,the microphone,on the table.
+20,yes,yes,1,+wh_gap,She said,who,the politician stated,,,,the reporter,put,the microphone,on the table.
+20,yes,no,1,+wh_no_gap,She said,who,the politician stated,,,,,put,the microphone,on the table.
+20,no,yes,2,-wh_gap,She said,that,the politician stated,his press secretary said,,,the reporter,put,the microphone,on the table.
+20,no,no,2,-wh_no_gap,She said,that,the politician stated,his press secretary said,,,,put,the microphone,on the table.
+20,yes,yes,2,+wh_gap,She said,who,the politician stated,his press secretary said,,,the reporter,put,the microphone,on the table.
+20,yes,no,2,+wh_no_gap,She said,who,the politician stated,his press secretary said,,,,put,the microphone,on the table.
+20,no,yes,3,-wh_gap,She said,that,the politician stated,his press secretary said,the chief of staff thought,,the reporter,put,the microphone,on the table.
+20,no,no,3,-wh_no_gap,She said,that,the politician stated,his press secretary said,the chief of staff thought,,,put,the microphone,on the table.
+20,yes,yes,3,+wh_gap,She said,who,the politician stated,his press secretary said,the chief of staff thought,,the reporter,put,the microphone,on the table.
+20,yes,no,3,+wh_no_gap,She said,who,the politician stated,his press secretary said,the chief of staff thought,,,put,the microphone,on the table.
+20,no,yes,4,-wh_gap,She said,that,the politician stated,his press secretary said,the chief of staff thought,his assistant suspects,the reporter,put,the microphone,on the table.
+20,no,no,4,-wh_no_gap,She said,that,the politician stated,his press secretary said,the chief of staff thought,his assistant suspects,,put,the microphone,on the table.
+20,yes,yes,4,+wh_gap,She said,who,the politician stated,his press secretary said,the chief of staff thought,his assistant suspects,the reporter,put,the microphone,on the table.
+20,yes,no,4,+wh_no_gap,She said,who,the politician stated,his press secretary said,the chief of staff thought,his assistant suspects,,put,the microphone,on the table.
+21,no,yes,0,-wh_gap,We all know,that,,,,,the teacher,gave,a test,to her students.
+21,no,no,0,-wh_no_gap,We all know,that,,,,,,gave,a test,to her students.
+21,yes,yes,0,+wh_gap,We all know,who,,,,,the teacher,gave,a test,to her students.
+21,yes,no,0,+wh_no_gap,We all know,who,,,,,,gave,a test,to her students.
+21,no,yes,1,-wh_gap,We all know,that,the old man thinks,,,,the teacher,gave,a test,to her students.
+21,no,no,1,-wh_no_gap,We all know,that,the old man thinks,,,,,gave,a test,to her students.
+21,yes,yes,1,+wh_gap,We all know,who,the old man thinks,,,,the teacher,gave,a test,to her students.
+21,yes,no,1,+wh_no_gap,We all know,who,the old man thinks,,,,,gave,a test,to her students.
+21,no,yes,2,-wh_gap,We all know,that,the old man thinks,the woman knows,,,the teacher,gave,a test,to her students.
+21,no,no,2,-wh_no_gap,We all know,that,the old man thinks,the woman knows,,,,gave,a test,to her students.
+21,yes,yes,2,+wh_gap,We all know,who,the old man thinks,the woman knows,,,the teacher,gave,a test,to her students.
+21,yes,no,2,+wh_no_gap,We all know,who,the old man thinks,the woman knows,,,,gave,a test,to her students.
+21,no,yes,3,-wh_gap,We all know,that,the old man thinks,the woman knows,the young boy said,,the teacher,gave,a test,to her students.
+21,no,no,3,-wh_no_gap,We all know,that,the old man thinks,the woman knows,the young boy said,,,gave,a test,to her students.
+21,yes,yes,3,+wh_gap,We all know,who,the old man thinks,the woman knows,the young boy said,,the teacher,gave,a test,to her students.
+21,yes,no,3,+wh_no_gap,We all know,who,the old man thinks,the woman knows,the young boy said,,,gave,a test,to her students.
+21,no,yes,4,-wh_gap,We all know,that,the old man thinks,the woman knows,the young boy said,his friend saw,the teacher,gave,a test,to her students.
+21,no,no,4,-wh_no_gap,We all know,that,the old man thinks,the woman knows,the young boy said,his friend saw,,gave,a test,to her students.
+21,yes,yes,4,+wh_gap,We all know,who,the old man thinks,the woman knows,the young boy said,his friend saw,the teacher,gave,a test,to her students.
+21,yes,no,4,+wh_no_gap,We all know,who,the old man thinks,the woman knows,the young boy said,his friend saw,,gave,a test,to her students.
+22,no,yes,0,-wh_gap,I know,that,,,,,the priest,congratulated,the couple,after the service.
+22,no,no,0,-wh_no_gap,I know,that,,,,,,congratulated,the couple,after the service.
+22,yes,yes,0,+wh_gap,I know,who,,,,,the priest,congratulated,the couple,after the service.
+22,yes,no,0,+wh_no_gap,I know,who,,,,,,congratulated,the couple,after the service.
+22,no,yes,1,-wh_gap,I know,that,the man thinks,,,,the priest,congratulated,the couple,after the service.
+22,no,no,1,-wh_no_gap,I know,that,the man thinks,,,,,congratulated,the couple,after the service.
+22,yes,yes,1,+wh_gap,I know,who,the man thinks,,,,the priest,congratulated,the couple,after the service.
+22,yes,no,1,+wh_no_gap,I know,who,the man thinks,,,,,congratulated,the couple,after the service.
+22,no,yes,2,-wh_gap,I know,that,the man thinks,the woman said,,,the priest,congratulated,the couple,after the service.
+22,no,no,2,-wh_no_gap,I know,that,the man thinks,the woman said,,,,congratulated,the couple,after the service.
+22,yes,yes,2,+wh_gap,I know,who,the man thinks,the woman said,,,the priest,congratulated,the couple,after the service.
+22,yes,no,2,+wh_no_gap,I know,who,the man thinks,the woman said,,,,congratulated,the couple,after the service.
+22,no,yes,3,-wh_gap,I know,that,the man thinks,the woman said,she believed,,the priest,congratulated,the couple,after the service.
+22,no,no,3,-wh_no_gap,I know,that,the man thinks,the woman said,she believed,,,congratulated,the couple,after the service.
+22,yes,yes,3,+wh_gap,I know,who,the man thinks,the woman said,she believed,,the priest,congratulated,the couple,after the service.
+22,yes,no,3,+wh_no_gap,I know,who,the man thinks,the woman said,she believed,,,congratulated,the couple,after the service.
+22,no,yes,4,-wh_gap,I know,that,the man thinks,the woman said,she believed,she noticed,the priest,congratulated,the couple,after the service.
+22,no,no,4,-wh_no_gap,I know,that,the man thinks,the woman said,she believed,she noticed,,congratulated,the couple,after the service.
+22,yes,yes,4,+wh_gap,I know,who,the man thinks,the woman said,she believed,she noticed,the priest,congratulated,the couple,after the service.
+22,yes,no,4,+wh_no_gap,I know,who,the man thinks,the woman said,she believed,she noticed,,congratulated,the couple,after the service.
+23,no,yes,0,-wh_gap,You know,that,,,,,the young woman,introduced,her friend,to her mother.
+23,no,no,0,-wh_no_gap,You know,that,,,,,,introduced,her friend,to her mother.
+23,yes,yes,0,+wh_gap,You know,who,,,,,the young woman,introduced,her friend,to her mother.
+23,yes,no,0,+wh_no_gap,You know,who,,,,,,introduced,her friend,to her mother.
+23,no,yes,1,-wh_gap,You know,that,we all believe,,,,the young woman,introduced,her friend,to her mother.
+23,no,no,1,-wh_no_gap,You know,that,we all believe,,,,,introduced,her friend,to her mother.
+23,yes,yes,1,+wh_gap,You know,who,we all believe,,,,the young woman,introduced,her friend,to her mother.
+23,yes,no,1,+wh_no_gap,You know,who,we all believe,,,,,introduced,her friend,to her mother.
+23,no,yes,2,-wh_gap,You know,that,we all believe,she thought,,,the young woman,introduced,her friend,to her mother.
+23,no,no,2,-wh_no_gap,You know,that,we all believe,she thought,,,,introduced,her friend,to her mother.
+23,yes,yes,2,+wh_gap,You know,who,we all believe,she thought,,,the young woman,introduced,her friend,to her mother.
+23,yes,no,2,+wh_no_gap,You know,who,we all believe,she thought,,,,introduced,her friend,to her mother.
+23,no,yes,3,-wh_gap,You know,that,we all believe,she thought,he said,,the young woman,introduced,her friend,to her mother.
+23,no,no,3,-wh_no_gap,You know,that,we all believe,she thought,he said,,,introduced,her friend,to her mother.
+23,yes,yes,3,+wh_gap,You know,who,we all believe,she thought,he said,,the young woman,introduced,her friend,to her mother.
+23,yes,no,3,+wh_no_gap,You know,who,we all believe,she thought,he said,,,introduced,her friend,to her mother.
+23,no,yes,4,-wh_gap,You know,that,we all believe,she thought,he said,he noticed,the young woman,introduced,her friend,to her mother.
+23,no,no,4,-wh_no_gap,You know,that,we all believe,she thought,he said,he noticed,,introduced,her friend,to her mother.
+23,yes,yes,4,+wh_gap,You know,who,we all believe,she thought,he said,he noticed,the young woman,introduced,her friend,to her mother.
+23,yes,no,4,+wh_no_gap,You know,who,we all believe,she thought,he said,he noticed,,introduced,her friend,to her mother.
+24,no,yes,0,-wh_gap,He knows,that,,,,,the police,interrogated,the spy,in the prison.
+24,no,no,0,-wh_no_gap,He knows,that,,,,,,interrogated,the spy,in the prison.
+24,yes,yes,0,+wh_gap,He knows,who,,,,,the police,interrogated,the spy,in the prison.
+24,yes,no,0,+wh_no_gap,He knows,who,,,,,,interrogated,the spy,in the prison.
+24,no,yes,1,-wh_gap,He knows,that,the inspector said,,,,the police,interrogated,the spy,in the prison.
+24,no,no,1,-wh_no_gap,He knows,that,the inspector said,,,,,interrogated,the spy,in the prison.
+24,yes,yes,1,+wh_gap,He knows,who,the inspector said,,,,the police,interrogated,the spy,in the prison.
+24,yes,no,1,+wh_no_gap,He knows,who,the inspector said,,,,,interrogated,the spy,in the prison.
+24,no,yes,2,-wh_gap,He knows,that,the inspector said,the man reported,,,the police,interrogated,the spy,in the prison.
+24,no,no,2,-wh_no_gap,He knows,that,the inspector said,the man reported,,,,interrogated,the spy,in the prison.
+24,yes,yes,2,+wh_gap,He knows,who,the inspector said,the man reported,,,the police,interrogated,the spy,in the prison.
+24,yes,no,2,+wh_no_gap,He knows,who,the inspector said,the man reported,,,,interrogated,the spy,in the prison.
+24,no,yes,3,-wh_gap,He knows,that,the inspector said,the man reported,he thought,,the police,interrogated,the spy,in the prison.
+24,no,no,3,-wh_no_gap,He knows,that,the inspector said,the man reported,he thought,,,interrogated,the spy,in the prison.
+24,yes,yes,3,+wh_gap,He knows,who,the inspector said,the man reported,he thought,,the police,interrogated,the spy,in the prison.
+24,yes,no,3,+wh_no_gap,He knows,who,the inspector said,the man reported,he thought,,,interrogated,the spy,in the prison.
+24,no,yes,4,-wh_gap,He knows,that,the inspector said,the man reported,he thought,he noticed,the police,interrogated,the spy,in the prison.
+24,no,no,4,-wh_no_gap,He knows,that,the inspector said,the man reported,he thought,he noticed,,interrogated,the spy,in the prison.
+24,yes,yes,4,+wh_gap,He knows,who,the inspector said,the man reported,he thought,he noticed,the police,interrogated,the spy,in the prison.
+24,yes,no,4,+wh_no_gap,He knows,who,the inspector said,the man reported,he thought,he noticed,,interrogated,the spy,in the prison.
+25,no,yes,0,-wh_gap,She knows,that,,,,,the woman,thanked,the waitress,after the meal.
+25,no,no,0,-wh_no_gap,She knows,that,,,,,,thanked,the waitress,after the meal.
+25,yes,yes,0,+wh_gap,She knows,who,,,,,the woman,thanked,the waitress,after the meal.
+25,yes,no,0,+wh_no_gap,She knows,who,,,,,,thanked,the waitress,after the meal.
+25,no,yes,1,-wh_gap,She knows,that,the waiter said,,,,the woman,thanked,the waitress,after the meal.
+25,no,no,1,-wh_no_gap,She knows,that,the waiter said,,,,,thanked,the waitress,after the meal.
+25,yes,yes,1,+wh_gap,She knows,who,the waiter said,,,,the woman,thanked,the waitress,after the meal.
+25,yes,no,1,+wh_no_gap,She knows,who,the waiter said,,,,,thanked,the waitress,after the meal.
+25,no,yes,2,-wh_gap,She knows,that,the waiter said,the woman believed,,,the woman,thanked,the waitress,after the meal.
+25,no,no,2,-wh_no_gap,She knows,that,the waiter said,the woman believed,,,,thanked,the waitress,after the meal.
+25,yes,yes,2,+wh_gap,She knows,who,the waiter said,the woman believed,,,the woman,thanked,the waitress,after the meal.
+25,yes,no,2,+wh_no_gap,She knows,who,the waiter said,the woman believed,,,,thanked,the waitress,after the meal.
+25,no,yes,3,-wh_gap,She knows,that,the waiter said,the woman believed,she remembered,,the woman,thanked,the waitress,after the meal.
+25,no,no,3,-wh_no_gap,She knows,that,the waiter said,the woman believed,she remembered,,,thanked,the waitress,after the meal.
+25,yes,yes,3,+wh_gap,She knows,who,the waiter said,the woman believed,she remembered,,the woman,thanked,the waitress,after the meal.
+25,yes,no,3,+wh_no_gap,She knows,who,the waiter said,the woman believed,she remembered,,,thanked,the waitress,after the meal.
+25,no,yes,4,-wh_gap,She knows,that,the waiter said,the woman believed,she remembered,she knew,the woman,thanked,the waitress,after the meal.
+25,no,no,4,-wh_no_gap,She knows,that,the waiter said,the woman believed,she remembered,she knew,,thanked,the waitress,after the meal.
+25,yes,yes,4,+wh_gap,She knows,who,the waiter said,the woman believed,she remembered,she knew,the woman,thanked,the waitress,after the meal.
+25,yes,no,4,+wh_no_gap,She knows,who,the waiter said,the woman believed,she remembered,she knew,,thanked,the waitress,after the meal.
+26,no,yes,0,-wh_gap,They know,that,,,,,the nurse,reassured,the old woman,at the hospital.
+26,no,no,0,-wh_no_gap,They know,that,,,,,,reassured,the old woman,at the hospital.
+26,yes,yes,0,+wh_gap,They know,who,,,,,the nurse,reassured,the old woman,at the hospital.
+26,yes,no,0,+wh_no_gap,They know,who,,,,,,reassured,the old woman,at the hospital.
+26,no,yes,1,-wh_gap,They know,that,the doctor believed,,,,the nurse,reassured,the old woman,at the hospital.
+26,no,no,1,-wh_no_gap,They know,that,the doctor believed,,,,,reassured,the old woman,at the hospital.
+26,yes,yes,1,+wh_gap,They know,who,the doctor believed,,,,the nurse,reassured,the old woman,at the hospital.
+26,yes,no,1,+wh_no_gap,They know,who,the doctor believed,,,,,reassured,the old woman,at the hospital.
+26,no,yes,2,-wh_gap,They know,that,the doctor believed,the man said,,,the nurse,reassured,the old woman,at the hospital.
+26,no,no,2,-wh_no_gap,They know,that,the doctor believed,the man said,,,,reassured,the old woman,at the hospital.
+26,yes,yes,2,+wh_gap,They know,who,the doctor believed,the man said,,,the nurse,reassured,the old woman,at the hospital.
+26,yes,no,2,+wh_no_gap,They know,who,the doctor believed,the man said,,,,reassured,the old woman,at the hospital.
+26,no,yes,3,-wh_gap,They know,that,the doctor believed,the man said,he thought,,the nurse,reassured,the old woman,at the hospital.
+26,no,no,3,-wh_no_gap,They know,that,the doctor believed,the man said,he thought,,,reassured,the old woman,at the hospital.
+26,yes,yes,3,+wh_gap,They know,who,the doctor believed,the man said,he thought,,the nurse,reassured,the old woman,at the hospital.
+26,yes,no,3,+wh_no_gap,They know,who,the doctor believed,the man said,he thought,,,reassured,the old woman,at the hospital.
+26,no,yes,4,-wh_gap,They know,that,the doctor believed,the man said,he thought,he noticed,the nurse,reassured,the old woman,at the hospital.
+26,no,no,4,-wh_no_gap,They know,that,the doctor believed,the man said,he thought,he noticed,,reassured,the old woman,at the hospital.
+26,yes,yes,4,+wh_gap,They know,who,the doctor believed,the man said,he thought,he noticed,the nurse,reassured,the old woman,at the hospital.
+26,yes,no,4,+wh_no_gap,They know,who,the doctor believed,the man said,he thought,he noticed,,reassured,the old woman,at the hospital.
+27,no,yes,0,-wh_gap,He reported,that,,,,,the cowboy,abandoned,his partner,in the desert.
+27,no,no,0,-wh_no_gap,He reported,that,,,,,,abandoned,his partner,in the desert.
+27,yes,yes,0,+wh_gap,He reported,who,,,,,the cowboy,abandoned,his partner,in the desert.
+27,yes,no,0,+wh_no_gap,He reported,who,,,,,,abandoned,his partner,in the desert.
+27,no,yes,1,-wh_gap,He reported,that,the farmer said,,,,the cowboy,abandoned,his partner,in the desert.
+27,no,no,1,-wh_no_gap,He reported,that,the farmer said,,,,,abandoned,his partner,in the desert.
+27,yes,yes,1,+wh_gap,He reported,who,the farmer said,,,,the cowboy,abandoned,his partner,in the desert.
+27,yes,no,1,+wh_no_gap,He reported,who,the farmer said,,,,,abandoned,his partner,in the desert.
+27,no,yes,2,-wh_gap,He reported,that,the farmer said,his friend reported,,,the cowboy,abandoned,his partner,in the desert.
+27,no,no,2,-wh_no_gap,He reported,that,the farmer said,his friend reported,,,,abandoned,his partner,in the desert.
+27,yes,yes,2,+wh_gap,He reported,who,the farmer said,his friend reported,,,the cowboy,abandoned,his partner,in the desert.
+27,yes,no,2,+wh_no_gap,He reported,who,the farmer said,his friend reported,,,,abandoned,his partner,in the desert.
+27,no,yes,3,-wh_gap,He reported,that,the farmer said,his friend reported,he believed,,the cowboy,abandoned,his partner,in the desert.
+27,no,no,3,-wh_no_gap,He reported,that,the farmer said,his friend reported,he believed,,,abandoned,his partner,in the desert.
+27,yes,yes,3,+wh_gap,He reported,who,the farmer said,his friend reported,he believed,,the cowboy,abandoned,his partner,in the desert.
+27,yes,no,3,+wh_no_gap,He reported,who,the farmer said,his friend reported,he believed,,,abandoned,his partner,in the desert.
+27,no,yes,4,-wh_gap,He reported,that,the farmer said,his friend reported,he believed,he noticed,the cowboy,abandoned,his partner,in the desert.
+27,no,no,4,-wh_no_gap,He reported,that,the farmer said,his friend reported,he believed,he noticed,,abandoned,his partner,in the desert.
+27,yes,yes,4,+wh_gap,He reported,who,the farmer said,his friend reported,he believed,he noticed,the cowboy,abandoned,his partner,in the desert.
+27,yes,no,4,+wh_no_gap,He reported,who,the farmer said,his friend reported,he believed,he noticed,,abandoned,his partner,in the desert.
+28,no,yes,0,-wh_gap,They reported,that,,,,,the manager,promoted,the accountant,yesterday.
+28,no,no,0,-wh_no_gap,They reported,that,,,,,,promoted,the accountant,yesterday.
+28,yes,yes,0,+wh_gap,They reported,who,,,,,the manager,promoted,the accountant,yesterday.
+28,yes,no,0,+wh_no_gap,They reported,who,,,,,,promoted,the accountant,yesterday.
+28,no,yes,1,-wh_gap,They reported,that,the executive said,,,,the manager,promoted,the accountant,yesterday.
+28,no,no,1,-wh_no_gap,They reported,that,the executive said,,,,,promoted,the accountant,yesterday.
+28,yes,yes,1,+wh_gap,They reported,who,the executive said,,,,the manager,promoted,the accountant,yesterday.
+28,yes,no,1,+wh_no_gap,They reported,who,the executive said,,,,,promoted,the accountant,yesterday.
+28,no,yes,2,-wh_gap,They reported,that,the executive said,a reporter believed,,,the manager,promoted,the accountant,yesterday.
+28,no,no,2,-wh_no_gap,They reported,that,the executive said,a reporter believed,,,,promoted,the accountant,yesterday.
+28,yes,yes,2,+wh_gap,They reported,who,the executive said,a reporter believed,,,the manager,promoted,the accountant,yesterday.
+28,yes,no,2,+wh_no_gap,They reported,who,the executive said,a reporter believed,,,,promoted,the accountant,yesterday.
+28,no,yes,3,-wh_gap,They reported,that,the executive said,a reporter believed,the client said,,the manager,promoted,the accountant,yesterday.
+28,no,no,3,-wh_no_gap,They reported,that,the executive said,a reporter believed,the client said,,,promoted,the accountant,yesterday.
+28,yes,yes,3,+wh_gap,They reported,who,the executive said,a reporter believed,the client said,,the manager,promoted,the accountant,yesterday.
+28,yes,no,3,+wh_no_gap,They reported,who,the executive said,a reporter believed,the client said,,,promoted,the accountant,yesterday.
+28,no,yes,4,-wh_gap,They reported,that,the executive said,a reporter believed,the client said,he saw,the manager,promoted,the accountant,yesterday.
+28,no,no,4,-wh_no_gap,They reported,that,the executive said,a reporter believed,the client said,he saw,,promoted,the accountant,yesterday.
+28,yes,yes,4,+wh_gap,They reported,who,the executive said,a reporter believed,the client said,he saw,the manager,promoted,the accountant,yesterday.
+28,yes,no,4,+wh_no_gap,They reported,who,the executive said,a reporter believed,the client said,he saw,,promoted,the accountant,yesterday.
+29,no,yes,0,-wh_gap,They recalled,that,,,,,the heiress,divorced,the count,last year.
+29,no,no,0,-wh_no_gap,They recalled,that,,,,,,divorced,the count,last year.
+29,yes,yes,0,+wh_gap,They recalled,who,,,,,the heiress,divorced,the count,last year.
+29,yes,no,0,+wh_no_gap,They recalled,who,,,,,,divorced,the count,last year.
+29,no,yes,1,-wh_gap,They recalled,that,the writer thought,,,,the heiress,divorced,the count,last year.
+29,no,no,1,-wh_no_gap,They recalled,that,the writer thought,,,,,divorced,the count,last year.
+29,yes,yes,1,+wh_gap,They recalled,who,the writer thought,,,,the heiress,divorced,the count,last year.
+29,yes,no,1,+wh_no_gap,They recalled,who,the writer thought,,,,,divorced,the count,last year.
+29,no,yes,2,-wh_gap,They recalled,that,the writer thought,the man said,,,the heiress,divorced,the count,last year.
+29,no,no,2,-wh_no_gap,They recalled,that,the writer thought,the man said,,,,divorced,the count,last year.
+29,yes,yes,2,+wh_gap,They recalled,who,the writer thought,the man said,,,the heiress,divorced,the count,last year.
+29,yes,no,2,+wh_no_gap,They recalled,who,the writer thought,the man said,,,,divorced,the count,last year.
+29,no,yes,3,-wh_gap,They recalled,that,the writer thought,the man said,his brother believed,,the heiress,divorced,the count,last year.
+29,no,no,3,-wh_no_gap,They recalled,that,the writer thought,the man said,his brother believed,,,divorced,the count,last year.
+29,yes,yes,3,+wh_gap,They recalled,who,the writer thought,the man said,his brother believed,,the heiress,divorced,the count,last year.
+29,yes,no,3,+wh_no_gap,They recalled,who,the writer thought,the man said,his brother believed,,,divorced,the count,last year.
+29,no,yes,4,-wh_gap,They recalled,that,the writer thought,the man said,his brother believed,he saw,the heiress,divorced,the count,last year.
+29,no,no,4,-wh_no_gap,They recalled,that,the writer thought,the man said,his brother believed,he saw,,divorced,the count,last year.
+29,yes,yes,4,+wh_gap,They recalled,who,the writer thought,the man said,his brother believed,he saw,the heiress,divorced,the count,last year.
+29,yes,no,4,+wh_no_gap,They recalled,who,the writer thought,the man said,his brother believed,he saw,,divorced,the count,last year.
+3,no,yes,0,-wh_gap,The assistant told me,that,,,,,the pilot,sent,the package,to his family.
+3,no,no,0,-wh_no_gap,The assistant told me,that,,,,,,sent,the package,to his family.
+3,yes,yes,0,+wh_gap,The assistant told me,who,,,,,the pilot,sent,the package,to his family.
+3,yes,no,0,+wh_no_gap,The assistant told me,who,,,,,,sent,the package,to his family.
+3,no,yes,1,-wh_gap,The assistant told me,that,the man knew,,,,the pilot,sent,the package,to his family.
+3,no,no,1,-wh_no_gap,The assistant told me,that,the man knew,,,,,sent,the package,to his family.
+3,yes,yes,1,+wh_gap,The assistant told me,who,the man knew,,,,the pilot,sent,the package,to his family.
+3,yes,no,1,+wh_no_gap,The assistant told me,who,the man knew,,,,,sent,the package,to his family.
+3,no,yes,2,-wh_gap,The assistant told me,that,the man knew,his friend recalled,,,the pilot,sent,the package,to his family.
+3,no,no,2,-wh_no_gap,The assistant told me,that,the man knew,his friend recalled,,,,sent,the package,to his family.
+3,yes,yes,2,+wh_gap,The assistant told me,who,the man knew,his friend recalled,,,the pilot,sent,the package,to his family.
+3,yes,no,2,+wh_no_gap,The assistant told me,who,the man knew,his friend recalled,,,,sent,the package,to his family.
+3,no,yes,3,-wh_gap,The assistant told me,that,the man knew,his friend recalled,the woman said,,the pilot,sent,the package,to his family.
+3,no,no,3,-wh_no_gap,The assistant told me,that,the man knew,his friend recalled,the woman said,,,sent,the package,to his family.
+3,yes,yes,3,+wh_gap,The assistant told me,who,the man knew,his friend recalled,the woman said,,the pilot,sent,the package,to his family.
+3,yes,no,3,+wh_no_gap,The assistant told me,who,the man knew,his friend recalled,the woman said,,,sent,the package,to his family.
+3,no,yes,4,-wh_gap,The assistant told me,that,the man knew,his friend recalled,the woman said,her colleague saw,the pilot,sent,the package,to his family.
+3,no,no,4,-wh_no_gap,The assistant told me,that,the man knew,his friend recalled,the woman said,her colleague saw,,sent,the package,to his family.
+3,yes,yes,4,+wh_gap,The assistant told me,who,the man knew,his friend recalled,the woman said,her colleague saw,the pilot,sent,the package,to his family.
+3,yes,no,4,+wh_no_gap,The assistant told me,who,the man knew,his friend recalled,the woman said,her colleague saw,,sent,the package,to his family.
+30,no,yes,0,-wh_gap,We recalled,that,,,,,the clown,frightened,the children,at the party.
+30,no,no,0,-wh_no_gap,We recalled,that,,,,,,frightened,the children,at the party.
+30,yes,yes,0,+wh_gap,We recalled,who,,,,,the clown,frightened,the children,at the party.
+30,yes,no,0,+wh_no_gap,We recalled,who,,,,,,frightened,the children,at the party.
+30,no,yes,1,-wh_gap,We recalled,that,the actor said,,,,the clown,frightened,the children,at the party.
+30,no,no,1,-wh_no_gap,We recalled,that,the actor said,,,,,frightened,the children,at the party.
+30,yes,yes,1,+wh_gap,We recalled,who,the actor said,,,,the clown,frightened,the children,at the party.
+30,yes,no,1,+wh_no_gap,We recalled,who,the actor said,,,,,frightened,the children,at the party.
+30,no,yes,2,-wh_gap,We recalled,that,the actor said,the people knew,,,the clown,frightened,the children,at the party.
+30,no,no,2,-wh_no_gap,We recalled,that,the actor said,the people knew,,,,frightened,the children,at the party.
+30,yes,yes,2,+wh_gap,We recalled,who,the actor said,the people knew,,,the clown,frightened,the children,at the party.
+30,yes,no,2,+wh_no_gap,We recalled,who,the actor said,the people knew,,,,frightened,the children,at the party.
+30,no,yes,3,-wh_gap,We recalled,that,the actor said,the people knew,he thought,,the clown,frightened,the children,at the party.
+30,no,no,3,-wh_no_gap,We recalled,that,the actor said,the people knew,he thought,,,frightened,the children,at the party.
+30,yes,yes,3,+wh_gap,We recalled,who,the actor said,the people knew,he thought,,the clown,frightened,the children,at the party.
+30,yes,no,3,+wh_no_gap,We recalled,who,the actor said,the people knew,he thought,,,frightened,the children,at the party.
+30,no,yes,4,-wh_gap,We recalled,that,the actor said,the people knew,he thought,he noticed,the clown,frightened,the children,at the party.
+30,no,no,4,-wh_no_gap,We recalled,that,the actor said,the people knew,he thought,he noticed,,frightened,the children,at the party.
+30,yes,yes,4,+wh_gap,We recalled,who,the actor said,the people knew,he thought,he noticed,the clown,frightened,the children,at the party.
+30,yes,no,4,+wh_no_gap,We recalled,who,the actor said,the people knew,he thought,he noticed,,frightened,the children,at the party.
+31,no,yes,0,-wh_gap,He recalled,that,,,,,the terrorist,assassinated,the politician,last night.
+31,no,no,0,-wh_no_gap,He recalled,that,,,,,,assassinated,the politician,last night.
+31,yes,yes,0,+wh_gap,He recalled,who,,,,,the terrorist,assassinated,the politician,last night.
+31,yes,no,0,+wh_no_gap,He recalled,who,,,,,,assassinated,the politician,last night.
+31,no,yes,1,-wh_gap,He recalled,that,the president said,,,,the terrorist,assassinated,the politician,last night.
+31,no,no,1,-wh_no_gap,He recalled,that,the president said,,,,,assassinated,the politician,last night.
+31,yes,yes,1,+wh_gap,He recalled,who,the president said,,,,the terrorist,assassinated,the politician,last night.
+31,yes,no,1,+wh_no_gap,He recalled,who,the president said,,,,,assassinated,the politician,last night.
+31,no,yes,2,-wh_gap,He recalled,that,the president said,the report confirmed,,,the terrorist,assassinated,the politician,last night.
+31,no,no,2,-wh_no_gap,He recalled,that,the president said,the report confirmed,,,,assassinated,the politician,last night.
+31,yes,yes,2,+wh_gap,He recalled,who,the president said,the report confirmed,,,the terrorist,assassinated,the politician,last night.
+31,yes,no,2,+wh_no_gap,He recalled,who,the president said,the report confirmed,,,,assassinated,the politician,last night.
+31,no,yes,3,-wh_gap,He recalled,that,the president said,the report confirmed,he believed,,the terrorist,assassinated,the politician,last night.
+31,no,no,3,-wh_no_gap,He recalled,that,the president said,the report confirmed,he believed,,,assassinated,the politician,last night.
+31,yes,yes,3,+wh_gap,He recalled,who,the president said,the report confirmed,he believed,,the terrorist,assassinated,the politician,last night.
+31,yes,no,3,+wh_no_gap,He recalled,who,the president said,the report confirmed,he believed,,,assassinated,the politician,last night.
+31,no,yes,4,-wh_gap,He recalled,that,the president said,the report confirmed,he believed,he remembered,the terrorist,assassinated,the politician,last night.
+31,no,no,4,-wh_no_gap,He recalled,that,the president said,the report confirmed,he believed,he remembered,,assassinated,the politician,last night.
+31,yes,yes,4,+wh_gap,He recalled,who,the president said,the report confirmed,he believed,he remembered,the terrorist,assassinated,the politician,last night.
+31,yes,no,4,+wh_no_gap,He recalled,who,the president said,the report confirmed,he believed,he remembered,,assassinated,the politician,last night.
+32,no,yes,0,-wh_gap,I know,that,,,,,the librarian,greeted,the man,early in the morning.
+32,no,no,0,-wh_no_gap,I know,that,,,,,,greeted,the man,early in the morning.
+32,yes,yes,0,+wh_gap,I know,who,,,,,the librarian,greeted,the man,early in the morning.
+32,yes,no,0,+wh_no_gap,I know,who,,,,,,greeted,the man,early in the morning.
+32,no,yes,1,-wh_gap,I know,that,the mayor said,,,,the librarian,greeted,the man,early in the morning.
+32,no,no,1,-wh_no_gap,I know,that,the mayor said,,,,,greeted,the man,early in the morning.
+32,yes,yes,1,+wh_gap,I know,who,the mayor said,,,,the librarian,greeted,the man,early in the morning.
+32,yes,no,1,+wh_no_gap,I know,who,the mayor said,,,,,greeted,the man,early in the morning.
+32,no,yes,2,-wh_gap,I know,that,the mayor said,the clerk believed,,,the librarian,greeted,the man,early in the morning.
+32,no,no,2,-wh_no_gap,I know,that,the mayor said,the clerk believed,,,,greeted,the man,early in the morning.
+32,yes,yes,2,+wh_gap,I know,who,the mayor said,the clerk believed,,,the librarian,greeted,the man,early in the morning.
+32,yes,no,2,+wh_no_gap,I know,who,the mayor said,the clerk believed,,,,greeted,the man,early in the morning.
+32,no,yes,3,-wh_gap,I know,that,the mayor said,the clerk believed,he witnessed,,the librarian,greeted,the man,early in the morning.
+32,no,no,3,-wh_no_gap,I know,that,the mayor said,the clerk believed,he witnessed,,,greeted,the man,early in the morning.
+32,yes,yes,3,+wh_gap,I know,who,the mayor said,the clerk believed,he witnessed,,the librarian,greeted,the man,early in the morning.
+32,yes,no,3,+wh_no_gap,I know,who,the mayor said,the clerk believed,he witnessed,,,greeted,the man,early in the morning.
+32,no,yes,4,-wh_gap,I know,that,the mayor said,the clerk believed,he witnessed,he noticed,the librarian,greeted,the man,early in the morning.
+32,no,no,4,-wh_no_gap,I know,that,the mayor said,the clerk believed,he witnessed,he noticed,,greeted,the man,early in the morning.
+32,yes,yes,4,+wh_gap,I know,who,the mayor said,the clerk believed,he witnessed,he noticed,the librarian,greeted,the man,early in the morning.
+32,yes,no,4,+wh_no_gap,I know,who,the mayor said,the clerk believed,he witnessed,he noticed,,greeted,the man,early in the morning.
+33,no,yes,0,-wh_gap,You know,that,,,,,the millionaire,supported,the candidate,last year.
+33,no,no,0,-wh_no_gap,You know,that,,,,,,supported,the candidate,last year.
+33,yes,yes,0,+wh_gap,You know,who,,,,,the millionaire,supported,the candidate,last year.
+33,yes,no,0,+wh_no_gap,You know,who,,,,,,supported,the candidate,last year.
+33,no,yes,1,-wh_gap,You know,that,the lobbyist believed,,,,the millionaire,supported,the candidate,last year.
+33,no,no,1,-wh_no_gap,You know,that,the lobbyist believed,,,,,supported,the candidate,last year.
+33,yes,yes,1,+wh_gap,You know,who,the lobbyist believed,,,,the millionaire,supported,the candidate,last year.
+33,yes,no,1,+wh_no_gap,You know,who,the lobbyist believed,,,,,supported,the candidate,last year.
+33,no,yes,2,-wh_gap,You know,that,the lobbyist believed,the secretary said,,,the millionaire,supported,the candidate,last year.
+33,no,no,2,-wh_no_gap,You know,that,the lobbyist believed,the secretary said,,,,supported,the candidate,last year.
+33,yes,yes,2,+wh_gap,You know,who,the lobbyist believed,the secretary said,,,the millionaire,supported,the candidate,last year.
+33,yes,no,2,+wh_no_gap,You know,who,the lobbyist believed,the secretary said,,,,supported,the candidate,last year.
+33,no,yes,3,-wh_gap,You know,that,the lobbyist believed,the secretary said,she saw,,the millionaire,supported,the candidate,last year.
+33,no,no,3,-wh_no_gap,You know,that,the lobbyist believed,the secretary said,she saw,,,supported,the candidate,last year.
+33,yes,yes,3,+wh_gap,You know,who,the lobbyist believed,the secretary said,she saw,,the millionaire,supported,the candidate,last year.
+33,yes,no,3,+wh_no_gap,You know,who,the lobbyist believed,the secretary said,she saw,,,supported,the candidate,last year.
+33,no,yes,4,-wh_gap,You know,that,the lobbyist believed,the secretary said,she saw,he noticed,the millionaire,supported,the candidate,last year.
+33,no,no,4,-wh_no_gap,You know,that,the lobbyist believed,the secretary said,she saw,he noticed,,supported,the candidate,last year.
+33,yes,yes,4,+wh_gap,You know,who,the lobbyist believed,the secretary said,she saw,he noticed,the millionaire,supported,the candidate,last year.
+33,yes,no,4,+wh_no_gap,You know,who,the lobbyist believed,the secretary said,she saw,he noticed,,supported,the candidate,last year.
+34,no,yes,0,-wh_gap,I know,that,,,,,the president,congratulated,the athletes,over lunch.
+34,no,no,0,-wh_no_gap,I know,that,,,,,,congratulated,the athletes,over lunch.
+34,yes,yes,0,+wh_gap,I know,who,,,,,the president,congratulated,the athletes,over lunch.
+34,yes,no,0,+wh_no_gap,I know,who,,,,,,congratulated,the athletes,over lunch.
+34,no,yes,1,-wh_gap,I know,that,the coach said,,,,the president,congratulated,the athletes,over lunch.
+34,no,no,1,-wh_no_gap,I know,that,the coach said,,,,,congratulated,the athletes,over lunch.
+34,yes,yes,1,+wh_gap,I know,who,the coach said,,,,the president,congratulated,the athletes,over lunch.
+34,yes,no,1,+wh_no_gap,I know,who,the coach said,,,,,congratulated,the athletes,over lunch.
+34,no,yes,2,-wh_gap,I know,that,the coach said,the assistant believed,,,the president,congratulated,the athletes,over lunch.
+34,no,no,2,-wh_no_gap,I know,that,the coach said,the assistant believed,,,,congratulated,the athletes,over lunch.
+34,yes,yes,2,+wh_gap,I know,who,the coach said,the assistant believed,,,the president,congratulated,the athletes,over lunch.
+34,yes,no,2,+wh_no_gap,I know,who,the coach said,the assistant believed,,,,congratulated,the athletes,over lunch.
+34,no,yes,3,-wh_gap,I know,that,the coach said,the assistant believed,he remembered,,the president,congratulated,the athletes,over lunch.
+34,no,no,3,-wh_no_gap,I know,that,the coach said,the assistant believed,he remembered,,,congratulated,the athletes,over lunch.
+34,yes,yes,3,+wh_gap,I know,who,the coach said,the assistant believed,he remembered,,the president,congratulated,the athletes,over lunch.
+34,yes,no,3,+wh_no_gap,I know,who,the coach said,the assistant believed,he remembered,,,congratulated,the athletes,over lunch.
+34,no,yes,4,-wh_gap,I know,that,the coach said,the assistant believed,he remembered,he noticed,the president,congratulated,the athletes,over lunch.
+34,no,no,4,-wh_no_gap,I know,that,the coach said,the assistant believed,he remembered,he noticed,,congratulated,the athletes,over lunch.
+34,yes,yes,4,+wh_gap,I know,who,the coach said,the assistant believed,he remembered,he noticed,the president,congratulated,the athletes,over lunch.
+34,yes,no,4,+wh_no_gap,I know,who,the coach said,the assistant believed,he remembered,he noticed,,congratulated,the athletes,over lunch.
+35,no,yes,0,-wh_gap,You know,that,,,,,the man,introduced,his friends,to his family.
+35,no,no,0,-wh_no_gap,You know,that,,,,,,introduced,his friends,to his family.
+35,yes,yes,0,+wh_gap,You know,who,,,,,the man,introduced,his friends,to his family.
+35,yes,no,0,+wh_no_gap,You know,who,,,,,,introduced,his friends,to his family.
+35,no,yes,1,-wh_gap,You know,that,the woman said,,,,the man,introduced,his friends,to his family.
+35,no,no,1,-wh_no_gap,You know,that,the woman said,,,,,introduced,his friends,to his family.
+35,yes,yes,1,+wh_gap,You know,who,the woman said,,,,the man,introduced,his friends,to his family.
+35,yes,no,1,+wh_no_gap,You know,who,the woman said,,,,,introduced,his friends,to his family.
+35,no,yes,2,-wh_gap,You know,that,the woman said,the neighbor thought,,,the man,introduced,his friends,to his family.
+35,no,no,2,-wh_no_gap,You know,that,the woman said,the neighbor thought,,,,introduced,his friends,to his family.
+35,yes,yes,2,+wh_gap,You know,who,the woman said,the neighbor thought,,,the man,introduced,his friends,to his family.
+35,yes,no,2,+wh_no_gap,You know,who,the woman said,the neighbor thought,,,,introduced,his friends,to his family.
+35,no,yes,3,-wh_gap,You know,that,the woman said,the neighbor thought,he recalled,,the man,introduced,his friends,to his family.
+35,no,no,3,-wh_no_gap,You know,that,the woman said,the neighbor thought,he recalled,,,introduced,his friends,to his family.
+35,yes,yes,3,+wh_gap,You know,who,the woman said,the neighbor thought,he recalled,,the man,introduced,his friends,to his family.
+35,yes,no,3,+wh_no_gap,You know,who,the woman said,the neighbor thought,he recalled,,,introduced,his friends,to his family.
+35,no,yes,4,-wh_gap,You know,that,the woman said,the neighbor thought,he recalled,he knew,the man,introduced,his friends,to his family.
+35,no,no,4,-wh_no_gap,You know,that,the woman said,the neighbor thought,he recalled,he knew,,introduced,his friends,to his family.
+35,yes,yes,4,+wh_gap,You know,who,the woman said,the neighbor thought,he recalled,he knew,the man,introduced,his friends,to his family.
+35,yes,no,4,+wh_no_gap,You know,who,the woman said,the neighbor thought,he recalled,he knew,,introduced,his friends,to his family.
+36,no,yes,0,-wh_gap,He knows,that,,,,,the woman,waited for,her friend,at the bus stop.
+36,no,no,0,-wh_no_gap,He knows,that,,,,,,waited for,her friend,at the bus stop.
+36,yes,yes,0,+wh_gap,He knows,who,,,,,the woman,waited for,her friend,at the bus stop.
+36,yes,no,0,+wh_no_gap,He knows,who,,,,,,waited for,her friend,at the bus stop.
+36,no,yes,1,-wh_gap,He knows,that,the man believed,,,,the woman,waited for,her friend,at the bus stop.
+36,no,no,1,-wh_no_gap,He knows,that,the man believed,,,,,waited for,her friend,at the bus stop.
+36,yes,yes,1,+wh_gap,He knows,who,the man believed,,,,the woman,waited for,her friend,at the bus stop.
+36,yes,no,1,+wh_no_gap,He knows,who,the man believed,,,,,waited for,her friend,at the bus stop.
+36,no,yes,2,-wh_gap,He knows,that,the man believed,the he concluded,,,the woman,waited for,her friend,at the bus stop.
+36,no,no,2,-wh_no_gap,He knows,that,the man believed,the he concluded,,,,waited for,her friend,at the bus stop.
+36,yes,yes,2,+wh_gap,He knows,who,the man believed,the he concluded,,,the woman,waited for,her friend,at the bus stop.
+36,yes,no,2,+wh_no_gap,He knows,who,the man believed,the he concluded,,,,waited for,her friend,at the bus stop.
+36,no,yes,3,-wh_gap,He knows,that,the man believed,the he concluded,his neighbors had said,,the woman,waited for,her friend,at the bus stop.
+36,no,no,3,-wh_no_gap,He knows,that,the man believed,the he concluded,his neighbors had said,,,waited for,her friend,at the bus stop.
+36,yes,yes,3,+wh_gap,He knows,who,the man believed,the he concluded,his neighbors had said,,the woman,waited for,her friend,at the bus stop.
+36,yes,no,3,+wh_no_gap,He knows,who,the man believed,the he concluded,his neighbors had said,,,waited for,her friend,at the bus stop.
+36,no,yes,4,-wh_gap,He knows,that,the man believed,the he concluded,his neighbors had said,they saw,the woman,waited for,her friend,at the bus stop.
+36,no,no,4,-wh_no_gap,He knows,that,the man believed,the he concluded,his neighbors had said,they saw,,waited for,her friend,at the bus stop.
+36,yes,yes,4,+wh_gap,He knows,who,the man believed,the he concluded,his neighbors had said,they saw,the woman,waited for,her friend,at the bus stop.
+36,yes,no,4,+wh_no_gap,He knows,who,the man believed,the he concluded,his neighbors had said,they saw,,waited for,her friend,at the bus stop.
+37,no,yes,0,-wh_gap,She knows,that,,,,,the inspectors,interrogated,the criminal,last night.
+37,no,no,0,-wh_no_gap,She knows,that,,,,,,interrogated,the criminal,last night.
+37,yes,yes,0,+wh_gap,She knows,who,,,,,the inspectors,interrogated,the criminal,last night.
+37,yes,no,0,+wh_no_gap,She knows,who,,,,,,interrogated,the criminal,last night.
+37,no,yes,1,-wh_gap,She knows,that,the police said,,,,the inspectors,interrogated,the criminal,last night.
+37,no,no,1,-wh_no_gap,She knows,that,the police said,,,,,interrogated,the criminal,last night.
+37,yes,yes,1,+wh_gap,She knows,who,the police said,,,,the inspectors,interrogated,the criminal,last night.
+37,yes,no,1,+wh_no_gap,She knows,who,the police said,,,,,interrogated,the criminal,last night.
+37,no,yes,2,-wh_gap,She knows,that,the police said,the detective believed,,,the inspectors,interrogated,the criminal,last night.
+37,no,no,2,-wh_no_gap,She knows,that,the police said,the detective believed,,,,interrogated,the criminal,last night.
+37,yes,yes,2,+wh_gap,She knows,who,the police said,the detective believed,,,the inspectors,interrogated,the criminal,last night.
+37,yes,no,2,+wh_no_gap,She knows,who,the police said,the detective believed,,,,interrogated,the criminal,last night.
+37,no,yes,3,-wh_gap,She knows,that,the police said,the detective believed,he thought,,the inspectors,interrogated,the criminal,last night.
+37,no,no,3,-wh_no_gap,She knows,that,the police said,the detective believed,he thought,,,interrogated,the criminal,last night.
+37,yes,yes,3,+wh_gap,She knows,who,the police said,the detective believed,he thought,,the inspectors,interrogated,the criminal,last night.
+37,yes,no,3,+wh_no_gap,She knows,who,the police said,the detective believed,he thought,,,interrogated,the criminal,last night.
+37,no,yes,4,-wh_gap,She knows,that,the police said,the detective believed,he thought,he saw,the inspectors,interrogated,the criminal,last night.
+37,no,no,4,-wh_no_gap,She knows,that,the police said,the detective believed,he thought,he saw,,interrogated,the criminal,last night.
+37,yes,yes,4,+wh_gap,She knows,who,the police said,the detective believed,he thought,he saw,the inspectors,interrogated,the criminal,last night.
+37,yes,no,4,+wh_no_gap,She knows,who,the police said,the detective believed,he thought,he saw,,interrogated,the criminal,last night.
+38,no,yes,0,-wh_gap,They know,that,,,,,the old man,thanked,the tailor,on the street.
+38,no,no,0,-wh_no_gap,They know,that,,,,,,thanked,the tailor,on the street.
+38,yes,yes,0,+wh_gap,They know,who,,,,,the old man,thanked,the tailor,on the street.
+38,yes,no,0,+wh_no_gap,They know,who,,,,,,thanked,the tailor,on the street.
+38,no,yes,1,-wh_gap,They know,that,the nurse said,,,,the old man,thanked,the tailor,on the street.
+38,no,no,1,-wh_no_gap,They know,that,the nurse said,,,,,thanked,the tailor,on the street.
+38,yes,yes,1,+wh_gap,They know,who,the nurse said,,,,the old man,thanked,the tailor,on the street.
+38,yes,no,1,+wh_no_gap,They know,who,the nurse said,,,,,thanked,the tailor,on the street.
+38,no,yes,2,-wh_gap,They know,that,the nurse said,the assistant knew,,,the old man,thanked,the tailor,on the street.
+38,no,no,2,-wh_no_gap,They know,that,the nurse said,the assistant knew,,,,thanked,the tailor,on the street.
+38,yes,yes,2,+wh_gap,They know,who,the nurse said,the assistant knew,,,the old man,thanked,the tailor,on the street.
+38,yes,no,2,+wh_no_gap,They know,who,the nurse said,the assistant knew,,,,thanked,the tailor,on the street.
+38,no,yes,3,-wh_gap,They know,that,the nurse said,the assistant knew,she saw,,the old man,thanked,the tailor,on the street.
+38,no,no,3,-wh_no_gap,They know,that,the nurse said,the assistant knew,she saw,,,thanked,the tailor,on the street.
+38,yes,yes,3,+wh_gap,They know,who,the nurse said,the assistant knew,she saw,,the old man,thanked,the tailor,on the street.
+38,yes,no,3,+wh_no_gap,They know,who,the nurse said,the assistant knew,she saw,,,thanked,the tailor,on the street.
+38,no,yes,4,-wh_gap,They know,that,the nurse said,the assistant knew,she saw,he noticed,the old man,thanked,the tailor,on the street.
+38,no,no,4,-wh_no_gap,They know,that,the nurse said,the assistant knew,she saw,he noticed,,thanked,the tailor,on the street.
+38,yes,yes,4,+wh_gap,They know,who,the nurse said,the assistant knew,she saw,he noticed,the old man,thanked,the tailor,on the street.
+38,yes,no,4,+wh_no_gap,They know,who,the nurse said,the assistant knew,she saw,he noticed,,thanked,the tailor,on the street.
+39,no,yes,0,-wh_gap,He reported,that,,,,,the doctor,reassured,the patient,before surgery.
+39,no,no,0,-wh_no_gap,He reported,that,,,,,,reassured,the patient,before surgery.
+39,yes,yes,0,+wh_gap,He reported,who,,,,,the doctor,reassured,the patient,before surgery.
+39,yes,no,0,+wh_no_gap,He reported,who,,,,,,reassured,the patient,before surgery.
+39,no,yes,1,-wh_gap,He reported,that,the nurse believed,,,,the doctor,reassured,the patient,before surgery.
+39,no,no,1,-wh_no_gap,He reported,that,the nurse believed,,,,,reassured,the patient,before surgery.
+39,yes,yes,1,+wh_gap,He reported,who,the nurse believed,,,,the doctor,reassured,the patient,before surgery.
+39,yes,no,1,+wh_no_gap,He reported,who,the nurse believed,,,,,reassured,the patient,before surgery.
+39,no,yes,2,-wh_gap,He reported,that,the nurse believed,the woman thought,,,the doctor,reassured,the patient,before surgery.
+39,no,no,2,-wh_no_gap,He reported,that,the nurse believed,the woman thought,,,,reassured,the patient,before surgery.
+39,yes,yes,2,+wh_gap,He reported,who,the nurse believed,the woman thought,,,the doctor,reassured,the patient,before surgery.
+39,yes,no,2,+wh_no_gap,He reported,who,the nurse believed,the woman thought,,,,reassured,the patient,before surgery.
+39,no,yes,3,-wh_gap,He reported,that,the nurse believed,the woman thought,she recalled,,the doctor,reassured,the patient,before surgery.
+39,no,no,3,-wh_no_gap,He reported,that,the nurse believed,the woman thought,she recalled,,,reassured,the patient,before surgery.
+39,yes,yes,3,+wh_gap,He reported,who,the nurse believed,the woman thought,she recalled,,the doctor,reassured,the patient,before surgery.
+39,yes,no,3,+wh_no_gap,He reported,who,the nurse believed,the woman thought,she recalled,,,reassured,the patient,before surgery.
+39,no,yes,4,-wh_gap,He reported,that,the nurse believed,the woman thought,she recalled,she noticed,the doctor,reassured,the patient,before surgery.
+39,no,no,4,-wh_no_gap,He reported,that,the nurse believed,the woman thought,she recalled,she noticed,,reassured,the patient,before surgery.
+39,yes,yes,4,+wh_gap,He reported,who,the nurse believed,the woman thought,she recalled,she noticed,the doctor,reassured,the patient,before surgery.
+39,yes,no,4,+wh_no_gap,He reported,who,the nurse believed,the woman thought,she recalled,she noticed,,reassured,the patient,before surgery.
+4,no,yes,0,-wh_gap,We discovered,that,,,,,the funny actor,told,a story,about the woman.
+4,no,no,0,-wh_no_gap,We discovered,that,,,,,,told,a story,about the woman.
+4,yes,yes,0,+wh_gap,We discovered,who,,,,,the funny actor,told,a story,about the woman.
+4,yes,no,0,+wh_no_gap,We discovered,who,,,,,,told,a story,about the woman.
+4,no,yes,1,-wh_gap,We discovered,that,the delivery boy remarked,,,,the funny actor,told,a story,about the woman.
+4,no,no,1,-wh_no_gap,We discovered,that,the delivery boy remarked,,,,,told,a story,about the woman.
+4,yes,yes,1,+wh_gap,We discovered,who,the delivery boy remarked,,,,the funny actor,told,a story,about the woman.
+4,yes,no,1,+wh_no_gap,We discovered,who,the delivery boy remarked,,,,,told,a story,about the woman.
+4,no,yes,2,-wh_gap,We discovered,that,the delivery boy remarked,the worker said,,,the funny actor,told,a story,about the woman.
+4,no,no,2,-wh_no_gap,We discovered,that,the delivery boy remarked,the worker said,,,,told,a story,about the woman.
+4,yes,yes,2,+wh_gap,We discovered,who,the delivery boy remarked,the worker said,,,the funny actor,told,a story,about the woman.
+4,yes,no,2,+wh_no_gap,We discovered,who,the delivery boy remarked,the worker said,,,,told,a story,about the woman.
+4,no,yes,3,-wh_gap,We discovered,that,the delivery boy remarked,the worker said,the gardener knew,,the funny actor,told,a story,about the woman.
+4,no,no,3,-wh_no_gap,We discovered,that,the delivery boy remarked,the worker said,the gardener knew,,,told,a story,about the woman.
+4,yes,yes,3,+wh_gap,We discovered,who,the delivery boy remarked,the worker said,the gardener knew,,the funny actor,told,a story,about the woman.
+4,yes,no,3,+wh_no_gap,We discovered,who,the delivery boy remarked,the worker said,the gardener knew,,,told,a story,about the woman.
+4,no,yes,4,-wh_gap,We discovered,that,the delivery boy remarked,the worker said,the gardener knew,the maid remembers,the funny actor,told,a story,about the woman.
+4,no,no,4,-wh_no_gap,We discovered,that,the delivery boy remarked,the worker said,the gardener knew,the maid remembers,,told,a story,about the woman.
+4,yes,yes,4,+wh_gap,We discovered,who,the delivery boy remarked,the worker said,the gardener knew,the maid remembers,the funny actor,told,a story,about the woman.
+4,yes,no,4,+wh_no_gap,We discovered,who,the delivery boy remarked,the worker said,the gardener knew,the maid remembers,,told,a story,about the woman.
+40,no,yes,0,-wh_gap,They reported,that,,,,,the woman,abandoned,the children,on the side of the road.
+40,no,no,0,-wh_no_gap,They reported,that,,,,,,abandoned,the children,on the side of the road.
+40,yes,yes,0,+wh_gap,They reported,who,,,,,the woman,abandoned,the children,on the side of the road.
+40,yes,no,0,+wh_no_gap,They reported,who,,,,,,abandoned,the children,on the side of the road.
+40,no,yes,1,-wh_gap,They reported,that,the man claimed,,,,the woman,abandoned,the children,on the side of the road.
+40,no,no,1,-wh_no_gap,They reported,that,the man claimed,,,,,abandoned,the children,on the side of the road.
+40,yes,yes,1,+wh_gap,They reported,who,the man claimed,,,,the woman,abandoned,the children,on the side of the road.
+40,yes,no,1,+wh_no_gap,They reported,who,the man claimed,,,,,abandoned,the children,on the side of the road.
+40,no,yes,2,-wh_gap,They reported,that,the man claimed,his friend believed,,,the woman,abandoned,the children,on the side of the road.
+40,no,no,2,-wh_no_gap,They reported,that,the man claimed,his friend believed,,,,abandoned,the children,on the side of the road.
+40,yes,yes,2,+wh_gap,They reported,who,the man claimed,his friend believed,,,the woman,abandoned,the children,on the side of the road.
+40,yes,no,2,+wh_no_gap,They reported,who,the man claimed,his friend believed,,,,abandoned,the children,on the side of the road.
+40,no,yes,3,-wh_gap,They reported,that,the man claimed,his friend believed,he knew,,the woman,abandoned,the children,on the side of the road.
+40,no,no,3,-wh_no_gap,They reported,that,the man claimed,his friend believed,he knew,,,abandoned,the children,on the side of the road.
+40,yes,yes,3,+wh_gap,They reported,who,the man claimed,his friend believed,he knew,,the woman,abandoned,the children,on the side of the road.
+40,yes,no,3,+wh_no_gap,They reported,who,the man claimed,his friend believed,he knew,,,abandoned,the children,on the side of the road.
+40,no,yes,4,-wh_gap,They reported,that,the man claimed,his friend believed,he knew,the man saw,the woman,abandoned,the children,on the side of the road.
+40,no,no,4,-wh_no_gap,They reported,that,the man claimed,his friend believed,he knew,the man saw,,abandoned,the children,on the side of the road.
+40,yes,yes,4,+wh_gap,They reported,who,the man claimed,his friend believed,he knew,the man saw,the woman,abandoned,the children,on the side of the road.
+40,yes,no,4,+wh_no_gap,They reported,who,the man claimed,his friend believed,he knew,the man saw,,abandoned,the children,on the side of the road.
+41,no,yes,0,-wh_gap,They recalled,that,,,,,the executive,promoted,the secretary,last week.
+41,no,no,0,-wh_no_gap,They recalled,that,,,,,,promoted,the secretary,last week.
+41,yes,yes,0,+wh_gap,They recalled,who,,,,,the executive,promoted,the secretary,last week.
+41,yes,no,0,+wh_no_gap,They recalled,who,,,,,,promoted,the secretary,last week.
+41,no,yes,1,-wh_gap,They recalled,that,the journalist believed,,,,the executive,promoted,the secretary,last week.
+41,no,no,1,-wh_no_gap,They recalled,that,the journalist believed,,,,,promoted,the secretary,last week.
+41,yes,yes,1,+wh_gap,They recalled,who,the journalist believed,,,,the executive,promoted,the secretary,last week.
+41,yes,no,1,+wh_no_gap,They recalled,who,the journalist believed,,,,,promoted,the secretary,last week.
+41,no,yes,2,-wh_gap,They recalled,that,the journalist believed,the transcript stated,,,the executive,promoted,the secretary,last week.
+41,no,no,2,-wh_no_gap,They recalled,that,the journalist believed,the transcript stated,,,,promoted,the secretary,last week.
+41,yes,yes,2,+wh_gap,They recalled,who,the journalist believed,the transcript stated,,,the executive,promoted,the secretary,last week.
+41,yes,no,2,+wh_no_gap,They recalled,who,the journalist believed,the transcript stated,,,,promoted,the secretary,last week.
+41,no,yes,3,-wh_gap,They recalled,that,the journalist believed,the transcript stated,he knew,,the executive,promoted,the secretary,last week.
+41,no,no,3,-wh_no_gap,They recalled,that,the journalist believed,the transcript stated,he knew,,,promoted,the secretary,last week.
+41,yes,yes,3,+wh_gap,They recalled,who,the journalist believed,the transcript stated,he knew,,the executive,promoted,the secretary,last week.
+41,yes,no,3,+wh_no_gap,They recalled,who,the journalist believed,the transcript stated,he knew,,,promoted,the secretary,last week.
+41,no,yes,4,-wh_gap,They recalled,that,the journalist believed,the transcript stated,he knew,the man noticed,the executive,promoted,the secretary,last week.
+41,no,no,4,-wh_no_gap,They recalled,that,the journalist believed,the transcript stated,he knew,the man noticed,,promoted,the secretary,last week.
+41,yes,yes,4,+wh_gap,They recalled,who,the journalist believed,the transcript stated,he knew,the man noticed,the executive,promoted,the secretary,last week.
+41,yes,no,4,+wh_no_gap,They recalled,who,the journalist believed,the transcript stated,he knew,the man noticed,,promoted,the secretary,last week.
+42,no,yes,0,-wh_gap,We recalled,that,,,,,the millionaire,divorced,his wife,last week.
+42,no,no,0,-wh_no_gap,We recalled,that,,,,,,divorced,his wife,last week.
+42,yes,yes,0,+wh_gap,We recalled,who,,,,,the millionaire,divorced,his wife,last week.
+42,yes,no,0,+wh_no_gap,We recalled,who,,,,,,divorced,his wife,last week.
+42,no,yes,1,-wh_gap,We recalled,that,the woman said,,,,the millionaire,divorced,his wife,last week.
+42,no,no,1,-wh_no_gap,We recalled,that,the woman said,,,,,divorced,his wife,last week.
+42,yes,yes,1,+wh_gap,We recalled,who,the woman said,,,,the millionaire,divorced,his wife,last week.
+42,yes,no,1,+wh_no_gap,We recalled,who,the woman said,,,,,divorced,his wife,last week.
+42,no,yes,2,-wh_gap,We recalled,that,the woman said,she thought,,,the millionaire,divorced,his wife,last week.
+42,no,no,2,-wh_no_gap,We recalled,that,the woman said,she thought,,,,divorced,his wife,last week.
+42,yes,yes,2,+wh_gap,We recalled,who,the woman said,she thought,,,the millionaire,divorced,his wife,last week.
+42,yes,no,2,+wh_no_gap,We recalled,who,the woman said,she thought,,,,divorced,his wife,last week.
+42,no,yes,3,-wh_gap,We recalled,that,the woman said,she thought,she knew,,the millionaire,divorced,his wife,last week.
+42,no,no,3,-wh_no_gap,We recalled,that,the woman said,she thought,she knew,,,divorced,his wife,last week.
+42,yes,yes,3,+wh_gap,We recalled,who,the woman said,she thought,she knew,,the millionaire,divorced,his wife,last week.
+42,yes,no,3,+wh_no_gap,We recalled,who,the woman said,she thought,she knew,,,divorced,his wife,last week.
+42,no,yes,4,-wh_gap,We recalled,that,the woman said,she thought,she knew,he saw,the millionaire,divorced,his wife,last week.
+42,no,no,4,-wh_no_gap,We recalled,that,the woman said,she thought,she knew,he saw,,divorced,his wife,last week.
+42,yes,yes,4,+wh_gap,We recalled,who,the woman said,she thought,she knew,he saw,the millionaire,divorced,his wife,last week.
+42,yes,no,4,+wh_no_gap,We recalled,who,the woman said,she thought,she knew,he saw,,divorced,his wife,last week.
+43,no,yes,0,-wh_gap,He recalled,that,,,,,the police,frightened,the protesters,over the weekend.
+43,no,no,0,-wh_no_gap,He recalled,that,,,,,,frightened,the protesters,over the weekend.
+43,yes,yes,0,+wh_gap,He recalled,who,,,,,the police,frightened,the protesters,over the weekend.
+43,yes,no,0,+wh_no_gap,He recalled,who,,,,,,frightened,the protesters,over the weekend.
+43,no,yes,1,-wh_gap,He recalled,that,the inspector believed,,,,the police,frightened,the protesters,over the weekend.
+43,no,no,1,-wh_no_gap,He recalled,that,the inspector believed,,,,,frightened,the protesters,over the weekend.
+43,yes,yes,1,+wh_gap,He recalled,who,the inspector believed,,,,the police,frightened,the protesters,over the weekend.
+43,yes,no,1,+wh_no_gap,He recalled,who,the inspector believed,,,,,frightened,the protesters,over the weekend.
+43,no,yes,2,-wh_gap,He recalled,that,the inspector believed,the detective concluded,,,the police,frightened,the protesters,over the weekend.
+43,no,no,2,-wh_no_gap,He recalled,that,the inspector believed,the detective concluded,,,,frightened,the protesters,over the weekend.
+43,yes,yes,2,+wh_gap,He recalled,who,the inspector believed,the detective concluded,,,the police,frightened,the protesters,over the weekend.
+43,yes,no,2,+wh_no_gap,He recalled,who,the inspector believed,the detective concluded,,,,frightened,the protesters,over the weekend.
+43,no,yes,3,-wh_gap,He recalled,that,the inspector believed,the detective concluded,he knew,,the police,frightened,the protesters,over the weekend.
+43,no,no,3,-wh_no_gap,He recalled,that,the inspector believed,the detective concluded,he knew,,,frightened,the protesters,over the weekend.
+43,yes,yes,3,+wh_gap,He recalled,who,the inspector believed,the detective concluded,he knew,,the police,frightened,the protesters,over the weekend.
+43,yes,no,3,+wh_no_gap,He recalled,who,the inspector believed,the detective concluded,he knew,,,frightened,the protesters,over the weekend.
+43,no,yes,4,-wh_gap,He recalled,that,the inspector believed,the detective concluded,he knew,the witness saw,the police,frightened,the protesters,over the weekend.
+43,no,no,4,-wh_no_gap,He recalled,that,the inspector believed,the detective concluded,he knew,the witness saw,,frightened,the protesters,over the weekend.
+43,yes,yes,4,+wh_gap,He recalled,who,the inspector believed,the detective concluded,he knew,the witness saw,the police,frightened,the protesters,over the weekend.
+43,yes,no,4,+wh_no_gap,He recalled,who,the inspector believed,the detective concluded,he knew,the witness saw,,frightened,the protesters,over the weekend.
+44,no,yes,0,-wh_gap,I know,that,,,,,the spy,assassinated,the politician,yesterday night.
+44,no,no,0,-wh_no_gap,I know,that,,,,,,assassinated,the politician,yesterday night.
+44,yes,yes,0,+wh_gap,I know,who,,,,,the spy,assassinated,the politician,yesterday night.
+44,yes,no,0,+wh_no_gap,I know,who,,,,,,assassinated,the politician,yesterday night.
+44,no,yes,1,-wh_gap,I know,that,the agent thought,,,,the spy,assassinated,the politician,yesterday night.
+44,no,no,1,-wh_no_gap,I know,that,the agent thought,,,,,assassinated,the politician,yesterday night.
+44,yes,yes,1,+wh_gap,I know,who,the agent thought,,,,the spy,assassinated,the politician,yesterday night.
+44,yes,no,1,+wh_no_gap,I know,who,the agent thought,,,,,assassinated,the politician,yesterday night.
+44,no,yes,2,-wh_gap,I know,that,the agent thought,the witness said,,,the spy,assassinated,the politician,yesterday night.
+44,no,no,2,-wh_no_gap,I know,that,the agent thought,the witness said,,,,assassinated,the politician,yesterday night.
+44,yes,yes,2,+wh_gap,I know,who,the agent thought,the witness said,,,the spy,assassinated,the politician,yesterday night.
+44,yes,no,2,+wh_no_gap,I know,who,the agent thought,the witness said,,,,assassinated,the politician,yesterday night.
+44,no,yes,3,-wh_gap,I know,that,the agent thought,the witness said,he knew,,the spy,assassinated,the politician,yesterday night.
+44,no,no,3,-wh_no_gap,I know,that,the agent thought,the witness said,he knew,,,assassinated,the politician,yesterday night.
+44,yes,yes,3,+wh_gap,I know,who,the agent thought,the witness said,he knew,,the spy,assassinated,the politician,yesterday night.
+44,yes,no,3,+wh_no_gap,I know,who,the agent thought,the witness said,he knew,,,assassinated,the politician,yesterday night.
+44,no,yes,4,-wh_gap,I know,that,the agent thought,the witness said,he knew,the man noticed,the spy,assassinated,the politician,yesterday night.
+44,no,no,4,-wh_no_gap,I know,that,the agent thought,the witness said,he knew,the man noticed,,assassinated,the politician,yesterday night.
+44,yes,yes,4,+wh_gap,I know,who,the agent thought,the witness said,he knew,the man noticed,the spy,assassinated,the politician,yesterday night.
+44,yes,no,4,+wh_no_gap,I know,who,the agent thought,the witness said,he knew,the man noticed,,assassinated,the politician,yesterday night.
+45,no,yes,0,-wh_gap,You know,that,,,,,the firefighter,greeted,the teacher,on the sidewalk.
+45,no,no,0,-wh_no_gap,You know,that,,,,,,greeted,the teacher,on the sidewalk.
+45,yes,yes,0,+wh_gap,You know,who,,,,,the firefighter,greeted,the teacher,on the sidewalk.
+45,yes,no,0,+wh_no_gap,You know,who,,,,,,greeted,the teacher,on the sidewalk.
+45,no,yes,1,-wh_gap,You know,that,the woman reported,,,,the firefighter,greeted,the teacher,on the sidewalk.
+45,no,no,1,-wh_no_gap,You know,that,the woman reported,,,,,greeted,the teacher,on the sidewalk.
+45,yes,yes,1,+wh_gap,You know,who,the woman reported,,,,the firefighter,greeted,the teacher,on the sidewalk.
+45,yes,no,1,+wh_no_gap,You know,who,the woman reported,,,,,greeted,the teacher,on the sidewalk.
+45,no,yes,2,-wh_gap,You know,that,the woman reported,the neighbors believed,,,the firefighter,greeted,the teacher,on the sidewalk.
+45,no,no,2,-wh_no_gap,You know,that,the woman reported,the neighbors believed,,,,greeted,the teacher,on the sidewalk.
+45,yes,yes,2,+wh_gap,You know,who,the woman reported,the neighbors believed,,,the firefighter,greeted,the teacher,on the sidewalk.
+45,yes,no,2,+wh_no_gap,You know,who,the woman reported,the neighbors believed,,,,greeted,the teacher,on the sidewalk.
+45,no,yes,3,-wh_gap,You know,that,the woman reported,the neighbors believed,they knew,,the firefighter,greeted,the teacher,on the sidewalk.
+45,no,no,3,-wh_no_gap,You know,that,the woman reported,the neighbors believed,they knew,,,greeted,the teacher,on the sidewalk.
+45,yes,yes,3,+wh_gap,You know,who,the woman reported,the neighbors believed,they knew,,the firefighter,greeted,the teacher,on the sidewalk.
+45,yes,no,3,+wh_no_gap,You know,who,the woman reported,the neighbors believed,they knew,,,greeted,the teacher,on the sidewalk.
+45,no,yes,4,-wh_gap,You know,that,the woman reported,the neighbors believed,they knew,they saw,the firefighter,greeted,the teacher,on the sidewalk.
+45,no,no,4,-wh_no_gap,You know,that,the woman reported,the neighbors believed,they knew,they saw,,greeted,the teacher,on the sidewalk.
+45,yes,yes,4,+wh_gap,You know,who,the woman reported,the neighbors believed,they knew,they saw,the firefighter,greeted,the teacher,on the sidewalk.
+45,yes,no,4,+wh_no_gap,You know,who,the woman reported,the neighbors believed,they knew,they saw,,greeted,the teacher,on the sidewalk.
+46,no,yes,0,-wh_gap,He knows,that,,,,,the mayor,supported,the principal,during the town meeting.
+46,no,no,0,-wh_no_gap,He knows,that,,,,,,supported,the principal,during the town meeting.
+46,yes,yes,0,+wh_gap,He knows,who,,,,,the mayor,supported,the principal,during the town meeting.
+46,yes,no,0,+wh_no_gap,He knows,who,,,,,,supported,the principal,during the town meeting.
+46,no,yes,1,-wh_gap,He knows,that,the politician believed,,,,the mayor,supported,the principal,during the town meeting.
+46,no,no,1,-wh_no_gap,He knows,that,the politician believed,,,,,supported,the principal,during the town meeting.
+46,yes,yes,1,+wh_gap,He knows,who,the politician believed,,,,the mayor,supported,the principal,during the town meeting.
+46,yes,no,1,+wh_no_gap,He knows,who,the politician believed,,,,,supported,the principal,during the town meeting.
+46,no,yes,2,-wh_gap,He knows,that,the politician believed,the donors said,,,the mayor,supported,the principal,during the town meeting.
+46,no,no,2,-wh_no_gap,He knows,that,the politician believed,the donors said,,,,supported,the principal,during the town meeting.
+46,yes,yes,2,+wh_gap,He knows,who,the politician believed,the donors said,,,the mayor,supported,the principal,during the town meeting.
+46,yes,no,2,+wh_no_gap,He knows,who,the politician believed,the donors said,,,,supported,the principal,during the town meeting.
+46,no,yes,3,-wh_gap,He knows,that,the politician believed,the donors said,they knew,,the mayor,supported,the principal,during the town meeting.
+46,no,no,3,-wh_no_gap,He knows,that,the politician believed,the donors said,they knew,,,supported,the principal,during the town meeting.
+46,yes,yes,3,+wh_gap,He knows,who,the politician believed,the donors said,they knew,,the mayor,supported,the principal,during the town meeting.
+46,yes,no,3,+wh_no_gap,He knows,who,the politician believed,the donors said,they knew,,,supported,the principal,during the town meeting.
+46,no,yes,4,-wh_gap,He knows,that,the politician believed,the donors said,they knew,he noticed,the mayor,supported,the principal,during the town meeting.
+46,no,no,4,-wh_no_gap,He knows,that,the politician believed,the donors said,they knew,he noticed,,supported,the principal,during the town meeting.
+46,yes,yes,4,+wh_gap,He knows,who,the politician believed,the donors said,they knew,he noticed,the mayor,supported,the principal,during the town meeting.
+46,yes,no,4,+wh_no_gap,He knows,who,the politician believed,the donors said,they knew,he noticed,,supported,the principal,during the town meeting.
+47,no,yes,0,-wh_gap,She knows,that,,,,,the man,congratulated,the writer,after the ceremony.
+47,no,no,0,-wh_no_gap,She knows,that,,,,,,congratulated,the writer,after the ceremony.
+47,yes,yes,0,+wh_gap,She knows,who,,,,,the man,congratulated,the writer,after the ceremony.
+47,yes,no,0,+wh_no_gap,She knows,who,,,,,,congratulated,the writer,after the ceremony.
+47,no,yes,1,-wh_gap,She knows,that,the woman said,,,,the man,congratulated,the writer,after the ceremony.
+47,no,no,1,-wh_no_gap,She knows,that,the woman said,,,,,congratulated,the writer,after the ceremony.
+47,yes,yes,1,+wh_gap,She knows,who,the woman said,,,,the man,congratulated,the writer,after the ceremony.
+47,yes,no,1,+wh_no_gap,She knows,who,the woman said,,,,,congratulated,the writer,after the ceremony.
+47,no,yes,2,-wh_gap,She knows,that,the woman said,her friend believed,,,the man,congratulated,the writer,after the ceremony.
+47,no,no,2,-wh_no_gap,She knows,that,the woman said,her friend believed,,,,congratulated,the writer,after the ceremony.
+47,yes,yes,2,+wh_gap,She knows,who,the woman said,her friend believed,,,the man,congratulated,the writer,after the ceremony.
+47,yes,no,2,+wh_no_gap,She knows,who,the woman said,her friend believed,,,,congratulated,the writer,after the ceremony.
+47,no,yes,3,-wh_gap,She knows,that,the woman said,her friend believed,she knew,,the man,congratulated,the writer,after the ceremony.
+47,no,no,3,-wh_no_gap,She knows,that,the woman said,her friend believed,she knew,,,congratulated,the writer,after the ceremony.
+47,yes,yes,3,+wh_gap,She knows,who,the woman said,her friend believed,she knew,,the man,congratulated,the writer,after the ceremony.
+47,yes,no,3,+wh_no_gap,She knows,who,the woman said,her friend believed,she knew,,,congratulated,the writer,after the ceremony.
+47,no,yes,4,-wh_gap,She knows,that,the woman said,her friend believed,she knew,the man saw,the man,congratulated,the writer,after the ceremony.
+47,no,no,4,-wh_no_gap,She knows,that,the woman said,her friend believed,she knew,the man saw,,congratulated,the writer,after the ceremony.
+47,yes,yes,4,+wh_gap,She knows,who,the woman said,her friend believed,she knew,the man saw,the man,congratulated,the writer,after the ceremony.
+47,yes,no,4,+wh_no_gap,She knows,who,the woman said,her friend believed,she knew,the man saw,,congratulated,the writer,after the ceremony.
+48,no,yes,0,-wh_gap,I know,that,,,,,the hostess,introduced,her friend,to the regular customer.
+48,no,no,0,-wh_no_gap,I know,that,,,,,,introduced,her friend,to the regular customer.
+48,yes,yes,0,+wh_gap,I know,who,,,,,the hostess,introduced,her friend,to the regular customer.
+48,yes,no,0,+wh_no_gap,I know,who,,,,,,introduced,her friend,to the regular customer.
+48,no,yes,1,-wh_gap,I know,that,the heiress believed,,,,the hostess,introduced,her friend,to the regular customer.
+48,no,no,1,-wh_no_gap,I know,that,the heiress believed,,,,,introduced,her friend,to the regular customer.
+48,yes,yes,1,+wh_gap,I know,who,the heiress believed,,,,the hostess,introduced,her friend,to the regular customer.
+48,yes,no,1,+wh_no_gap,I know,who,the heiress believed,,,,,introduced,her friend,to the regular customer.
+48,no,yes,2,-wh_gap,I know,that,the heiress believed,her friend said,,,the hostess,introduced,her friend,to the regular customer.
+48,no,no,2,-wh_no_gap,I know,that,the heiress believed,her friend said,,,,introduced,her friend,to the regular customer.
+48,yes,yes,2,+wh_gap,I know,who,the heiress believed,her friend said,,,the hostess,introduced,her friend,to the regular customer.
+48,yes,no,2,+wh_no_gap,I know,who,the heiress believed,her friend said,,,,introduced,her friend,to the regular customer.
+48,no,yes,3,-wh_gap,I know,that,the heiress believed,her friend said,she knew,,the hostess,introduced,her friend,to the regular customer.
+48,no,no,3,-wh_no_gap,I know,that,the heiress believed,her friend said,she knew,,,introduced,her friend,to the regular customer.
+48,yes,yes,3,+wh_gap,I know,who,the heiress believed,her friend said,she knew,,the hostess,introduced,her friend,to the regular customer.
+48,yes,no,3,+wh_no_gap,I know,who,the heiress believed,her friend said,she knew,,,introduced,her friend,to the regular customer.
+48,no,yes,4,-wh_gap,I know,that,the heiress believed,her friend said,she knew,the man noticed,the hostess,introduced,her friend,to the regular customer.
+48,no,no,4,-wh_no_gap,I know,that,the heiress believed,her friend said,she knew,the man noticed,,introduced,her friend,to the regular customer.
+48,yes,yes,4,+wh_gap,I know,who,the heiress believed,her friend said,she knew,the man noticed,the hostess,introduced,her friend,to the regular customer.
+48,yes,no,4,+wh_no_gap,I know,who,the heiress believed,her friend said,she knew,the man noticed,,introduced,her friend,to the regular customer.
+49,no,yes,0,-wh_gap,You know,that,,,,,the young woman,waited for,her mother,at the movie theater.
+49,no,no,0,-wh_no_gap,You know,that,,,,,,waited for,her mother,at the movie theater.
+49,yes,yes,0,+wh_gap,You know,who,,,,,the young woman,waited for,her mother,at the movie theater.
+49,yes,no,0,+wh_no_gap,You know,who,,,,,,waited for,her mother,at the movie theater.
+49,no,yes,1,-wh_gap,You know,that,the man said,,,,the young woman,waited for,her mother,at the movie theater.
+49,no,no,1,-wh_no_gap,You know,that,the man said,,,,,waited for,her mother,at the movie theater.
+49,yes,yes,1,+wh_gap,You know,who,the man said,,,,the young woman,waited for,her mother,at the movie theater.
+49,yes,no,1,+wh_no_gap,You know,who,the man said,,,,,waited for,her mother,at the movie theater.
+49,no,yes,2,-wh_gap,You know,that,the man said,the attendant saw,,,the young woman,waited for,her mother,at the movie theater.
+49,no,no,2,-wh_no_gap,You know,that,the man said,the attendant saw,,,,waited for,her mother,at the movie theater.
+49,yes,yes,2,+wh_gap,You know,who,the man said,the attendant saw,,,the young woman,waited for,her mother,at the movie theater.
+49,yes,no,2,+wh_no_gap,You know,who,the man said,the attendant saw,,,,waited for,her mother,at the movie theater.
+49,no,yes,3,-wh_gap,You know,that,the man said,the attendant saw,her friend knew,,the young woman,waited for,her mother,at the movie theater.
+49,no,no,3,-wh_no_gap,You know,that,the man said,the attendant saw,her friend knew,,,waited for,her mother,at the movie theater.
+49,yes,yes,3,+wh_gap,You know,who,the man said,the attendant saw,her friend knew,,the young woman,waited for,her mother,at the movie theater.
+49,yes,no,3,+wh_no_gap,You know,who,the man said,the attendant saw,her friend knew,,,waited for,her mother,at the movie theater.
+49,no,yes,4,-wh_gap,You know,that,the man said,the attendant saw,her friend knew,his father saw,the young woman,waited for,her mother,at the movie theater.
+49,no,no,4,-wh_no_gap,You know,that,the man said,the attendant saw,her friend knew,his father saw,,waited for,her mother,at the movie theater.
+49,yes,yes,4,+wh_gap,You know,who,the man said,the attendant saw,her friend knew,his father saw,the young woman,waited for,her mother,at the movie theater.
+49,yes,no,4,+wh_no_gap,You know,who,the man said,the attendant saw,her friend knew,his father saw,,waited for,her mother,at the movie theater.
+5,no,yes,0,-wh_gap,The neighbors found out,that,,,,,the young woman,bought,a gift,for her parents.
+5,no,no,0,-wh_no_gap,The neighbors found out,that,,,,,,bought,a gift,for her parents.
+5,yes,yes,0,+wh_gap,The neighbors found out,who,,,,,the young woman,bought,a gift,for her parents.
+5,yes,no,0,+wh_no_gap,The neighbors found out,who,,,,,,bought,a gift,for her parents.
+5,no,yes,1,-wh_gap,The neighbors found out,that,her mother heard,,,,the young woman,bought,a gift,for her parents.
+5,no,no,1,-wh_no_gap,The neighbors found out,that,her mother heard,,,,,bought,a gift,for her parents.
+5,yes,yes,1,+wh_gap,The neighbors found out,who,her mother heard,,,,the young woman,bought,a gift,for her parents.
+5,yes,no,1,+wh_no_gap,The neighbors found out,who,her mother heard,,,,,bought,a gift,for her parents.
+5,no,yes,2,-wh_gap,The neighbors found out,that,her mother heard,the newspaper reported,,,the young woman,bought,a gift,for her parents.
+5,no,no,2,-wh_no_gap,The neighbors found out,that,her mother heard,the newspaper reported,,,,bought,a gift,for her parents.
+5,yes,yes,2,+wh_gap,The neighbors found out,who,her mother heard,the newspaper reported,,,the young woman,bought,a gift,for her parents.
+5,yes,no,2,+wh_no_gap,The neighbors found out,who,her mother heard,the newspaper reported,,,,bought,a gift,for her parents.
+5,no,yes,3,-wh_gap,The neighbors found out,that,her mother heard,the newspaper reported,the mayor said,,the young woman,bought,a gift,for her parents.
+5,no,no,3,-wh_no_gap,The neighbors found out,that,her mother heard,the newspaper reported,the mayor said,,,bought,a gift,for her parents.
+5,yes,yes,3,+wh_gap,The neighbors found out,who,her mother heard,the newspaper reported,the mayor said,,the young woman,bought,a gift,for her parents.
+5,yes,no,3,+wh_no_gap,The neighbors found out,who,her mother heard,the newspaper reported,the mayor said,,,bought,a gift,for her parents.
+5,no,yes,4,-wh_gap,The neighbors found out,that,her mother heard,the newspaper reported,the mayor said,his assistant saw,the young woman,bought,a gift,for her parents.
+5,no,no,4,-wh_no_gap,The neighbors found out,that,her mother heard,the newspaper reported,the mayor said,his assistant saw,,bought,a gift,for her parents.
+5,yes,yes,4,+wh_gap,The neighbors found out,who,her mother heard,the newspaper reported,the mayor said,his assistant saw,the young woman,bought,a gift,for her parents.
+5,yes,no,4,+wh_no_gap,The neighbors found out,who,her mother heard,the newspaper reported,the mayor said,his assistant saw,,bought,a gift,for her parents.
+50,no,yes,0,-wh_gap,He knows,that,,,,,the police,interrogated,the suspect,in the basement.
+50,no,no,0,-wh_no_gap,He knows,that,,,,,,interrogated,the suspect,in the basement.
+50,yes,yes,0,+wh_gap,He knows,who,,,,,the police,interrogated,the suspect,in the basement.
+50,yes,no,0,+wh_no_gap,He knows,who,,,,,,interrogated,the suspect,in the basement.
+50,no,yes,1,-wh_gap,He knows,that,the inspector believed,,,,the police,interrogated,the suspect,in the basement.
+50,no,no,1,-wh_no_gap,He knows,that,the inspector believed,,,,,interrogated,the suspect,in the basement.
+50,yes,yes,1,+wh_gap,He knows,who,the inspector believed,,,,the police,interrogated,the suspect,in the basement.
+50,yes,no,1,+wh_no_gap,He knows,who,the inspector believed,,,,,interrogated,the suspect,in the basement.
+50,no,yes,2,-wh_gap,He knows,that,the inspector believed,the man reported,,,the police,interrogated,the suspect,in the basement.
+50,no,no,2,-wh_no_gap,He knows,that,the inspector believed,the man reported,,,,interrogated,the suspect,in the basement.
+50,yes,yes,2,+wh_gap,He knows,who,the inspector believed,the man reported,,,the police,interrogated,the suspect,in the basement.
+50,yes,no,2,+wh_no_gap,He knows,who,the inspector believed,the man reported,,,,interrogated,the suspect,in the basement.
+50,no,yes,3,-wh_gap,He knows,that,the inspector believed,the man reported,he knew,,the police,interrogated,the suspect,in the basement.
+50,no,no,3,-wh_no_gap,He knows,that,the inspector believed,the man reported,he knew,,,interrogated,the suspect,in the basement.
+50,yes,yes,3,+wh_gap,He knows,who,the inspector believed,the man reported,he knew,,the police,interrogated,the suspect,in the basement.
+50,yes,no,3,+wh_no_gap,He knows,who,the inspector believed,the man reported,he knew,,,interrogated,the suspect,in the basement.
+50,no,yes,4,-wh_gap,He knows,that,the inspector believed,the man reported,he knew,he noticed,the police,interrogated,the suspect,in the basement.
+50,no,no,4,-wh_no_gap,He knows,that,the inspector believed,the man reported,he knew,he noticed,,interrogated,the suspect,in the basement.
+50,yes,yes,4,+wh_gap,He knows,who,the inspector believed,the man reported,he knew,he noticed,the police,interrogated,the suspect,in the basement.
+50,yes,no,4,+wh_no_gap,He knows,who,the inspector believed,the man reported,he knew,he noticed,,interrogated,the suspect,in the basement.
+51,no,yes,0,-wh_gap,She knows,that,,,,,the soldier,thanked,the cook,in the mess hall.
+51,no,no,0,-wh_no_gap,She knows,that,,,,,,thanked,the cook,in the mess hall.
+51,yes,yes,0,+wh_gap,She knows,who,,,,,the soldier,thanked,the cook,in the mess hall.
+51,yes,no,0,+wh_no_gap,She knows,who,,,,,,thanked,the cook,in the mess hall.
+51,no,yes,1,-wh_gap,She knows,that,the captain said,,,,the soldier,thanked,the cook,in the mess hall.
+51,no,no,1,-wh_no_gap,She knows,that,the captain said,,,,,thanked,the cook,in the mess hall.
+51,yes,yes,1,+wh_gap,She knows,who,the captain said,,,,the soldier,thanked,the cook,in the mess hall.
+51,yes,no,1,+wh_no_gap,She knows,who,the captain said,,,,,thanked,the cook,in the mess hall.
+51,no,yes,2,-wh_gap,She knows,that,the captain said,the pilot thought,,,the soldier,thanked,the cook,in the mess hall.
+51,no,no,2,-wh_no_gap,She knows,that,the captain said,the pilot thought,,,,thanked,the cook,in the mess hall.
+51,yes,yes,2,+wh_gap,She knows,who,the captain said,the pilot thought,,,the soldier,thanked,the cook,in the mess hall.
+51,yes,no,2,+wh_no_gap,She knows,who,the captain said,the pilot thought,,,,thanked,the cook,in the mess hall.
+51,no,yes,3,-wh_gap,She knows,that,the captain said,the pilot thought,he knew,,the soldier,thanked,the cook,in the mess hall.
+51,no,no,3,-wh_no_gap,She knows,that,the captain said,the pilot thought,he knew,,,thanked,the cook,in the mess hall.
+51,yes,yes,3,+wh_gap,She knows,who,the captain said,the pilot thought,he knew,,the soldier,thanked,the cook,in the mess hall.
+51,yes,no,3,+wh_no_gap,She knows,who,the captain said,the pilot thought,he knew,,,thanked,the cook,in the mess hall.
+51,no,yes,4,-wh_gap,She knows,that,the captain said,the pilot thought,he knew,the man saw,the soldier,thanked,the cook,in the mess hall.
+51,no,no,4,-wh_no_gap,She knows,that,the captain said,the pilot thought,he knew,the man saw,,thanked,the cook,in the mess hall.
+51,yes,yes,4,+wh_gap,She knows,who,the captain said,the pilot thought,he knew,the man saw,the soldier,thanked,the cook,in the mess hall.
+51,yes,no,4,+wh_no_gap,She knows,who,the captain said,the pilot thought,he knew,the man saw,,thanked,the cook,in the mess hall.
+52,no,yes,0,-wh_gap,They know,that,,,,,the lawyer,reassured,his client,last night.
+52,no,no,0,-wh_no_gap,They know,that,,,,,,reassured,his client,last night.
+52,yes,yes,0,+wh_gap,They know,who,,,,,the lawyer,reassured,his client,last night.
+52,yes,no,0,+wh_no_gap,They know,who,,,,,,reassured,his client,last night.
+52,no,yes,1,-wh_gap,They know,that,the man said,,,,the lawyer,reassured,his client,last night.
+52,no,no,1,-wh_no_gap,They know,that,the man said,,,,,reassured,his client,last night.
+52,yes,yes,1,+wh_gap,They know,who,the man said,,,,the lawyer,reassured,his client,last night.
+52,yes,no,1,+wh_no_gap,They know,who,the man said,,,,,reassured,his client,last night.
+52,no,yes,2,-wh_gap,They know,that,the man said,the neighbors thought,,,the lawyer,reassured,his client,last night.
+52,no,no,2,-wh_no_gap,They know,that,the man said,the neighbors thought,,,,reassured,his client,last night.
+52,yes,yes,2,+wh_gap,They know,who,the man said,the neighbors thought,,,the lawyer,reassured,his client,last night.
+52,yes,no,2,+wh_no_gap,They know,who,the man said,the neighbors thought,,,,reassured,his client,last night.
+52,no,yes,3,-wh_gap,They know,that,the man said,the neighbors thought,they knew,,the lawyer,reassured,his client,last night.
+52,no,no,3,-wh_no_gap,They know,that,the man said,the neighbors thought,they knew,,,reassured,his client,last night.
+52,yes,yes,3,+wh_gap,They know,who,the man said,the neighbors thought,they knew,,the lawyer,reassured,his client,last night.
+52,yes,no,3,+wh_no_gap,They know,who,the man said,the neighbors thought,they knew,,,reassured,his client,last night.
+52,no,yes,4,-wh_gap,They know,that,the man said,the neighbors thought,they knew,the woman noticed,the lawyer,reassured,his client,last night.
+52,no,no,4,-wh_no_gap,They know,that,the man said,the neighbors thought,they knew,the woman noticed,,reassured,his client,last night.
+52,yes,yes,4,+wh_gap,They know,who,the man said,the neighbors thought,they knew,the woman noticed,the lawyer,reassured,his client,last night.
+52,yes,no,4,+wh_no_gap,They know,who,the man said,the neighbors thought,they knew,the woman noticed,,reassured,his client,last night.
+53,no,yes,0,-wh_gap,He reported,that,,,,,the pirate,abandoned,his comrades,on the sinking ship.
+53,no,no,0,-wh_no_gap,He reported,that,,,,,,abandoned,his comrades,on the sinking ship.
+53,yes,yes,0,+wh_gap,He reported,who,,,,,the pirate,abandoned,his comrades,on the sinking ship.
+53,yes,no,0,+wh_no_gap,He reported,who,,,,,,abandoned,his comrades,on the sinking ship.
+53,no,yes,1,-wh_gap,He reported,that,the sailor believed,,,,the pirate,abandoned,his comrades,on the sinking ship.
+53,no,no,1,-wh_no_gap,He reported,that,the sailor believed,,,,,abandoned,his comrades,on the sinking ship.
+53,yes,yes,1,+wh_gap,He reported,who,the sailor believed,,,,the pirate,abandoned,his comrades,on the sinking ship.
+53,yes,no,1,+wh_no_gap,He reported,who,the sailor believed,,,,,abandoned,his comrades,on the sinking ship.
+53,no,yes,2,-wh_gap,He reported,that,the sailor believed,the man believed,,,the pirate,abandoned,his comrades,on the sinking ship.
+53,no,no,2,-wh_no_gap,He reported,that,the sailor believed,the man believed,,,,abandoned,his comrades,on the sinking ship.
+53,yes,yes,2,+wh_gap,He reported,who,the sailor believed,the man believed,,,the pirate,abandoned,his comrades,on the sinking ship.
+53,yes,no,2,+wh_no_gap,He reported,who,the sailor believed,the man believed,,,,abandoned,his comrades,on the sinking ship.
+53,no,yes,3,-wh_gap,He reported,that,the sailor believed,the man believed,he knew,,the pirate,abandoned,his comrades,on the sinking ship.
+53,no,no,3,-wh_no_gap,He reported,that,the sailor believed,the man believed,he knew,,,abandoned,his comrades,on the sinking ship.
+53,yes,yes,3,+wh_gap,He reported,who,the sailor believed,the man believed,he knew,,the pirate,abandoned,his comrades,on the sinking ship.
+53,yes,no,3,+wh_no_gap,He reported,who,the sailor believed,the man believed,he knew,,,abandoned,his comrades,on the sinking ship.
+53,no,yes,4,-wh_gap,He reported,that,the sailor believed,the man believed,he knew,the man saw,the pirate,abandoned,his comrades,on the sinking ship.
+53,no,no,4,-wh_no_gap,He reported,that,the sailor believed,the man believed,he knew,the man saw,,abandoned,his comrades,on the sinking ship.
+53,yes,yes,4,+wh_gap,He reported,who,the sailor believed,the man believed,he knew,the man saw,the pirate,abandoned,his comrades,on the sinking ship.
+53,yes,no,4,+wh_no_gap,He reported,who,the sailor believed,the man believed,he knew,the man saw,,abandoned,his comrades,on the sinking ship.
+54,no,yes,0,-wh_gap,They reported,that,,,,,the boss,promoted,the accountant,last quarter.
+54,no,no,0,-wh_no_gap,They reported,that,,,,,,promoted,the accountant,last quarter.
+54,yes,yes,0,+wh_gap,They reported,who,,,,,the boss,promoted,the accountant,last quarter.
+54,yes,no,0,+wh_no_gap,They reported,who,,,,,,promoted,the accountant,last quarter.
+54,no,yes,1,-wh_gap,They reported,that,the man said,,,,the boss,promoted,the accountant,last quarter.
+54,no,no,1,-wh_no_gap,They reported,that,the man said,,,,,promoted,the accountant,last quarter.
+54,yes,yes,1,+wh_gap,They reported,who,the man said,,,,the boss,promoted,the accountant,last quarter.
+54,yes,no,1,+wh_no_gap,They reported,who,the man said,,,,,promoted,the accountant,last quarter.
+54,no,yes,2,-wh_gap,They reported,that,the man said,the old woman told him,,,the boss,promoted,the accountant,last quarter.
+54,no,no,2,-wh_no_gap,They reported,that,the man said,the old woman told him,,,,promoted,the accountant,last quarter.
+54,yes,yes,2,+wh_gap,They reported,who,the man said,the old woman told him,,,the boss,promoted,the accountant,last quarter.
+54,yes,no,2,+wh_no_gap,They reported,who,the man said,the old woman told him,,,,promoted,the accountant,last quarter.
+54,no,yes,3,-wh_gap,They reported,that,the man said,the old woman told him,she knew,,the boss,promoted,the accountant,last quarter.
+54,no,no,3,-wh_no_gap,They reported,that,the man said,the old woman told him,she knew,,,promoted,the accountant,last quarter.
+54,yes,yes,3,+wh_gap,They reported,who,the man said,the old woman told him,she knew,,the boss,promoted,the accountant,last quarter.
+54,yes,no,3,+wh_no_gap,They reported,who,the man said,the old woman told him,she knew,,,promoted,the accountant,last quarter.
+54,no,yes,4,-wh_gap,They reported,that,the man said,the old woman told him,she knew,he noticed,the boss,promoted,the accountant,last quarter.
+54,no,no,4,-wh_no_gap,They reported,that,the man said,the old woman told him,she knew,he noticed,,promoted,the accountant,last quarter.
+54,yes,yes,4,+wh_gap,They reported,who,the man said,the old woman told him,she knew,he noticed,the boss,promoted,the accountant,last quarter.
+54,yes,no,4,+wh_no_gap,They reported,who,the man said,the old woman told him,she knew,he noticed,,promoted,the accountant,last quarter.
+6,no,yes,0,-wh_gap,My friend knows,that,,,,,the successful architect,handed,an award,for her mother.
+6,no,no,0,-wh_no_gap,My friend knows,that,,,,,,handed,an award,for her mother.
+6,yes,yes,0,+wh_gap,My friend knows,who,,,,,the successful architect,handed,an award,for her mother.
+6,yes,no,0,+wh_no_gap,My friend knows,who,,,,,,handed,an award,for her mother.
+6,no,yes,1,-wh_gap,My friend knows,that,the judge thought,,,,the successful architect,handed,an award,for her mother.
+6,no,no,1,-wh_no_gap,My friend knows,that,the judge thought,,,,,handed,an award,for her mother.
+6,yes,yes,1,+wh_gap,My friend knows,who,the judge thought,,,,the successful architect,handed,an award,for her mother.
+6,yes,no,1,+wh_no_gap,My friend knows,who,the judge thought,,,,,handed,an award,for her mother.
+6,no,yes,2,-wh_gap,My friend knows,that,the judge thought,the cop said,,,the successful architect,handed,an award,for her mother.
+6,no,no,2,-wh_no_gap,My friend knows,that,the judge thought,the cop said,,,,handed,an award,for her mother.
+6,yes,yes,2,+wh_gap,My friend knows,who,the judge thought,the cop said,,,the successful architect,handed,an award,for her mother.
+6,yes,no,2,+wh_no_gap,My friend knows,who,the judge thought,the cop said,,,,handed,an award,for her mother.
+6,no,yes,3,-wh_gap,My friend knows,that,the judge thought,the cop said,the man testified,,the successful architect,handed,an award,for her mother.
+6,no,no,3,-wh_no_gap,My friend knows,that,the judge thought,the cop said,the man testified,,,handed,an award,for her mother.
+6,yes,yes,3,+wh_gap,My friend knows,who,the judge thought,the cop said,the man testified,,the successful architect,handed,an award,for her mother.
+6,yes,no,3,+wh_no_gap,My friend knows,who,the judge thought,the cop said,the man testified,,,handed,an award,for her mother.
+6,no,yes,4,-wh_gap,My friend knows,that,the judge thought,the cop said,the man testified,his friend reported,the successful architect,handed,an award,for her mother.
+6,no,no,4,-wh_no_gap,My friend knows,that,the judge thought,the cop said,the man testified,his friend reported,,handed,an award,for her mother.
+6,yes,yes,4,+wh_gap,My friend knows,who,the judge thought,the cop said,the man testified,his friend reported,the successful architect,handed,an award,for her mother.
+6,yes,no,4,+wh_no_gap,My friend knows,who,the judge thought,the cop said,the man testified,his friend reported,,handed,an award,for her mother.
+7,no,yes,0,-wh_gap,The commissioner discovered,that,,,,,the police detective,lent,some money,to the man.
+7,no,no,0,-wh_no_gap,The commissioner discovered,that,,,,,,lent,some money,to the man.
+7,yes,yes,0,+wh_gap,The commissioner discovered,who,,,,,the police detective,lent,some money,to the man.
+7,yes,no,0,+wh_no_gap,The commissioner discovered,who,,,,,,lent,some money,to the man.
+7,no,yes,1,-wh_gap,The commissioner discovered,that,the report stated,,,,the police detective,lent,some money,to the man.
+7,no,no,1,-wh_no_gap,The commissioner discovered,that,the report stated,,,,,lent,some money,to the man.
+7,yes,yes,1,+wh_gap,The commissioner discovered,who,the report stated,,,,the police detective,lent,some money,to the man.
+7,yes,no,1,+wh_no_gap,The commissioner discovered,who,the report stated,,,,,lent,some money,to the man.
+7,no,yes,2,-wh_gap,The commissioner discovered,that,the report stated,the television host thought,,,the police detective,lent,some money,to the man.
+7,no,no,2,-wh_no_gap,The commissioner discovered,that,the report stated,the television host thought,,,,lent,some money,to the man.
+7,yes,yes,2,+wh_gap,The commissioner discovered,who,the report stated,the television host thought,,,the police detective,lent,some money,to the man.
+7,yes,no,2,+wh_no_gap,The commissioner discovered,who,the report stated,the television host thought,,,,lent,some money,to the man.
+7,no,yes,3,-wh_gap,The commissioner discovered,that,the report stated,the television host thought,the man reported,,the police detective,lent,some money,to the man.
+7,no,no,3,-wh_no_gap,The commissioner discovered,that,the report stated,the television host thought,the man reported,,,lent,some money,to the man.
+7,yes,yes,3,+wh_gap,The commissioner discovered,who,the report stated,the television host thought,the man reported,,the police detective,lent,some money,to the man.
+7,yes,no,3,+wh_no_gap,The commissioner discovered,who,the report stated,the television host thought,the man reported,,,lent,some money,to the man.
+7,no,yes,4,-wh_gap,The commissioner discovered,that,the report stated,the television host thought,the man reported,the lawyer said,the police detective,lent,some money,to the man.
+7,no,no,4,-wh_no_gap,The commissioner discovered,that,the report stated,the television host thought,the man reported,the lawyer said,,lent,some money,to the man.
+7,yes,yes,4,+wh_gap,The commissioner discovered,who,the report stated,the television host thought,the man reported,the lawyer said,the police detective,lent,some money,to the man.
+7,yes,no,4,+wh_no_gap,The commissioner discovered,who,the report stated,the television host thought,the man reported,the lawyer said,,lent,some money,to the man.
+8,no,yes,0,-wh_gap,We all know,that,,,,,the investor,repaid,his debt,to the criminal kingpin.
+8,no,no,0,-wh_no_gap,We all know,that,,,,,,repaid,his debt,to the criminal kingpin.
+8,yes,yes,0,+wh_gap,We all know,who,,,,,the investor,repaid,his debt,to the criminal kingpin .
+8,yes,no,0,+wh_no_gap,We all know,who,,,,,,repaid,his debt,to the criminal kingpin .
+8,no,yes,1,-wh_gap,We all know,that,the accountant said,,,,the investor,repaid,his debt,to the criminal kingpin.
+8,no,no,1,-wh_no_gap,We all know,that,the accountant said,,,,,repaid,his debt,to the criminal kingpin.
+8,yes,yes,1,+wh_gap,We all know,who,the accountant said,,,,the investor,repaid,his debt,to the criminal kingpin .
+8,yes,no,1,+wh_no_gap,We all know,who,the accountant said,,,,,repaid,his debt,to the criminal kingpin .
+8,no,yes,2,-wh_gap,We all know,that,the accountant said,his colleague recalled,,,the investor,repaid,his debt,to the criminal kingpin.
+8,no,no,2,-wh_no_gap,We all know,that,the accountant said,his colleague recalled,,,,repaid,his debt,to the criminal kingpin.
+8,yes,yes,2,+wh_gap,We all know,who,the accountant said,his colleague recalled,,,the investor,repaid,his debt,to the criminal kingpin .
+8,yes,no,2,+wh_no_gap,We all know,who,the accountant said,his colleague recalled,,,,repaid,his debt,to the criminal kingpin .
+8,no,yes,3,-wh_gap,We all know,that,the accountant said,his colleague recalled,the partners knew,,the investor,repaid,his debt,to the criminal kingpin.
+8,no,no,3,-wh_no_gap,We all know,that,the accountant said,his colleague recalled,the partners knew,,,repaid,his debt,to the criminal kingpin.
+8,yes,yes,3,+wh_gap,We all know,who,the accountant said,his colleague recalled,the partners knew,,the investor,repaid,his debt,to the criminal kingpin .
+8,yes,no,3,+wh_no_gap,We all know,who,the accountant said,his colleague recalled,the partners knew,,,repaid,his debt,to the criminal kingpin .
+8,no,yes,4,-wh_gap,We all know,that,the accountant said,his colleague recalled,the partners knew,their accountant suspects,the investor,repaid,his debt,to the criminal kingpin.
+8,no,no,4,-wh_no_gap,We all know,that,the accountant said,his colleague recalled,the partners knew,their accountant suspects,,repaid,his debt,to the criminal kingpin.
+8,yes,yes,4,+wh_gap,We all know,who,the accountant said,his colleague recalled,the partners knew,their accountant suspects,the investor,repaid,his debt,to the criminal kingpin .
+8,yes,no,4,+wh_no_gap,We all know,who,the accountant said,his colleague recalled,the partners knew,their accountant suspects,,repaid,his debt,to the criminal kingpin .
+9,no,yes,0,-wh_gap,I know,that,,,,,the business man,promised,a raise,to the factory workers.
+9,no,no,0,-wh_no_gap,I know,that,,,,,,promised,a raise,to the factory workers.
+9,yes,yes,0,+wh_gap,I know,who,,,,,the business man,promised,a raise,to the factory workers.
+9,yes,no,0,+wh_no_gap,I know,who,,,,,,promised,a raise,to the factory workers.
+9,no,yes,1,-wh_gap,I know,that,the secretary said,,,,the business man,promised,a raise,to the factory workers.
+9,no,no,1,-wh_no_gap,I know,that,the secretary said,,,,,promised,a raise,to the factory workers.
+9,yes,yes,1,+wh_gap,I know,who,the secretary said,,,,the business man,promised,a raise,to the factory workers.
+9,yes,no,1,+wh_no_gap,I know,who,the secretary said,,,,,promised,a raise,to the factory workers.
+9,no,yes,2,-wh_gap,I know,that,the secretary said,the journalist remarked,,,the business man,promised,a raise,to the factory workers.
+9,no,no,2,-wh_no_gap,I know,that,the secretary said,the journalist remarked,,,,promised,a raise,to the factory workers.
+9,yes,yes,2,+wh_gap,I know,who,the secretary said,the journalist remarked,,,the business man,promised,a raise,to the factory workers.
+9,yes,no,2,+wh_no_gap,I know,who,the secretary said,the journalist remarked,,,,promised,a raise,to the factory workers.
+9,no,yes,3,-wh_gap,I know,that,the secretary said,the journalist remarked,the workers said,,the business man,promised,a raise,to the factory workers.
+9,no,no,3,-wh_no_gap,I know,that,the secretary said,the journalist remarked,the workers said,,,promised,a raise,to the factory workers.
+9,yes,yes,3,+wh_gap,I know,who,the secretary said,the journalist remarked,the workers said,,the business man,promised,a raise,to the factory workers.
+9,yes,no,3,+wh_no_gap,I know,who,the secretary said,the journalist remarked,the workers said,,,promised,a raise,to the factory workers.
+9,no,yes,4,-wh_gap,I know,that,the secretary said,the journalist remarked,the workers said,their representatives think,the business man,promised,a raise,to the factory workers.
+9,no,no,4,-wh_no_gap,I know,that,the secretary said,the journalist remarked,the workers said,their representatives think,,promised,a raise,to the factory workers.
+9,yes,yes,4,+wh_gap,I know,who,the secretary said,the journalist remarked,the workers said,their representatives think,the business man,promised,a raise,to the factory workers.
+9,yes,no,4,+wh_no_gap,I know,who,the secretary said,the journalist remarked,the workers said,their representatives think,,promised,a raise,to the factory workers.
