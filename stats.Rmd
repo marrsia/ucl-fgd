@@ -1,0 +1,88 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+## mixed effect model of the effects of presence of wh-licensor, presence of gap, gap type and embedding level on surprisals from gpt2
+
+```{r}
+library(tidyverse)
+
+full_surprisals.gpt.object <- read_csv("data/model_outputs/gpt2_wilcox2022_embed4_object_gap_stimuli_with_surprisals.csv")
+
+full_surprisals.gpt.subject <- read_csv("data/model_outputs/gpt2_wilcox2022_embed4_object_gap_stimuli_with_surprisals.csv")
+
+surprisals_df.gpt.object <- data.frame(
+    "id" = full_surprisals.gpt.object$sentence_group, 
+    "wh" = full_surprisals.gpt.object$wh, 
+    "gap" = full_surprisals.gpt.object$gap, 
+    "condition" = full_surprisals.gpt.object$condition,
+    "embed" = full_surprisals.gpt.object$levels_of_embedding, 
+    "surprisal" = full_surprisals.gpt.object$local_surprisal,
+    "gap_type" = "object")
+
+surprisals_df.gpt.subject <- data.frame(
+  "id" = full_surprisals.gpt.subject$sentence_group, 
+  "wh" = full_surprisals.gpt.subject$wh, 
+  "gap" = full_surprisals.gpt.subject$gap, 
+  "condition" = full_surprisals.gpt.subject$condition,
+  "embed" = full_surprisals.gpt.subject$levels_of_embedding, 
+  "surprisal" = full_surprisals.gpt.subject$local_surprisal,
+  "gap_type" = "subject"  
+)
+
+surprisals_df.gpt2 <- rbind(surprisals_df.gpt.subject, surprisals_df.gpt.object)
+
+head(surprisals_df.gpt2)
+```
+
+```{r}
+
+library(lme4)
+
+m1 <- lmer(surprisal ~ wh * gap + gap_type + embed + (1 + wh*gap | id), 
+           data = surprisals_df.gpt2)
+
+summary(m1)
+```
+
+```{r}
+m1.null <- lmer(surprisal ~  (1 + wh*gap | id), 
+           data = surprisals_df.gpt2, REML=FALSE)
+
+m1.for_comparison <- lmer(surprisal ~ wh * gap + gap_type + embed + (1 + wh*gap | id), 
+                                data = surprisals_df.gpt2, REML=FALSE)
+
+anova(m1.null, m1.for_comparison)
+```
+
+```{r}
+plot(fitted(m1), residuals(m1))
+
+```
+
+```{r}
+hist(residuals(m1))
+
+```
+
+```{r}
+qqnorm(residuals(m1))
+
+```
+
+## Prediction modelling
