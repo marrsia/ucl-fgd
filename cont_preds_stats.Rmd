@@ -1,0 +1,161 @@
+---
+title: "stats_cont_preds"
+output: html_document
+date: "2026-07-08"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+# Read data
+
+```{r}
+
+gpt2_object_preds_path <- "data/model_outputs/distributions/gpt2_wilcox2022_embed4_object_gap_continuation_results.csv"
+
+gpt2_subject_preds_path <- "data/model_outputs/distributions/gpt2_wilcox2022_embed4_subject_gap_continuation_results.csv"
+
+read_and_combine_dfs <- function(object_preds_path, subject_preds_path) {
+  object_preds <- read_csv(object_preds_path)
+  
+  object_preds <- object_preds %>%
+    mutate(
+      wh = if_else(str_detect(condition, "^\\+wh"), "yes", "no"),
+      gap = if_else(str_detect(condition, "no_gap$"), "no", "yes")
+    )
+  
+  subject_preds <- read_csv(subject_preds_path)
+  
+  subject_preds <- subject_preds %>%
+    mutate(
+      wh = if_else(str_detect(condition, "^\\+wh"), "yes", "no"),
+      gap = if_else(str_detect(condition, "no_gap$"), "no", "yes")
+    )
+  
+  
+  object_preds <- data.frame(
+    "id" = object_preds$sentence_id, 
+    "wh" = as_factor(object_preds$wh), 
+    "embed" = as_factor(object_preds$embedding_level), 
+    "correct" = as.integer(object_preds$correct),
+    "gap_type" = "object")
+  
+  subject_preds <- data.frame(
+    "id" = subject_preds$sentence_id, 
+    "wh" = as_factor(subject_preds$wh), 
+    "embed" = as_factor(subject_preds$embedding_level), 
+    "correct" = as.integer(subject_preds$correct),
+    "gap_type" = "subject")
+  
+  
+  output <- rbind(object_preds, subject_preds)
+  
+  output$gap_type <- as_factor(output$gap_type) 
+  
+  contrasts(output$gap) <- contr.sum(levels(output$gap))
+  
+  contrasts(output$wh) <- contr.sum(levels(output$wh))
+  
+  contrasts(output$gap_type) <- contr.sum(levels(output$gap_type))
+  
+  
+  contrasts(output$embed) <- contr.treatment(n = levels(output$embed), base = 1)
+  
+  return (output)
+  
+}
+
+gpt.preds <- read_and_combine_dfs(gpt2_object_preds_path, gpt2_subject_preds_path)
+
+head(gpt.preds)
+```
+
+## Fit mixed effects model
+
+```{r}
+
+gpt.correctness.model <- glmer(correct ~ wh * embed * gap_type + (1 + wh | id),
+                           data = gpt.preds,
+                           family = binomial)
+
+
+```
+
+```{r}
+summary(gpt.correctness.model)
+```
+
+## Analyse results
+
+average is better for subject, but only because subject consistently predict no-gap, nearly 100% of the time
+
+```{r}
+
+
+emmeans(gpt.correctness.model, spec = ~ gap_type, type = "response") %>% plot
+```
+
+```{r}
+emmeans(gpt.correctness.model, spec = ~ gap_type * wh, type = "response") %>% plot
+```
+
+Breaking down by gap type: embed only significant for object in combination with wh, somehow significant for subject?
+
+```{r}
+joint_tests(gpt.correctness.model, by="gap_type")
+```
+
+## GRNN
+
+```{r}
+grnn_object_preds_path <- "data/model_outputs/distributions/grnn_wilcox2022_embed4_object_gap_continuation_results.csv"
+
+grnn_subject_preds_path <- "data/model_outputs/distributions/grnn_wilcox2022_embed4_subject_gap_continuation_results.csv"
+
+grnn.preds <- read_and_combine_dfs(grnn_object_preds_path, grnn_subject_preds_path)
+
+```
+
+```{r}
+
+grnn.correctness.model <- glmer(correct ~ wh * embed * gap_type + (1 + wh | id),
+                               data = grnn.preds,
+                               family = binomial)
+```
+
+```{r}
+summary(grnn.correctness.model)
+```
+
+```{r}
+emmeans(grnn.correctness.model, spec = ~ gap_type, type = "response") %>% plot
+```
+
+```{r}
+emmeans(grnn.correctness.model, spec = ~ gap_type * wh, type = "response") %>% plot
+```
+
+```{r}
+joint_tests(gpt.correctness.model, by="gap_type")
+```

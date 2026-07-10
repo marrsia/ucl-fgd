@@ -74,6 +74,25 @@ def plot_surprisal_lines(csv_path, configs, use_mean=True, save_path=None):
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()
 
+def get_surprisal_column_names(surprisal_type, condition, gap_type):
+    if surprisal_type == 'local' or surprisal_type == 'local_continuation_only':
+        if gap_type == 'object':
+            gap_col    = 'continuation_surprisal'
+            no_gap_col = 'object_surprisal'
+        elif gap_type == 'subject':
+            gap_col = 'verb_surprisal'
+            no_gap_col = 'subject_surprisal'
+        else:
+            raise ValueError(f"gap_type must be 'object' or 'subject', got {gap_type}")
+    elif surprisal_type == 'semi_local':
+        gap_col    = 'semi_local_surprisal_mean'
+        no_gap_col = 'semi_local_surprisal_mean'
+    elif surprisal_type == 'global':
+        gap_col    = 'global_surprisal_mean'
+        no_gap_col = 'global_surprisal_mean'
+    else:
+        raise ValueError(f"surprisal_type must be 'local', 'semi_local' or 'global', got '{surprisal_type}'")
+    return gap_col, no_gap_col
 
 def get_wh_effect(surprisal_df, sentence_group, embedding_level, condition, surprisal_type, gap_type):
     """
@@ -94,23 +113,7 @@ def get_wh_effect(surprisal_df, sentence_group, embedding_level, condition, surp
     Returns:
         wh_effect as float, or None if data missing
     """
-    if surprisal_type == 'local' or surprisal_type == 'local_continuation_only':
-        if gap_type == 'object':
-            gap_col    = 'continuation_surprisal'
-            no_gap_col = 'object_surprisal'
-        elif gap_type == 'subject':
-            gap_col = 'verb_surprisal'
-            no_gap_col = 'subject_surprisal'
-        else:
-            raise ValueError(f"gap_type must be 'object' or 'subject', got {gap_type}")
-    elif surprisal_type == 'semi_local':
-        gap_col    = 'semi_local_surprisal_mean'
-        no_gap_col = 'semi_local_surprisal_mean'
-    elif surprisal_type == 'global':
-        gap_col    = 'global_surprisal_mean'
-        no_gap_col = 'global_surprisal_mean'
-    else:
-        raise ValueError(f"surprisal_type must be 'local', 'semi_local' or 'global', got '{surprisal_type}'")
+    gap_col, no_gap_col = get_surprisal_column_names(surprisal_type, condition, gap_type)
 
     base = surprisal_df[
         (surprisal_df['sentence_group'] == sentence_group) &
@@ -153,26 +156,8 @@ def get_filler_offloading_effect(surprisal_df, sentence_group, embedding_level, 
     Returns:
         filler_offloading_effect as float, or None if data missing
     """
-    if surprisal_type == 'local':
-        if gap_type == 'object':
-            gap_col    = 'continuation_surprisal'
-            no_gap_col = 'object_surprisal'
-        elif gap_type == 'subject':
-            gap_col = 'verb_surprisal'
-            no_gap_col = 'subject_surprisal'
-        else:
-            raise ValueError(f"gap_type must be 'object' or 'subject', got {gap_type}")
-    elif surprisal_type == 'local_continuation_only':
-        gap_col = 'continuation_surprisal'
-        no_gap_col = 'continuation_surprisal'
-    elif surprisal_type == 'semi_local':
-        gap_col    = 'semi_local_surprisal_mean'
-        no_gap_col = 'semi_local_surprisal_mean'
-    elif surprisal_type == 'global':
-        gap_col    = 'global_surprisal_mean'
-        no_gap_col = 'global_surprisal_mean'
-    else:
-        raise ValueError(f"surprisal_type must be 'local', 'local_continuation_only', 'semi_local' or 'global', got '{surprisal_type}'")
+    
+    gap_col, no_gap_col = get_surprisal_column_names(surprisal_type, condition, gap_type)
 
     base = surprisal_df[
         (surprisal_df['sentence_group'] == sentence_group) &
@@ -206,7 +191,10 @@ def mean_ci_95(values):
         return values[0], 0.0
     mean = np.mean(values)
     ci_low, ci_high = stats.t.interval(0.95, df=n-1, loc=mean, scale=stats.sem(values))
-    return mean, (ci_high - mean)  # return half-width to use as yerr
+    ci_half = ci_high - mean
+    if not np.isfinite(ci_half):
+        ci_half = 0.0
+    return mean, ci_half
       
   ## TODO 
   # 1. add semi-local filler offloading effect
@@ -553,6 +541,86 @@ def plot_metrics(surprisal_df, gap_type, surprisal_type='local'):
 
         plt.tight_layout()
         plt.show()
+
+
+
+
+def plot_mean_surprisal_by_condition(surprisal_df, title, gap_type, surprisal_type='local', conditions=None,
+                                     condition_labels=None, embedding_levels=None, save_path=None):
+    """
+    Plots mean surprisal by condition and embedding level with 95% CIs.
+    Averages over sentence groups within each condition x embedding level cell.
+    Uses get_surprisal_column_names to select the appropriate column per condition.
+    """
+    if conditions is None:
+        conditions = sorted(surprisal_df['condition'].unique())
+    if condition_labels is None:
+        condition_labels = conditions
+    if embedding_levels is None:
+        embedding_levels = sorted(surprisal_df['levels_of_embedding'].unique())
+
+    def _col_for_condition(condition):
+        gap_col, no_gap_col = get_surprisal_column_names(surprisal_type, condition, gap_type)
+        return no_gap_col if 'no_gap' in condition else gap_col
+
+    all_means = {}
+    all_cis   = {}
+    for condition in conditions:
+        col = _col_for_condition(condition)
+        all_means[condition] = []
+        all_cis[condition]   = []
+        for level in embedding_levels:
+            values = surprisal_df[
+                (surprisal_df['condition'] == condition) &
+                (surprisal_df['levels_of_embedding'] == level)
+            ][col].dropna().tolist()
+            mean, ci = mean_ci_95(values)
+            all_means[condition].append(mean if mean is not None else 0)
+            all_cis[condition].append(ci   if ci   is not None else 0)
+
+    n_levels     = len(embedding_levels)
+    n_conditions = len(conditions)
+    x            = np.arange(n_levels)
+    width        = 0.8 / n_conditions
+    offsets      = np.linspace(-(n_conditions - 1) / 2, (n_conditions - 1) / 2, n_conditions) * width
+    colors       = ['#5bbcd6', '#f98400', '#00a08a', '#ff0000'][:n_conditions]
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+    for i, condition in enumerate(conditions):
+        ax.bar(
+            x + offsets[i], all_means[condition], width,
+            yerr=all_cis[condition], capsize=4,
+            label=condition_labels[i], color=colors[i], alpha=0.85,
+            error_kw={'elinewidth': 1.5}
+        )
+
+    ax.set_xticks(x)
+    ax.set_xticklabels([f'Embedding {l}' for l in embedding_levels])
+    ax.set_xlabel('Embedding Level')
+    ax.set_ylabel('Mean Surprisal (bits)')
+    ax.set_title(title)
+    ax.legend()
+    ax.grid(True, alpha=0.3, axis='y')
+
+    print(f"\n=== MEANS & SDs ({title}) ===")
+    for condition, label in zip(conditions, condition_labels):
+        col = _col_for_condition(condition)
+        print(f"\n  {label}:")
+        for level in embedding_levels:
+            vals = surprisal_df[
+                (surprisal_df['condition'] == condition) &
+                (surprisal_df['levels_of_embedding'] == level)
+            ][col].dropna().tolist()
+            if vals:
+                print(f"    embedding {level}: mean={np.mean(vals):.3f}, sd={np.std(vals, ddof=1):.3f}, n={len(vals)}")
+            else:
+                print(f"    embedding {level}: no data")
+
+    plt.tight_layout()
+    if save_path:
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+    plt.show()
+
 
 def compute_average_surprisals_by_condition(csv_path, regions, surprisal_type='mean'):
     """

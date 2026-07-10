@@ -26,12 +26,124 @@ RELEVANT_REGIONS = [
 
 gpt2_tokenizer =  GPT2TokenizerFast.from_pretrained("openai-community/gpt2", add_prefix_space=True)
 
-# TODO: write a data verifier 
-# 1. check that sentences are all correct (grammar spelling etc), 
-# 2. check that in each sentence group each column either always has the same thing or has nothing in it.
-# 3. check that gap and filler columns match the condition column 
-# 3. check that object column in empty if gap=yes and gap_type = object, same for subject
-# 4. check that number of embeddings matches the condition
+def verify_data(input_csv):
+    """
+    Verifies structural integrity of a stimuli CSV.
+    gap_type ('subject' or 'object') is inferred from the filename.
+
+    Checks:
+    1. Sentences are well-formed (spell-checked; proper nouns skipped)
+    2. Within each sentence group, each content column has at most one distinct non-empty value
+    3. wh/gap columns match the condition column; complementiser matches wh
+    4. The gap filler column (subject or object) is empty iff gap=yes
+    5. Number of non-empty embedding columns matches levels_of_embedding
+
+    Args:
+        input_csv: path to stimuli CSV
+
+    Returns:
+        True if all checks pass, False otherwise.
+    """
+    import os
+    name = os.path.basename(input_csv).lower()
+    if "object" in name:
+        gap_type = "object"
+    elif "subject" in name:
+        gap_type = "subject"
+    else:
+        raise ValueError(f"Cannot infer gap_type from filename {os.path.basename(input_csv)!r}: expected 'subject' or 'object' in the name")
+
+    df = pd.read_csv(input_csv)
+    errors = []
+
+    EMBEDDING_COLS = ["embedding_1", "embedding_2", "embedding_3", "embedding_4"]
+    ALL_SENTENCE_COLS = [
+        "main_clause", "complementiser", "embedding_1", "embedding_2",
+        "embedding_3", "embedding_4", "subject", "verb", "object", "continuation"
+    ]
+    # Columns that vary by design within a sentence group
+    VARYING_COLS = {"sentence_group", "wh", "gap", "condition", "levels_of_embedding", "complementiser"}
+    CONTENT_COLS = [c for c in df.columns if c not in VARYING_COLS]
+    gap_col = "subject" if gap_type == "subject" else "object"
+
+    def cell(row, col):
+        return str(row[col]).strip() if pd.notna(row[col]) else ""
+
+    # Check 1: spell-check each word in the reconstructed sentence.
+    # Proper nouns (words starting with uppercase mid-sentence) are skipped.
+    from spellchecker import SpellChecker
+    spell = SpellChecker()
+    for idx, row in df.iterrows():
+        parts = [cell(row, col) for col in ALL_SENTENCE_COLS if cell(row, col)]
+        sentence = " ".join(parts)
+        words = sentence.split()
+        # skip first word (always capitalised) and mid-sentence proper nouns
+        to_check = [w.lower().strip(".,;:!?\"'") for w in words[1:] if not w[0].isupper()]
+        unknown = spell.unknown(to_check)
+        if unknown:
+            errors.append(f"Row {idx}: unrecognised word(s) {sorted(unknown)} in sentence: {sentence!r}")
+
+    # Check 2: content columns should have at most one distinct non-empty value per group
+    for group, group_df in df.groupby("sentence_group"):
+        for col in CONTENT_COLS:
+            non_empty = group_df[col].dropna()
+            non_empty = non_empty[non_empty.astype(str).str.strip() != ""]
+            distinct = non_empty.astype(str).str.strip().unique()
+            if len(distinct) > 1:
+                errors.append(
+                    f"Group {group}, column '{col}': inconsistent values: {list(distinct)}"
+                )
+
+    # Check 3: wh/gap columns match condition; complementiser matches wh
+    for idx, row in df.iterrows():
+        cond = cell(row, "condition")
+        expected_wh = "yes" if cond.startswith("+wh") else "no"
+        expected_gap = "yes" if cond.endswith("_gap") and not cond.endswith("_no_gap") else "no"
+        if cell(row, "wh") != expected_wh:
+            errors.append(
+                f"Row {idx}: wh={row['wh']!r} doesn't match condition={cond!r} (expected {expected_wh!r})"
+            )
+        if cell(row, "gap") != expected_gap:
+            errors.append(
+                f"Row {idx}: gap={row['gap']!r} doesn't match condition={cond!r} (expected {expected_gap!r})"
+            )
+        comp = cell(row, "complementiser")
+        if cell(row, "wh") == "yes" and comp != "who":
+            errors.append(f"Row {idx}: wh=yes but complementiser={comp!r} (expected 'who')")
+        elif cell(row, "wh") == "no" and comp != "that":
+            errors.append(f"Row {idx}: wh=no but complementiser={comp!r} (expected 'that')")
+
+    # Check 4: gap filler column is empty iff gap=yes
+    for idx, row in df.iterrows():
+        gap = cell(row, "gap")
+        val = cell(row, gap_col)
+        if gap == "yes" and val:
+            errors.append(f"Row {idx}: gap=yes but {gap_col}={val!r} is not empty")
+        elif gap == "no" and not val:
+            errors.append(f"Row {idx}: gap=no but {gap_col} is empty")
+
+    # Check 5: number of non-empty embedding columns matches levels_of_embedding
+    for idx, row in df.iterrows():
+        levels = int(row["levels_of_embedding"])
+        for i, emb_col in enumerate(EMBEDDING_COLS, start=1):
+            val = cell(row, emb_col)
+            if i <= levels and not val:
+                errors.append(
+                    f"Row {idx}: levels_of_embedding={levels} but {emb_col} is empty"
+                )
+            elif i > levels and val:
+                errors.append(
+                    f"Row {idx}: levels_of_embedding={levels} but {emb_col}={val!r} is not empty"
+                )
+
+    if errors:
+        for e in errors:
+            print(f"FAIL: {e}")
+        print(f"\n{len(errors)} error(s) found.")
+        return False
+
+    print("All checks passed.")
+    return True
 
 
 def build_sentences_for_surprisals(input_csv, output_txt):
@@ -282,6 +394,7 @@ def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name
     """
     For each sentence in the stimuli, computes the surprisal of the first token
     of each specified region and saves results to a CSV.
+    Additionally saves local, semi-local and global surprisal in columns.
 
     Args:
         stimuli_csv: path to original stimuli CSV
@@ -301,8 +414,25 @@ def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name
         results[f"{region}_surprisal_mean"] = None
     results["semi_local_surprisal_mean"] = None
     results["global_surprisal_mean"] = None
+    results["local_surprisal"] = None
+    
+    def get_local_surprisal_col(gap_type, condition):
+        if gap_type == 'object':
+            gap_col    = 'continuation_surprisal'
+            no_gap_col = 'object_surprisal'
+        elif gap_type == 'subject':
+            gap_col = 'verb_surprisal'
+            no_gap_col = 'subject_surprisal'
+        
+        if condition.endswith("no_gap"):
+            return no_gap_col
+        else:
+            return gap_col
+        
+    
+    for sentence_id, row in stimuli_df.iterrows():
+        condition = row['condition']
 
-    for sentence_id, _ in stimuli_df.iterrows():
         for region in regions:
             token_range = get_region_token_ids(stimuli_df, region, sentence_id, model_name)
 
@@ -315,18 +445,20 @@ def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name
             results.at[sentence_id, f"{region}_surprisal_mean"] = get_range_mean_surprisal(
                 surprisal_df, sentence_id, token_range
             )
-        
+
         semi_local_regions = ["object", "continuation"] if gap_type == 'object' else ["subject", "verb", "object", "continuation"]
-        
+
         results.at[sentence_id, "semi_local_surprisal_mean"] = get_range_mean_surprisal(
             surprisal_df, sentence_id, get_multi_region_token_ids(stimuli_df, semi_local_regions, sentence_id, model_name)
         )
         results.at[sentence_id, "global_surprisal_mean"] = get_range_mean_surprisal(
             surprisal_df, sentence_id, get_multi_region_token_ids(stimuli_df, regions, sentence_id, model_name)
         )
-        
-        
-           
+
+        local_col = get_local_surprisal_col(gap_type, condition)
+        results.at[sentence_id, "local_surprisal"] = results.at[sentence_id, local_col]
+
+
     results.to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
     

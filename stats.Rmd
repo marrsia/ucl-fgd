@@ -1,88 +1,305 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*.
+## Computational modelling of filler-gap dependencies
 
 ```{r}
-plot(cars)
+
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+```{r}
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+```
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
-
-## mixed effect model of the effects of presence of wh-licensor, presence of gap, gap type and embedding level on surprisals from gpt2
+## GPT2: mixed effect model of the effects of presence of wh-licensor, presence of gap, gap type and embedding level on surprisals
 
 ```{r}
 library(tidyverse)
 
-full_surprisals.gpt.object <- read_csv("data/model_outputs/gpt2_wilcox2022_embed4_object_gap_stimuli_with_surprisals.csv")
+gpt2.object_path <- "data/model_outputs/gpt2_wilcox2022_embed4_object_gap_stimuli_with_surprisals.csv"
 
-full_surprisals.gpt.subject <- read_csv("data/model_outputs/gpt2_wilcox2022_embed4_object_gap_stimuli_with_surprisals.csv")
+gpt2.subject_path <- "data/model_outputs/gpt2_wilcox2022_embed4_subject_gap_stimuli_with_surprisals.csv"
 
-surprisals_df.gpt.object <- data.frame(
-    "id" = full_surprisals.gpt.object$sentence_group, 
-    "wh" = full_surprisals.gpt.object$wh, 
-    "gap" = full_surprisals.gpt.object$gap, 
-    "condition" = full_surprisals.gpt.object$condition,
-    "embed" = full_surprisals.gpt.object$levels_of_embedding, 
-    "surprisal" = full_surprisals.gpt.object$local_surprisal,
+read_and_combine_dfs <- function(object_surprisals, subject_surprisals) {
+  full_surprisals.object <- read_csv(object_surprisals)
+  
+  full_surprisals.subject <- read_csv(subject_surprisals)
+  
+  surprisals_df.object <- data.frame(
+    "id" = as_factor(full_surprisals.object$sentence_group), 
+    "wh" = as_factor(full_surprisals.object$wh), 
+    "gap" = as_factor(full_surprisals.object$gap), 
+    "condition" = full_surprisals.object$condition,
+    "embed" = as_factor(full_surprisals.object$levels_of_embedding), 
+    "surprisal" = full_surprisals.object$local_surprisal,
     "gap_type" = "object")
+  
+  surprisals_df.subject <- data.frame(
+    "id" = as_factor(full_surprisals.subject$sentence_group), 
+    "wh" = as_factor(full_surprisals.subject$wh), 
+    "gap" = as_factor(full_surprisals.subject$gap), 
+    "condition" = full_surprisals.subject$condition,
+    "embed" = as_factor(full_surprisals.subject$levels_of_embedding), 
+    "surprisal" = full_surprisals.subject$local_surprisal,
+    "gap_type" = "subject"  
+  )
+  
+  
+  output <- rbind(surprisals_df.subject, surprisals_df.object)
+  
+  output$gap_type <- as_factor(output$gap_type) 
+  
+  
+  contrasts(output$gap) <- contr.sum(levels(output$gap))
+  
+  contrasts(output$wh) <- contr.sum(levels(output$wh))
 
-surprisals_df.gpt.subject <- data.frame(
-  "id" = full_surprisals.gpt.subject$sentence_group, 
-  "wh" = full_surprisals.gpt.subject$wh, 
-  "gap" = full_surprisals.gpt.subject$gap, 
-  "condition" = full_surprisals.gpt.subject$condition,
-  "embed" = full_surprisals.gpt.subject$levels_of_embedding, 
-  "surprisal" = full_surprisals.gpt.subject$local_surprisal,
-  "gap_type" = "subject"  
-)
+  contrasts(output$gap_type) <- contr.sum(levels(output$gap_type))
 
-surprisals_df.gpt2 <- rbind(surprisals_df.gpt.subject, surprisals_df.gpt.object)
+  
+  contrasts(output$embed) <- contr.treatment(n = levels(output$embed), base = 1)
+
+  return (output)
+  
+}
+
+
+
+surprisals_df.gpt2 <- read_and_combine_dfs(gpt2.object_path, gpt2.subject_path)
 
 head(surprisals_df.gpt2)
+summary(surprisals_df.gpt2)
+
+contrasts(surprisals_df.gpt2$gap)
+contrasts(surprisals_df.gpt2$wh)
+contrasts(surprisals_df.gpt2$gap_type)
+contrasts(surprisals_df.gpt2$embed)
+
 ```
+
+## Fitting a Mixed-effects model to the gpt2 data
+
+**TODO**: make all of this be functions so I can reuse between models!
 
 ```{r}
 
 library(lme4)
 
-m1 <- lmer(surprisal ~ wh * gap + gap_type + embed + (1 + wh*gap | id), 
+library(lmerTest)
+
+surprisals.gpt.model <- lmer(surprisal ~ wh * gap * gap_type * embed + (1 + wh*gap | id), 
            data = surprisals_df.gpt2)
 
-summary(m1)
+summary(surprisals.gpt.model)
 ```
 
 ```{r}
-m1.null <- lmer(surprisal ~  (1 + wh*gap | id), 
-           data = surprisals_df.gpt2, REML=FALSE)
 
-m1.for_comparison <- lmer(surprisal ~ wh * gap + gap_type + embed + (1 + wh*gap | id), 
-                                data = surprisals_df.gpt2, REML=FALSE)
+plot(fitted(surprisals.gpt.model), residuals(surprisals.gpt.model))
 
-anova(m1.null, m1.for_comparison)
+```
+
+## Analysis with emmeans package
+
+### break down results by  gap type 
+
+```{r}
+library(emmeans)
+library(magrittr)
+
+em.gap_type <- emmeans(surprisals.gpt.model, specs =  ~ wh*gap | embed)
+em.gap <- emmeans(surprisals.gpt.model, spec = ~ wh | gap)
+em.wh <- emmeans(surprisals.gpt.model, spec = ~ gap*embed| wh)
+em.gap_type <- emmeans(surprisals.gpt.model, spec = ~ gap | gap_type)
+```
+
+on average sentences with subject-gaps have higher s
+
+```{r}
+joint_tests(em.wh, by="wh")
+```
+
+urprisal
+
+```{r}
+emmeans(surprisals.gpt.model, spec = ~ gap_type) %>% plot
+
 ```
 
 ```{r}
-plot(fitted(m1), residuals(m1))
+summary(em.gap_type)
+```
 
+wh alone only a significant predictor for object gaps – I think this makes sense with the theory that LMs are bad at subject-gaps
+
+embedding alone only a predictor for subject gaps, and wh:embed interaction is also only present for subject gaps
+
+```{r}
+
+joint_tests(surprisals.gpt.model, by="embed")
+```
+
+This plot seems broadly pretty useful? But I don't know if it tells us that much because it's just means – and we generally care a lot more about differences in surprisal between conditions for the same sentence?
+
+```{r}
+emmip(surprisals.gpt.model, gap_type ~ embed | wh*gap)
+```
+
+## Further break down by embedding level
+
+Again significant for subject gaps — across all embedding levels – but not object gaps
+
+```{r}
+emmeans(surprisals.gpt.model, trt.vs.ctrl ~ embed | gap_type)
+```
+
+Breaking down even more – significant for wh=yes and gap_type = subject, not anything else
+
+```{r}
+emmeans(surprisals.gpt.model, trt.vs.ctrl ~ embed | gap_type * wh)
+```
+
+Embedding consistently has an effect on outcomes for +wh_gap condition across both gap types. Bigger effect for higher embedding levels for object but not subject gaps – makes sense if we think LMs are just generally bad at subject gaps maybe. For gap=no, wh= yes effect present at **high embedding levels for object** and **low embedding levels for subject**
+
+```{r}
+emmeans(surprisals.gpt.model, trt.vs.ctrl ~ embed | gap_type * gap * wh)
+
+```
+
+## Examining the wh-effect
+
+```{r}
+emmeans(surprisals.gpt.model, pairwise ~ wh | gap)
 ```
 
 ```{r}
-hist(residuals(m1))
+emmeans(surprisals.gpt.model, pairwise ~ wh | gap * gap_type)
+```
 
+## Examining the filler-offloading effect: statistically significant difference but NOT in the direction we expect
+
+something makes gaps always more surprising regardless of their grammaticality! This is stronger for subject-gaps meaning that they are less good at filler-offloading for subject gaps
+
+```{r}
+emmeans(surprisals.gpt.model, pairwise ~ gap | wh)
 ```
 
 ```{r}
-qqnorm(residuals(m1))
+emmeans(surprisals.gpt.model, pairwise ~ gap | wh * gap_type)
+```
+
+## GRNN: mixed effect model of the effects of presence of wh-licensor, presence of gap, gap type and embedding level on surprisals from
+
+```{r}
+library(tidyverse)
+
+grnn.object_path = "data/model_outputs/grnn_wilcox2022_embed4_object_gap_stimuli_with_surprisals.csv"
+
+grnn.subject_path = "data/model_outputs/grnn_wilcox2022_embed4_subject_gap_stimuli_with_surprisals.csv"
+
+
+surprisals_df.grnn <- read_and_combine_dfs(grnn.object_path, grnn.subject_path)
+
+head(surprisals_df.grnn)
+summary(surprisals_df.grnn)
+
 
 ```
 
-## Prediction modelling
+## Fitting a mixed-effects linear model to GRNN surprisal data
+
+```{r}
+surprisals.grnn.model <- lmer(surprisal ~ wh * gap * gap_type * embed + (1 + wh*gap | id), 
+                             data = surprisals_df.grnn)
+
+summary(surprisals.grnn.model)
+```
+
+```{r}
+plot(fitted(surprisals.gpt.model), residuals(surprisals.gpt.model))
+
+```
+
+## Analysis with emmeans package
+
+### break down results by  gap type 
+
+```{r}
+library(emmeans) 
+library(magrittr)  
+em.grnn.gap_type <- emmeans(surprisals.grnn.model, specs =  ~ wh*gap*embed | gap_type)
+```
+
+on average sentences with subject-gaps have higher surprisal
+
+```{r}
+emmeans(surprisals.grnn.model, spec = ~ gap_type) %>% plot 
+```
+
+```{r}
+summary(em.grnn.gap_type)
+```
+
+wh alone not a significant predictor – unlike gpt2
+
+embedding alone only a predictor for subject gaps, and wh:embed interaction is also only present for subject gaps: again maybe this aligns with the theory that the models are just really really bad when it comes to subject gaps?
+
+```{r}
+joint_tests(surprisals.grnn.model, by="gap_type")
+```
+
+```{r}
+emmip(surprisals.gpt.model, gap_type ~ embed | wh*gap)
+```
+
+## 
+
+## Further break down by embedding level
+
+Again significant for subject gaps — across all embedding levels – but not object gaps
+
+```{r}
+emmeans(surprisals.grnn.model, trt.vs.ctrl ~ embed | gap_type)
+```
+
+Breaking down even more – significant for wh=yes and gap_type = subject, not anything else
+
+```{r}
+emmeans(surprisals.grnn.model, trt.vs.ctrl ~ embed | gap_type * wh)
+```
+
+Significant effects only for wh_gap condition across both gap types, no significant interaction in the ungrammatical wh_no_gap condition – GRNN more superficial in its modelling?
+
+```{r}
+emmeans(surprisals.grnn.model, trt.vs.ctrl ~ embed | gap_type * gap * wh) 
+```
+
+## 
+
+## Examining the wh-effect
+
+```{r}
+emmeans(surprisals.grnn.model, pairwise ~ wh | gap)
+```
+
+```{r}
+emmeans(surprisals.grnn.model, pairwise ~ wh | gap * gap_type)
+```
+
+## Examining the filler-offloading effect: statistically significant difference but NOT in the direction we expect
+
+something makes gaps always more surprising regardless of their grammaticality! This is stronger for subject-gaps meaning that they are less good at filler-offloading for subject gaps
+
+```{r}
+emmeans(surprisals.gpt.model, pairwise ~ gap | wh)
+```
+
+```{r}
+emmeans(surprisals.gpt.model, pairwise ~ gap | wh * gap_type)
+```
+
+## 

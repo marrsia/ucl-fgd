@@ -3,3 +3,8 @@ __pycache__/
 *.pyc
 venv/
 models
+*.hdf5
+# Ignore vim files:
+*~
+*.swp
+*.swo
