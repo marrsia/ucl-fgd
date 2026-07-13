@@ -8,8 +8,7 @@ all_model_names = ["grnn", "ngram", "jrnn", "gpt2"]
 stimuli_file = sys.argv[1]
 files = sys.argv[2:]
 
-for file in files:
-    
+for file in files: 
    
     gap_type = "object" if "object" in stimuli_file.lower() else "subject"
     
@@ -29,6 +28,12 @@ for file in files:
         surprisal_csv=output,
         output_csv=results_file,
         model_name=model_name,
+        regions=list(SENTENCE_COLUMNS),
+        gap_type = gap_type
+    )
+    
+    add_region_base_frequency(
+        output_with_surprisals_csv=results_file,
         regions=list(SENTENCE_COLUMNS),
         gap_type = gap_type
     )

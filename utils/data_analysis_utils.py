@@ -84,6 +84,9 @@ def get_surprisal_column_names(surprisal_type, condition, gap_type):
             no_gap_col = 'subject_surprisal'
         else:
             raise ValueError(f"gap_type must be 'object' or 'subject', got {gap_type}")
+    elif surprisal_type == "local_mean":
+        gap_col = 'local_surprisal_mean'
+        no_gap_col = 'local_surprisal_mean'
     elif surprisal_type == 'semi_local':
         gap_col    = 'semi_local_surprisal_mean'
         no_gap_col = 'semi_local_surprisal_mean'
@@ -91,7 +94,7 @@ def get_surprisal_column_names(surprisal_type, condition, gap_type):
         gap_col    = 'global_surprisal_mean'
         no_gap_col = 'global_surprisal_mean'
     else:
-        raise ValueError(f"surprisal_type must be 'local', 'semi_local' or 'global', got '{surprisal_type}'")
+        raise ValueError(f"surprisal_type must be 'local', 'semi_local', 'local_mean' or 'global', got '{surprisal_type}'")
     return gap_col, no_gap_col
 
 def get_wh_effect(surprisal_df, sentence_group, embedding_level, condition, surprisal_type, gap_type):
@@ -583,7 +586,7 @@ def plot_mean_surprisal_by_condition(surprisal_df, title, gap_type, surprisal_ty
     x            = np.arange(n_levels)
     width        = 0.8 / n_conditions
     offsets      = np.linspace(-(n_conditions - 1) / 2, (n_conditions - 1) / 2, n_conditions) * width
-    colors       = ['#5bbcd6', '#f98400', '#00a08a', '#ff0000'][:n_conditions]
+    colors       = ['tab:pink', 'tab:grey', 'tab:olive', 'tab:cyan'][:n_conditions]
 
     fig, ax = plt.subplots(figsize=(10, 5))
     for i, condition in enumerate(conditions):
@@ -648,3 +651,91 @@ def compute_average_surprisals_by_condition(csv_path, regions, surprisal_type='m
     result.columns = regions
 
     return result
+
+def plot_surprisal_type_difference_by_condition(surprisal_df, title, gap_type,
+                                                  surprisal_type_1, surprisal_type_2,
+                                                  conditions=None, condition_labels=None,
+                                                  embedding_levels=None,
+                                                  type_labels=None, save_path=None):
+    """
+    Plots the mean difference (surprisal_type_1 - surprisal_type_2) by condition
+    and embedding level, with 95% CIs computed on the paired per-row differences.
+
+    Positive bars = surprisal_type_1 > surprisal_type_2 for that condition/level.
+    """
+    if conditions is None:
+        conditions = sorted(surprisal_df['condition'].unique())
+    if condition_labels is None:
+        condition_labels = conditions
+    if embedding_levels is None:
+        embedding_levels = sorted(surprisal_df['levels_of_embedding'].unique())
+    if type_labels is None:
+        type_labels = (surprisal_type_1, surprisal_type_2)
+
+    def _cols_for_condition(condition):
+        gap_col_1, no_gap_col_1 = get_surprisal_column_names(surprisal_type_1, condition, gap_type)
+        gap_col_2, no_gap_col_2 = get_surprisal_column_names(surprisal_type_2, condition, gap_type)
+        if 'no_gap' in condition:
+            return no_gap_col_1, no_gap_col_2
+        return gap_col_1, gap_col_2
+
+    all_means = {}
+    all_cis   = {}
+    all_diffs = {}  # kept for printed summary stats
+    for condition in conditions:
+        col_1, col_2 = _cols_for_condition(condition)
+        all_means[condition] = []
+        all_cis[condition]   = []
+        all_diffs[condition] = []
+        for level in embedding_levels:
+            subset = surprisal_df[
+                (surprisal_df['condition'] == condition) &
+                (surprisal_df['levels_of_embedding'] == level)
+            ][[col_1, col_2]].dropna()
+
+            diffs = (subset[col_1] - subset[col_2]).tolist()
+            mean, ci = mean_ci_95(diffs)
+
+            all_means[condition].append(mean if mean is not None else 0)
+            all_cis[condition].append(ci if ci is not None else 0)
+            all_diffs[condition].append(diffs)
+
+    n_levels     = len(embedding_levels)
+    n_conditions = len(conditions)
+    x            = np.arange(n_levels)
+    width        = 0.8 / n_conditions
+    offsets      = np.linspace(-(n_conditions - 1) / 2, (n_conditions - 1) / 2, n_conditions) * width
+    colors       = ['#4C72B0', '#DD8452', '#55A868', '#C44E52'][:n_conditions]
+
+    fig, ax = plt.subplots(figsize=(10, 5))
+    for i, condition in enumerate(conditions):
+        ax.bar(
+            x + offsets[i], all_means[condition], width,
+            yerr=all_cis[condition], capsize=4,
+            label=condition_labels[i], color=colors[i], alpha=0.85,
+            error_kw={'elinewidth': 1.5}
+        )
+
+    ax.axhline(0, color='black', linewidth=0.8)
+    ax.set_xticks(x)
+    ax.set_xticklabels([f'Embedding {l}' for l in embedding_levels])
+    ax.set_xlabel('Embedding Level')
+    ax.set_ylabel(f'Mean Δ Surprisal (bits)\n[{type_labels[0]} − {type_labels[1]}]')
+    ax.set_title(title)
+    ax.legend()
+    ax.grid(True, alpha=0.3, axis='y')
+
+    print(f"\n=== DIFFERENCE MEANS & SDs ({title}) [{type_labels[0]} - {type_labels[1]}] ===")
+    for condition, label in zip(conditions, condition_labels):
+        print(f"\n  {label}:")
+        for level, diffs in zip(embedding_levels, all_diffs[condition]):
+            if diffs:
+                print(f"    embedding {level}: mean_diff={np.mean(diffs):.3f}, "
+                      f"sd={np.std(diffs, ddof=1):.3f}, n={len(diffs)}")
+            else:
+                print(f"    embedding {level}: no data")
+
+    plt.tight_layout()
+    if save_path:
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+    plt.show()

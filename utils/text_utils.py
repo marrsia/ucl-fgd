@@ -1,19 +1,20 @@
 import pandas as pd
 from transformers import GPT2TokenizerFast
+from wordfreq import word_frequency
 
 SENTENCE_COLUMNS = [
     "main_clause", "complementiser", "embedding_1" , "embedding_2", 
-    "embedding_3", "subject", "verb", "object" , "continuation"
+    "embedding_3", "embedding_4", "subject", "verb", "object" , "continuation"
 ]
 
 SENTENCE_COLUMNS_FOR_SAMPLING_CONTINUATIONS_OBJECT_GAPS = [
     "main_clause", "complementiser", "embedding_1" , "embedding_2",  
-    "embedding_3", "subject", "verb"
+    "embedding_3", "embedding_4", "subject", "verb"
 ]
 
 SENTENCE_COLUMNS_FOR_SAMPLING_CONTINUATIONS_SUBJECT_GAPS = [
     "main_clause", "complementiser", "embedding_1" , "embedding_2",  
-    "embedding_3"
+    "embedding_3", "embedding_4",
 ]
 
 # Regions relevant for computing FGD surprisals.
@@ -108,8 +109,8 @@ def verify_data(input_csv):
                 f"Row {idx}: gap={row['gap']!r} doesn't match condition={cond!r} (expected {expected_gap!r})"
             )
         comp = cell(row, "complementiser")
-        if cell(row, "wh") == "yes" and comp != "who":
-            errors.append(f"Row {idx}: wh=yes but complementiser={comp!r} (expected 'who')")
+        if cell(row, "wh") == "yes" and comp != "who" and comp != "what":
+            errors.append(f"Row {idx}: wh=yes but complementiser={comp!r} (expected 'who' or 'what')")
         elif cell(row, "wh") == "no" and comp != "that":
             errors.append(f"Row {idx}: wh=no but complementiser={comp!r} (expected 'that')")
 
@@ -390,6 +391,19 @@ def get_range_mean_surprisal(surprisal_df, sentence_id, token_range):
 
     return rows["surprisal"].mean()
 
+def get_local_col(gap_type, condition):
+        if gap_type == 'object':
+            gap_col    = 'continuation'
+            no_gap_col = 'object'
+        elif gap_type == 'subject':
+            gap_col = 'verb'
+            no_gap_col = 'subject'
+        
+        if condition.endswith("no_gap"):
+            return no_gap_col
+        else:
+            return gap_col
+
 def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name, regions, gap_type):
     """
     For each sentence in the stimuli, computes the surprisal of the first token
@@ -415,19 +429,7 @@ def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name
     results["semi_local_surprisal_mean"] = None
     results["global_surprisal_mean"] = None
     results["local_surprisal"] = None
-    
-    def get_local_surprisal_col(gap_type, condition):
-        if gap_type == 'object':
-            gap_col    = 'continuation_surprisal'
-            no_gap_col = 'object_surprisal'
-        elif gap_type == 'subject':
-            gap_col = 'verb_surprisal'
-            no_gap_col = 'subject_surprisal'
-        
-        if condition.endswith("no_gap"):
-            return no_gap_col
-        else:
-            return gap_col
+    results["local_surprisal_mean"] = None
         
     
     for sentence_id, row in stimuli_df.iterrows():
@@ -455,10 +457,54 @@ def compute_region_surprisals(stimuli_csv, surprisal_csv, output_csv, model_name
             surprisal_df, sentence_id, get_multi_region_token_ids(stimuli_df, regions, sentence_id, model_name)
         )
 
-        local_col = get_local_surprisal_col(gap_type, condition)
+        local_col = get_local_col(gap_type, condition) + "_surprisal"
         results.at[sentence_id, "local_surprisal"] = results.at[sentence_id, local_col]
+        results.at[sentence_id, "local_surprisal_mean"] = results.at[sentence_id, f"{local_col}_mean"]
 
 
     results.to_csv(output_csv, index=False)
     print(f"Saved to {output_csv}")
+    
+def add_region_base_frequency(output_with_surprisals_csv, regions, gap_type):
+    """
+        Compute base probabilities of: the first word in regions and full regions themselves.
+        These do not yet have log applied to them. Save results to the same file.
+        
+        word_freq documentation states that: "This method of combining word frequencies implicitly assumes that you're 
+        asking about words that frequently appear together. It's not multiplying the frequencies, because that would 
+        assume they are statistically unrelated. So if you give it an uncommon combination of tokens, 
+        it will hugely over-estimate their frequency"
+        For this reason I will not be computing these for sections larger than just one region (no global or semi-local)
+        
+    """
+    
+    results_df = pd.read_csv(output_with_surprisals_csv)
+
+    results = results_df.copy()
+    
+    for region in regions:
+        results[f"{region}_frequency"] = None
+        results[f"{region}_frequency_mean"] = None
+    results["local_frequency"] = None
+    results["local_frequency_mean"] = None
+    
+    for sentence_id, row in results_df.iterrows():
+        condition = row['condition']
+        for region in regions:
+            if not pd.isnull(results.at[sentence_id, region]):
+                first_word_freq = word_frequency( (results.at[sentence_id, region]).split()[0], 'en')
+                mean_freq = word_frequency(results.at[sentence_id, region], 'en')
+            
+                results.at[sentence_id, f"{region}_frequency"] = first_word_freq
+                results.at[sentence_id, f"{region}_frequency_mean"] = mean_freq
+
+        local_region = get_local_col(gap_type, condition)
+        
+        results.at[sentence_id, "local_frequency"] = results.at[sentence_id, f"{local_region}_frequency"]
+        results.at[sentence_id, "local_frequency_mean"] = results.at[sentence_id, f"{local_region}_frequency_mean"]
+
+    
+    results.to_csv(output_with_surprisals_csv, index=False)
+    print(f"Saved to {output_with_surprisals_csv}") 
+    
     

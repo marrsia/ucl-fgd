@@ -1041,24 +1041,24 @@ sentence_group,wh,gap,levels_of_embedding,condition,main_clause,complementiser,e
 7,yes,no,4,+wh_no_gap,The commissioner discovered,who,the report stated,the television host thought,the man reported,the lawyer said,the police detective,lent,some money,to the man.
 8,no,yes,0,-wh_gap,We all know,that,,,,,,repaid,his debt,to the criminal kingpin.
 8,no,no,0,-wh_no_gap,We all know,that,,,,,the investor,repaid,his debt,to the criminal kingpin.
-8,yes,yes,0,+wh_gap,We all know,who,,,,,,repaid,his debt,to the criminal kingpin .
-8,yes,no,0,+wh_no_gap,We all know,who,,,,,the investor,repaid,his debt,to the criminal kingpin .
+8,yes,yes,0,+wh_gap,We all know,who,,,,,,repaid,his debt,to the criminal kingpin.
+8,yes,no,0,+wh_no_gap,We all know,who,,,,,the investor,repaid,his debt,to the criminal kingpin.
 8,no,yes,1,-wh_gap,We all know,that,the accountant said,,,,,repaid,his debt,to the criminal kingpin.
 8,no,no,1,-wh_no_gap,We all know,that,the accountant said,,,,the investor,repaid,his debt,to the criminal kingpin.
-8,yes,yes,1,+wh_gap,We all know,who,the accountant said,,,,,repaid,his debt,to the criminal kingpin .
-8,yes,no,1,+wh_no_gap,We all know,who,the accountant said,,,,the investor,repaid,his debt,to the criminal kingpin .
+8,yes,yes,1,+wh_gap,We all know,who,the accountant said,,,,,repaid,his debt,to the criminal kingpin.
+8,yes,no,1,+wh_no_gap,We all know,who,the accountant said,,,,the investor,repaid,his debt,to the criminal kingpin.
 8,no,yes,2,-wh_gap,We all know,that,the accountant said,his colleague recalled,,,,repaid,his debt,to the criminal kingpin.
 8,no,no,2,-wh_no_gap,We all know,that,the accountant said,his colleague recalled,,,the investor,repaid,his debt,to the criminal kingpin.
-8,yes,yes,2,+wh_gap,We all know,who,the accountant said,his colleague recalled,,,,repaid,his debt,to the criminal kingpin .
-8,yes,no,2,+wh_no_gap,We all know,who,the accountant said,his colleague recalled,,,the investor,repaid,his debt,to the criminal kingpin .
+8,yes,yes,2,+wh_gap,We all know,who,the accountant said,his colleague recalled,,,,repaid,his debt,to the criminal kingpin.
+8,yes,no,2,+wh_no_gap,We all know,who,the accountant said,his colleague recalled,,,the investor,repaid,his debt,to the criminal kingpin.
 8,no,yes,3,-wh_gap,We all know,that,the accountant said,his colleague recalled,the partners knew,,,repaid,his debt,to the criminal kingpin.
 8,no,no,3,-wh_no_gap,We all know,that,the accountant said,his colleague recalled,the partners knew,,the investor,repaid,his debt,to the criminal kingpin.
-8,yes,yes,3,+wh_gap,We all know,who,the accountant said,his colleague recalled,the partners knew,,,repaid,his debt,to the criminal kingpin .
-8,yes,no,3,+wh_no_gap,We all know,who,the accountant said,his colleague recalled,the partners knew,,the investor,repaid,his debt,to the criminal kingpin .
+8,yes,yes,3,+wh_gap,We all know,who,the accountant said,his colleague recalled,the partners knew,,,repaid,his debt,to the criminal kingpin.
+8,yes,no,3,+wh_no_gap,We all know,who,the accountant said,his colleague recalled,the partners knew,,the investor,repaid,his debt,to the criminal kingpin.
 8,no,yes,4,-wh_gap,We all know,that,the accountant said,his colleague recalled,the partners knew,their accountant suspects,,repaid,his debt,to the criminal kingpin.
 8,no,no,4,-wh_no_gap,We all know,that,the accountant said,his colleague recalled,the partners knew,their accountant suspects,the investor,repaid,his debt,to the criminal kingpin.
-8,yes,yes,4,+wh_gap,We all know,who,the accountant said,his colleague recalled,the partners knew,their accountant suspects,,repaid,his debt,to the criminal kingpin .
-8,yes,no,4,+wh_no_gap,We all know,who,the accountant said,his colleague recalled,the partners knew,their accountant suspects,the investor,repaid,his debt,to the criminal kingpin .
+8,yes,yes,4,+wh_gap,We all know,who,the accountant said,his colleague recalled,the partners knew,their accountant suspects,,repaid,his debt,to the criminal kingpin.
+8,yes,no,4,+wh_no_gap,We all know,who,the accountant said,his colleague recalled,the partners knew,their accountant suspects,the investor,repaid,his debt,to the criminal kingpin.
 9,no,yes,0,-wh_gap,I know,that,,,,,,promised,a raise,to the factory workers.
 9,no,no,0,-wh_no_gap,I know,that,,,,,the business man,promised,a raise,to the factory workers.
 9,yes,yes,0,+wh_gap,I know,who,,,,,,promised,a raise,to the factory workers.
