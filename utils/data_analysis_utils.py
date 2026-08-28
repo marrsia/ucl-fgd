@@ -75,15 +75,9 @@ def plot_surprisal_lines(csv_path, configs, use_mean=True, save_path=None):
     plt.show()
 
 def get_surprisal_column_names(surprisal_type, condition, gap_type):
-    if surprisal_type == 'local' or surprisal_type == 'local_continuation_only':
-        if gap_type == 'object':
-            gap_col    = 'continuation_surprisal'
-            no_gap_col = 'object_surprisal'
-        elif gap_type == 'subject':
-            gap_col = 'verb_surprisal'
-            no_gap_col = 'subject_surprisal'
-        else:
-            raise ValueError(f"gap_type must be 'object' or 'subject', got {gap_type}")
+    if surprisal_type == 'local':
+        gap_col = "local_surprisal"
+        no_gap_col = "local_surprisal"
     elif surprisal_type == "local_mean":
         gap_col = 'local_surprisal_mean'
         no_gap_col = 'local_surprisal_mean'
@@ -120,7 +114,8 @@ def get_wh_effect(surprisal_df, sentence_group, embedding_level, condition, surp
 
     base = surprisal_df[
         (surprisal_df['sentence_group'] == sentence_group) &
-        (surprisal_df['levels_of_embedding'] == embedding_level)
+        (surprisal_df['levels_of_embedding'] == embedding_level) &
+        
     ]
 
     if condition == "gap":
@@ -548,7 +543,7 @@ def plot_metrics(surprisal_df, gap_type, surprisal_type='local'):
 
 
 
-def plot_mean_surprisal_by_condition(surprisal_df, title, gap_type, surprisal_type='local', conditions=None,
+def plot_mean_surprisal_by_condition(surprisal_df, title, surprisal_type='local', conditions=None,
                                      condition_labels=None, embedding_levels=None, save_path=None):
     """
     Plots mean surprisal by condition and embedding level with 95% CIs.
@@ -561,15 +556,12 @@ def plot_mean_surprisal_by_condition(surprisal_df, title, gap_type, surprisal_ty
         condition_labels = conditions
     if embedding_levels is None:
         embedding_levels = sorted(surprisal_df['levels_of_embedding'].unique())
-
-    def _col_for_condition(condition):
-        gap_col, no_gap_col = get_surprisal_column_names(surprisal_type, condition, gap_type)
-        return no_gap_col if 'no_gap' in condition else gap_col
+    
+    col = surprisal_type
 
     all_means = {}
     all_cis   = {}
     for condition in conditions:
-        col = _col_for_condition(condition)
         all_means[condition] = []
         all_cis[condition]   = []
         for level in embedding_levels:
@@ -607,7 +599,6 @@ def plot_mean_surprisal_by_condition(surprisal_df, title, gap_type, surprisal_ty
 
     print(f"\n=== MEANS & SDs ({title}) ===")
     for condition, label in zip(conditions, condition_labels):
-        col = _col_for_condition(condition)
         print(f"\n  {label}:")
         for level in embedding_levels:
             vals = surprisal_df[
@@ -620,6 +611,7 @@ def plot_mean_surprisal_by_condition(surprisal_df, title, gap_type, surprisal_ty
                 print(f"    embedding {level}: no data")
 
     plt.tight_layout()
+    plt.ylim(0, 22)
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()
@@ -736,6 +728,7 @@ def plot_surprisal_type_difference_by_condition(surprisal_df, title, gap_type,
                 print(f"    embedding {level}: no data")
 
     plt.tight_layout()
+    plt.ylim(-5, 5)
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()

@@ -24,6 +24,10 @@ gpt2.object_path <- "data/model_outputs/gpt2_wilcox2022_embed4_object_gap_stimul
 
 gpt2.subject_path <- "data/model_outputs/gpt2_wilcox2022_embed4_subject_gap_stimuli_with_surprisals.csv"
 
+GRNN.object_path <- "data/model_outputs/grnn_wilcox2022_embed4_object_gap_stimuli_with_surprisals.csv"
+
+GRNN.subject_path <- "data/model_outputs/grnn_wilcox2022_embed4_subject_gap_stimuli_with_surprisals.csv"
+
 read_and_combine_dfs <- function(object_surprisals, subject_surprisals) {
   full_surprisals.object <- read_csv(object_surprisals)
   
@@ -36,6 +40,7 @@ read_and_combine_dfs <- function(object_surprisals, subject_surprisals) {
     "condition" = full_surprisals.object$condition,
     "embed" = as_factor(full_surprisals.object$levels_of_embedding), 
     "surprisal" = full_surprisals.object$local_surprisal,
+    "log_freq" = log2(full_surprisals.object$local_frequency),
     "gap_type" = "object")
   
   surprisals_df.subject <- data.frame(
@@ -45,6 +50,7 @@ read_and_combine_dfs <- function(object_surprisals, subject_surprisals) {
     "condition" = full_surprisals.subject$condition,
     "embed" = as_factor(full_surprisals.subject$levels_of_embedding), 
     "surprisal" = full_surprisals.subject$local_surprisal,
+    "log_freq" = log2(full_surprisals.subject$local_frequency),
     "gap_type" = "subject"  
   )
   
@@ -74,11 +80,10 @@ surprisals_df.gpt2 <- read_and_combine_dfs(gpt2.object_path, gpt2.subject_path)
 head(surprisals_df.gpt2)
 summary(surprisals_df.gpt2)
 
-contrasts(surprisals_df.gpt2$gap)
-contrasts(surprisals_df.gpt2$wh)
-contrasts(surprisals_df.gpt2$gap_type)
-contrasts(surprisals_df.gpt2$embed)
+surprisals_df.gpt2
 
+test <- read_and_combine_dfs(GRNN.object_path, GRNN.subject_path)
+test
 ```
 
 ## Fitting a Mixed-effects model to the gpt2 data
@@ -91,7 +96,7 @@ library(lme4)
 
 library(lmerTest)
 
-surprisals.gpt.model <- lmer(surprisal ~ wh * gap * gap_type * embed + (1 + wh*gap | id), 
+surprisals.gpt.model <- lmer(surprisal ~ wh * gap * gap_type * embed + log_freq + (1 + wh*gap | id), 
            data = surprisals_df.gpt2)
 
 summary(surprisals.gpt.model)
@@ -99,22 +104,180 @@ summary(surprisals.gpt.model)
 
 ```{r}
 
-plot(fitted(surprisals.gpt.model), residuals(surprisals.gpt.model))
+plot(surprisals_df.gpt2$surprisal, by="id")
 
 ```
 
 ## Analysis with emmeans package
 
-### break down results by  gap type 
+### breaking down the wh:gap:embed interaction
 
 ```{r}
 library(emmeans)
 library(magrittr)
 
+em.wh_gap_embed <- emmeans(surprisals.gpt.model, specs =  ~ wh*gap*embed )
+summary(em.wh_gap_embed)
+joint_tests(em.wh_gap_embed, by = "embed")
+```
+
+```{r}
+joint_tests(em.wh_gap_embed, by = "gap")
+```
+
+```{r}
+joint_tests(em.wh_gap_embed, by = "wh")
+```
+
+### breaking down the gap:gap_type:embed interaction
+
+```{r}
+em.wh_gap_type_embed <- emmeans(surprisals.gpt.model, specs =  ~ wh*gap_type*embed)
+summary(em.wh_gap_type_embed)
+joint_tests(em.wh_gap_type_embed, by = "embed")
+```
+
+## the wh-effect
+
+```{r}
+em <- emmeans(surprisals.gpt.model, pairwise ~ wh | gap*embed)
+em$contrasts
+```
+
+```{r}
+emmeans(surprisals.gpt.model, ~ wh * gap_type | gap) %>%
+  contrast(interaction = c("pairwise", "pairwise"), by = "gap")
+```
+
+```{r}
+emmip(em$contrasts, gap~embed, CIs= TRUE) + labs(x = "Embedding level", y = "wh effect estimate (surprisal)", color = "Gap")
+```
+
+## the filler offloading effect
+
+```{r}
+em <- emmeans(surprisals.gpt.model, pairwise ~gap | wh*embed)
+em$contrasts
+```
+
+```{r}
+emmip(em$contrasts, wh~embed, CIs= TRUE) + labs(x = "Embedding level", y = "filler-offload effect estimate (surprisal)", color = "Wh")
+```
+
+```{r}
+emmeans(surprisals.gpt.model, ~ gap * embed | wh) %>%
+  contrast(interaction = c("pairwise", "trt.vs.ctrl"), by = "wh")
+```
+
+## Surprisal by condition
+
+```{r}
+emmip(surprisals.gpt.model, gap_type ~ embed | gap, CIs=TRUE)
+
+```
+
+## GRNN
+
+```{r}
+
+GRNN.object_path <- "data/model_outputs/grnn_wilcox2022_embed4_object_gap_stimuli_with_surprisals.csv"
+
+GRNN.subject_path <- "data/model_outputs/grnn_wilcox2022_embed4_subject_gap_stimuli_with_surprisals.csv"
+
+surprisals_df.GRNN <- read_and_combine_dfs(GRNN.object_path, GRNN.subject_path)
+
+surprisals_df.GRNN
+```
+
+```{r}
+library(lme4)
+
+library(lmerTest)
+
+surprisals.GRNN.model <- lmer(surprisal ~ wh * gap * gap_type * embed + log_freq + (1 + wh*gap | id), 
+                             data = surprisals_df.GRNN)
+
+summary(surprisals.GRNN.model)
+```
+
+```{r}
+emmeans(surprisals.GRNN.model, pairwise ~ wh | gap)
+```
+
+```{r}
+emmip(surprisals.GRNN.model, gap_type*gap*wh ~ embed | gap, CIs=TRUE)
+```
+
+### wh-effect
+
+```{r}
+em <- emmeans(surprisals.GRNN.model, pairwise ~ gap | wh*embed)
+em$contrasts
+```
+
+```{r}
+```
+
+```{r}
+emmeans(surprisals.GRNN.model, ~ gap * embed | wh) %>%
+  contrast(interaction = c("pairwise", "trt.vs.ctrl"), by = "wh")
+```
+
+`{emmip(em$contrasts, wh~embed, CIs= TRUE) + labs(x = "Embedding level", y = "filler-offload effect estimate (surprisal)", color = "Wh")}`
+
+```{r}
+
+emmeans(surprisals.GRNN.model, ~ wh * gap_type * embed| gap) %>%
+  contrast(interaction = c("pairwise", "pairwise", "trt.vs.ctrl"), by = "gap")
+
+emmeans(surprisals.GRNN.model, ~ wh * gap_type | gap * embed) %>%
+  contrast(interaction = c("pairwise", "pairwise"), by = c("gap", "embed"))
+```
+
+```{r}
+emmeans(surprisals.GRNN.model, ~ wh * embed | gap) %>%
+  contrast(interaction = c("pairwise", "trt.vs.ctrl"), by = "gap")
+```
+
+```{r}
+emmeans(surprisals.GRNN.model, ~ gap * gap_type | wh * embed) %>%
+  contrast(interaction = c("pairwise", "pairwise"), by = c("wh", "embed"))
+
+
+
+```
+
+### NGRAM
+
+```{r}
+
+```
+
+# OLD STUFF
+
+### break down results by gap type
+
+```{r}
+### break down results by gap type
+
+library(emmeans)
+lib
+
+
 em.gap_type <- emmeans(surprisals.gpt.model, specs =  ~ wh*gap | embed)
 em.gap <- emmeans(surprisals.gpt.model, spec = ~ wh | gap)
 em.wh <- emmeans(surprisals.gpt.model, spec = ~ gap*embed| wh)
 em.gap_type <- emmeans(surprisals.gpt.model, spec = ~ gap | gap_type)
+
+```
+
+```{r}
+library(emmeans)
+lib
+```
+
+```{r}
+
 ```
 
 on average sentences with subject-gaps have higher s
@@ -146,7 +309,7 @@ joint_tests(surprisals.gpt.model, by="embed")
 This plot seems broadly pretty useful? But I don't know if it tells us that much because it's just means – and we generally care a lot more about differences in surprisal between conditions for the same sentence?
 
 ```{r}
-emmip(surprisals.gpt.model, gap_type ~ embed | wh*gap)
+emmip(surprisals.gpt.model, gap_type ~ embed | gap)
 ```
 
 ## Further break down by embedding level
@@ -177,7 +340,11 @@ emmeans(surprisals.gpt.model, pairwise ~ wh | gap)
 ```
 
 ```{r}
-emmeans(surprisals.gpt.model, pairwise ~ wh | gap * gap_type)
+emmip(surprisals.gpt.model, pairwise ~ wh | embed * gap) 
+```
+
+```{r}
+emmeans(surprisals.gpt.model, pairwise ~ wh | embed * gap) 
 ```
 
 ## Examining the filler-offloading effect: statistically significant difference but NOT in the direction we expect
@@ -226,7 +393,7 @@ plot(fitted(surprisals.gpt.model), residuals(surprisals.gpt.model))
 
 ## Analysis with emmeans package
 
-### break down results by  gap type 
+### break down results by gap type
 
 ```{r}
 library(emmeans) 

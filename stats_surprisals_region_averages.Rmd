@@ -1,0 +1,712 @@
+---
+title: "surprisal_stats_region_average"
+output: html_document
+date: "2026-08-07"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# GPT2
+
+## Reading data
+
+```{r}
+library(tidyverse)
+
+gpt2.object_path <- "data/model_outputs/gpt2_wilcox2022_embed4_object_gap_stimuli_with_surprisals.csv"
+
+gpt2.subject_path <- "data/model_outputs/gpt2_wilcox2022_embed4_subject_gap_stimuli_with_surprisals.csv"
+
+GRNN.object_path <- "data/model_outputs/grnn_wilcox2022_embed4_object_gap_stimuli_with_surprisals.csv"
+
+GRNN.subject_path <- "data/model_outputs/grnn_wilcox2022_embed4_subject_gap_stimuli_with_surprisals.csv"
+
+ngram.object_path <- "data/model_outputs/ngram_wilcox2022_embed4_object_gap_stimuli_with_surprisals.csv"
+
+ngram.subject_path <- "data/model_outputs/ngram_wilcox2022_embed4_subject_gap_stimuli_with_surprisals.csv"
+
+read_and_combine_dfs <- function(object_surprisals, subject_surprisals,  frequency_column, surprisal_column) {
+  full_surprisals.object <- read_csv(object_surprisals)
+  
+  full_surprisals.subject <- read_csv(subject_surprisals)
+  
+  surprisals_df.object <- data.frame(
+    "id" = as_factor(full_surprisals.object$sentence_group), 
+    "wh" = as_factor(full_surprisals.object$wh), 
+    "gap" = as_factor(full_surprisals.object$gap), 
+    "condition" = full_surprisals.object$condition,
+    "embed" = as_factor(full_surprisals.object$levels_of_embedding), 
+    "surprisal" = full_surprisals.object[[surprisal_column]],
+    "log_freq" = log2(full_surprisals.object[[frequency_column]]),
+    "gap_type" = "object")
+  
+  surprisals_df.subject <- data.frame(
+    "id" = as_factor(full_surprisals.subject$sentence_group), 
+    "wh" = as_factor(full_surprisals.subject$wh), 
+    "gap" = as_factor(full_surprisals.subject$gap), 
+    "condition" = full_surprisals.subject$condition,
+    "embed" = as_factor(full_surprisals.subject$levels_of_embedding), 
+    "surprisal" = full_surprisals.subject[[surprisal_column]],
+    "log_freq" = log2(full_surprisals.subject[[frequency_column]]),
+    "gap_type" = "subject"  
+  )
+  
+  
+  output <- rbind(surprisals_df.subject, surprisals_df.object)
+  
+  output$gap_type <- as_factor(output$gap_type) 
+  
+  
+  contrasts(output$gap) <- contr.sum(levels(output$gap))
+  
+  contrasts(output$wh) <- contr.sum(levels(output$wh))
+  
+  contrasts(output$gap_type) <- contr.sum(levels(output$gap_type))
+  
+  
+  contrasts(output$embed) <- contr.treatment(n = levels(output$embed), base = 1)
+  
+  return (output)
+  
+}
+
+local_frequency_column = "local_frequency" 
+local_surprisal_column = "local_surprisal"
+
+local_mean_frequency_column = "local_frequency_mean"
+local_mean_surprisal_column = "local_surprisal_mean"
+```
+
+## Model fit
+
+```{r}
+first_token_surprisals_df.gpt2 <- read_and_combine_dfs(gpt2.object_path, gpt2.subject_path, local_frequency_column, local_surprisal_column)
+
+mean_surprisals_df.gpt2 <- read_and_combine_dfs(gpt2.object_path, gpt2.subject_path, local_mean_frequency_column, local_mean_surprisal_column)
+
+```
+
+```{r}
+library(lme4)
+
+library(lmerTest)
+
+
+
+
+surprisals.gpt_first_token.model <- lmer(surprisal ~ wh * gap * gap_type * embed + log_freq+ (1  | id), 
+                             data = first_token_surprisals_df.gpt2)
+
+surprisals.gpt_mean.model <- lmer(surprisal ~ wh * gap * gap_type * embed + log_freq + (1 | id), 
+                                         data = mean_surprisals_df.gpt2)
+
+summary(surprisals.gpt_first_token.model)
+summary(surprisals.gpt_mean.model)
+```
+
+## Wh-effect
+
+### prediction 1.A
+
+```{r}
+
+library(emmeans)
+library(magrittr)
+
+em <- emmeans(surprisals.gpt_first_token.model, pairwise ~ wh | gap)
+em$contrasts
+```
+
+### Prediction 1.B - wh effect by distance
+
+```{r}
+emmeans(surprisals.gpt_mean.model, ~ wh * embed | gap) %>%
+  contrast(interaction = c("pairwise", "trt.vs.ctrl"), by = "gap")
+```
+
+```{r}
+em <- emmeans(surprisals.gpt_first_token.model, pairwise ~ wh | gap*embed)
+em$contrasts
+
+
+plot = emmip(em$contrasts, gap~embed, CIs= TRUE) + labs(x = "Embedding level", y = "wh effect estimate (surprisal)", color = "Gap")
+
+ggsave("wh_first_gpt.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+plot
+```
+
+```{r}
+
+library(ggplot2)
+library(dplyr)
+library(emmeans)
+
+wh_plot_two_models <- function(model1, model2, name1, name2,
+                            ylab = "wh effect estimate (surprisal)",
+                            palette = "Set1") {
+  
+  em1 <- emmeans(model1, pairwise ~ wh | gap*embed)
+  em2 <- emmeans(model2, pairwise ~ wh | gap*embed)
+  
+  d1 <- emmip(em1$contrasts, gap ~ embed, CIs = TRUE, plotit = FALSE) %>% mutate(model = name1)
+  d2 <- emmip(em2$contrasts, gap ~ embed, CIs = TRUE, plotit = FALSE) %>% mutate(model = name2)
+  
+  plot_df <- bind_rows(d1, d2)
+  
+  bars <- ggplot(plot_df, aes(x = embed, y = yvar, fill = interaction(gap, model))) +
+    geom_col(position = position_dodge(width = 0.9)) +
+    geom_errorbar(aes(ymin = LCL, ymax = UCL),
+                  position = position_dodge(width = 0.9), width = 0.2) +
+    theme_minimal() +
+    labs(x = "Embedding level", y = ylab, fill = "Gap x Model")
+  
+  bars + scale_fill_brewer(palette = palette)
+}
+
+plot = wh_plot_two_models(surprisals.gpt_first_token.model, surprisals.gpt_mean.model, "first_token", "mean", ylab="wh effect estimate (surprisal) for GPT2")
+
+ggsave("wh_first_v_mean_gpt.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+plot
+```
+
+### Prediction 1C
+
+```{r}
+em <- emmeans(surprisals.gpt_mean.model, pairwise ~ wh | gap*gap_type)
+em$contrasts
+
+```
+
+```{r}
+em <- emmeans(surprisals.gpt_mean.model, pairwise ~ wh | gap*gap_type*embed)
+
+
+plot = emmip(em$contrasts, gap*gap_type~embed, CIs= TRUE) + labs(x = "Embedding level", y = "wh effect estimate (surprisal)", color = "Gap")
+
+ggsave("wh_subject_v_object_gpt_mean.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+plot
+
+```
+
+## other questions
+
+is the effect significant across all embedding levels and subject/object gaps?
+
+```{r}
+em <- emmeans(surprisals.gpt_mean.model, pairwise ~ wh | gap*gap_type*embed)
+
+em$contrasts
+```
+
+```{r}
+em <- emmeans(surprisals.gpt_mean.model, pairwise ~ wh | gap*embed*gap_type)
+
+df = as.data.frame(em$contrasts)
+
+
+select(df, c('gap_type', 'embed', 'p.value'))
+```
+
+## Filler-offloading effect
+
+### Prediction 2.A
+
+```{r}
+em <- emmeans(surprisals.gpt_first_token.model,  pairwise ~ gap | wh)
+em$contrasts
+```
+
+```{r}
+em <- emmeans(surprisals.gpt_mean.model,  pairwise ~ gap | wh)
+em$contrasts
+
+```
+
+### Prediction 2.B
+
+```{r}
+emmeans(surprisals.gpt_mean.model, ~ gap * embed | wh) %>%
+  contrast(interaction = c("pairwise", "trt.vs.ctrl"), by = "wh")
+```
+
+```{r}
+emmeans(surprisals.gpt_first_token.model, ~ gap * embed | wh) %>%
+  contrast(interaction = c("pairwise", "trt.vs.ctrl"), by = "wh")
+```
+
+```{r}
+
+em <- emmeans(surprisals.gpt_first_token.model, pairwise ~ gap | wh*embed)
+em$contrasts
+
+
+plot = emmip(em$contrasts, wh~embed, CIs= TRUE) + labs(x = "Embedding level", y = "filler-offloading effect estimate (surprisal)", color = "Wh")
+
+ggsave("fo_first_token_gpt.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+plot
+```
+
+```{r}
+em <- emmeans(surprisals.gpt_mean.model, ~ wh*gap*embed)
+
+
+emmip(em, wh*gap~embed, CIs= TRUE) + labs(x = "Embedding level", y = "estimate (surprisal)", color = "Wh x Gap")
+```
+
+```{r}
+
+library(ggplot2)
+library(dplyr)
+library(emmeans)
+
+fo_plot_two_models <- function(model1, model2, name1, name2,
+                               ylab = "filler-offloading effect estimate (surprisal)",
+                               palette = "Set1") {
+  
+  em1 <- emmeans(model1, pairwise ~ gap | wh*embed)
+  em2 <- emmeans(model2, pairwise ~ gap | wh*embed)
+  
+  d1 <- emmip(em1$contrasts, wh ~ embed, CIs = TRUE, plotit = FALSE) %>% mutate(model = name1)
+  d2 <- emmip(em2$contrasts, wh ~ embed, CIs = TRUE, plotit = FALSE) %>% mutate(model = name2)
+  
+  plot_df <- bind_rows(d1, d2)
+  
+  bars <- ggplot(plot_df, aes(x = embed, y = yvar, fill = interaction(wh, model))) +
+    geom_col(position = position_dodge(width = 0.9)) +
+    geom_errorbar(aes(ymin = LCL, ymax = UCL),
+                  position = position_dodge(width = 0.9), width = 0.2) +
+    theme_minimal() +
+    labs(x = "Embedding level", y = ylab, fill = "Wh x Model")
+  
+  bars + scale_fill_brewer(palette = palette)
+}
+
+plot = fo_plot_two_models(surprisals.gpt_first_token.model, surprisals.gpt_mean.model, "first_token", "mean", ylab="filler-offloading effect estimate (surprisal) for GPT2")
+
+ggsave("fo_first_v_mean_gpt.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+plot
+```
+
+```{r}
+em <- emmeans(surprisals.gpt_mean.model, pairwise ~ gap | wh*embed*gap_type)
+em$contrasts
+
+
+plot = emmip(em$contrasts, wh*gap_type~embed, CIs= TRUE) + labs(x = "Embedding level", y = "filler-offloading effect estimate (surprisal)", color = "Wh")
+
+ggsave("fo_subject_v_object_gpt_mean.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+plot
+```
+
+### Prediction 2.C
+
+```{r}
+
+em <- emmeans(surprisals.gpt_first_token.model, pairwise ~ gap | wh*gap_type*embed)
+em$contrasts
+```
+
+```{r}
+em <- emmeans(surprisals.gpt_mean.model, pairwise ~ gap | wh*gap_type*embed)
+em$contrasts
+```
+
+```{r}
+em <- emmeans(surprisals.gpt_mean.model, pairwise ~ gap | wh*gap_type*embed)
+
+
+emmip(em$contrasts, wh*gap_type~embed, CIs= TRUE) + labs(x = "Embedding level", y = "wh effect estimate (surprisal)", color = "Wh")
+```
+
+```{r}
+
+em <- emmeans(surprisals.gpt_first_token.model, pairwise ~ gap | wh*gap_type*embed)
+
+
+emmip(em$contrasts, wh*gap_type~embed, CIs= TRUE) + labs(x = "Embedding level", y = "wh effect estimate (surprisal)", color = "Wh")
+```
+
+# GRNN
+
+```{r}
+first_token_surprisals_df.grnn = read_and_combine_dfs(GRNN.object_path, GRNN.subject_path, local_frequency_column, local_surprisal_column)
+
+first_token_surprisals_df.grnn
+```
+
+```{r}
+mean_surprisals_df.grnn <- read_and_combine_dfs(GRNN.object_path, GRNN.subject_path, local_mean_frequency_column, local_mean_surprisal_column)
+
+mean_surprisals_df.grnn
+```
+
+## fitting the model
+
+```{r}
+library(lme4)
+
+library(lmerTest)
+
+
+surprisals.grnn_first_token.model <- lmer(surprisal ~ wh * gap * gap_type * embed + log_freq + (1  | id), 
+                                   data = first_token_surprisals_df.grnn)
+
+
+surprisals.grnn_mean.model <- lmer(surprisal ~ wh * gap * gap_type * embed + log_freq + (1 | id), 
+                             data = mean_surprisals_df.grnn)
+
+
+summary(surprisals.grnn_first_token.model)
+
+summary(surprisals.grnn_mean.model)
+```
+
+### prediction 1A
+
+```{r}
+library(emmeans)
+library(magrittr)
+
+em <- emmeans(surprisals.grnn_mean.model, pairwise ~ wh | gap)
+em$contrasts
+```
+
+### Prediction 1.B
+
+```{r}
+emmeans(surprisals.grnn_mean.model, ~ wh * embed | gap) %>%
+  contrast(interaction = c("pairwise", "trt.vs.ctrl"), by = "gap")
+```
+
+```{r}
+em <- emmeans(surprisals.grnn_mean.model, pairwise ~ wh | gap*embed)
+em$contrasts
+
+
+emmip(em$contrasts, gap~embed, CIs= TRUE) + labs(x = "Embedding level", y = "wh effect estimate (surprisal)", color = "Gap")
+```
+
+```{r}
+
+plot = plot_two_models(surprisals.grnn_first_token.model, surprisals.grnn_mean.model, "first_token", "mean", ylab="wh effect estimate (surprisal) for GRNN")
+
+ggsave("wh_first_v_mean_grnn.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+plot
+```
+
+### prediction 1C
+
+```{r}
+
+em <- emmeans(surprisals.grnn_first_token.model, pairwise ~ wh | gap*gap_type)
+em$contrasts
+```
+
+```{r}
+em <- emmeans(surprisals.grnn_first_token.model, pairwise ~ wh | gap*gap_type*embed)
+
+
+
+plot = emmip(em$contrasts, gap*gap_type~embed, CIs= TRUE) + labs(x = "Embedding level", y = "wh effect estimate (surprisal)", color = "Gap")
+
+ggsave("wh_subject_v_object_grnn_first_token.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+plot
+```
+
+### misc
+
+```{r}
+emmeans(surprisals.grnn_mean.model, ~ wh | gap * embed * gap_type) %>%
+  contrast(interaction = c("pairwise", "pairwise"), by = c("gap", "embed", "gap_type"))
+
+```
+
+## Filler-offloading effect
+
+## 2.A
+
+```{r}
+em <- emmeans(surprisals.grnn_first_token.model,  pairwise ~ gap | wh)
+em$contrasts
+```
+
+```{r}
+em <- emmeans(surprisals.grnn_mean.model,  pairwise ~ gap | wh)
+em$contrasts
+```
+
+### prediction 2.B
+
+```{r}
+emmeans(surprisals.grnn_first_token.model, ~ gap * embed | wh) %>%
+  contrast(interaction = c("pairwise", "trt.vs.ctrl"), by = "wh")
+```
+
+```{r}
+emmeans(surprisals.grnn_mean.model, ~ gap * embed | wh) %>%
+  contrast(interaction = c("pairwise", "trt.vs.ctrl"), by = "wh")
+```
+
+```{r}
+em <- emmeans(surprisals.grnn_first_token.model, pairwise ~ gap | wh*embed)
+em$contrasts
+
+
+emmip(em$contrasts, wh~embed, CIs= TRUE) + labs(x = "Embedding level", y = "wh effect estimate (surprisal)", color = "Wh")
+```
+
+```{r}
+em <- emmeans(surprisals.gpt_mean.model, pairwise ~ gap | wh*embed)
+em$contrasts
+
+
+emmip(em$contrasts, wh~embed, CIs= TRUE) + labs(x = "Embedding level", y = "wh effect estimate (surprisal)", color = "Wh")
+```
+
+```{r}
+plot = fo_plot_two_models(surprisals.grnn_first_token.model, surprisals.grnn_mean.model, "first_token", "mean", ylab="filler-offloading effect estimate (surprisal) for GPT2")
+
+ggsave("fo_first_v_mean_grnn.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+plot
+```
+
+```{r}
+
+```
+
+### prediction 2C
+
+```{r}
+em <- emmeans(surprisals.grnn_first_token.model, pairwise ~ gap | wh*gap_type*embed)
+em$contrasts
+```
+
+# n-gram data
+
+### read data + fit model
+
+```{r}
+first_token_surprisals_df.ngram <- read_and_combine_dfs(ngram.object_path, ngram.subject_path, local_frequency_column, local_surprisal_column)
+
+
+mean_surprisals_df.ngram <- read_and_combine_dfs(ngram.object_path, ngram.subject_path, local_mean_frequency_column, local_mean_surprisal_column)
+
+
+first_token_surprisals_df.ngram
+mean_surprisals_df.ngram
+```
+
+```{r}
+library(lme4)
+
+library(lmerTest)
+
+surprisals.ngram_first_token.model <- lmer(surprisal ~ wh * gap * gap_type * embed + log_freq + (1 + wh*gap | id), 
+                              data = first_token_surprisals_df.ngram)
+
+
+
+surprisals.ngram_mean.model <- lmer(surprisal ~ wh * gap * gap_type * embed + log_freq + (1 + wh*gap | id), 
+                                           data = mean_surprisals_df.ngram)
+
+summary(surprisals.ngram_first_token.model)
+
+summary(surprisals.ngram_mean.model)
+
+```
+
+### prediction 1.A
+
+```{r}
+library(emmeans)
+library(magrittr)
+
+em <- emmeans(surprisals.ngram.model, pairwise ~ wh | gap)
+em$contrasts
+```
+
+### prediction 1.B
+
+```{r}
+emmeans(surprisals.ngram.model, ~ wh * embed | gap) %>%
+  contrast(interaction = c("pairwise", "trt.vs.ctrl"), by = "gap")
+```
+
+```{r}
+em <- emmeans(surprisals.ngram.model, pairwise ~ wh | gap*embed)
+em$contrasts
+
+
+emmip(em$contrasts, gap~embed, CIs= TRUE) + labs(x = "Embedding level", y = "wh effect estimate (surprisal)", color = "Gap")
+```
+
+```{r}
+plot_two_models(surprisals.ngram_first_token.model, surprisals.ngram_mean.model, "first_token", "mean", ylab="wh effect estimate (surprisal) for ngram")
+```
+
+### prediction 1.C
+
+```{r}
+
+em <- emmeans(surprisals.ngram.model, pairwise ~ wh | gap*gap_type)
+em$contrasts
+```
+
+```{r}
+
+emmeans(surprisals.ngram_mean.model, ~ wh * gap_type | gap * embed) %>%
+  contrast(interaction = c("pairwise", "pairwise"), by = c("gap", "embed"))
+
+
+em <- emmeans(surprisals.ngram_first_token.model, pairwise ~ wh | gap*gap_type*embed)
+
+
+
+plot = emmip(em$contrasts, gap*gap_type~embed, CIs= TRUE) + labs(x = "Embedding level", y = "wh effect estimate (surprisal)", color = "Wh")
+
+ggsave("wh_subject_v_object_ngram_first_token.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+plot
+```
+
+## filler-offloading effect
+
+```{r}
+
+
+em <- emmeans(surprisals.ngram_mean.model, pairwise ~ gap | wh*embed*gap_type)
+em$contrasts
+
+
+plot = emmip(em$contrasts, wh*gap_type~embed, CIs= TRUE) + labs(x = "Embedding level", y = "filler-offloading effect estimate (surprisal)", color = "Wh")
+
+ggsave("fo_subject_v_object_ngram_first_token.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+plot
+```
+
+# More visuals
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(emmeans)
+
+wh_plot_three_models <- function(model1, model2, model3, name1, name2, name3,
+                              ylab = "wh effect estimate (surprisal)",
+                              palette = "Set1") {
+  
+  em1 <- emmeans(model1, pairwise ~ wh | gap*embed)
+  em2 <- emmeans(model2, pairwise ~ wh | gap*embed)
+  em3 <- emmeans(model3, pairwise ~ wh | gap*embed)
+  
+  d1 <- emmip(em1$contrasts, gap ~ embed, CIs = TRUE, plotit = FALSE) %>% mutate(model = name1)
+  d2 <- emmip(em2$contrasts, gap ~ embed, CIs = TRUE, plotit = FALSE) %>% mutate(model = name2)
+  d3 <- emmip(em3$contrasts, gap ~ embed, CIs = TRUE, plotit = FALSE) %>% mutate(model = name3)
+  
+  plot_df <- bind_rows(d1, d2, d3)
+  
+  bars <- ggplot(plot_df, aes(x = embed, y = yvar, fill = interaction(gap, model))) +
+    geom_col(position = position_dodge(width = 0.9)) +
+    geom_errorbar(aes(ymin = LCL, ymax = UCL),
+                  position = position_dodge(width = 0.9), width = 0.2) +
+    theme_minimal() +
+    labs(x = "Embedding level", y = ylab, fill = "Gap x Model")
+  
+  bars + scale_fill_brewer(palette = palette)
+}
+```
+
+```{r}
+plot = wh_plot_three_models(surprisals.gpt_mean.model, surprisals.grnn_mean.model, surprisals.ngram_mean.model, "GPT2", "GRNN", "NGRAM", ylab="wh effect estimate (surprisal)")
+
+ggsave("wh_effect_plot_all_models_mean_bars.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+```
+
+```{r}
+fo_plot_three_models <- function(model1, model2, model3, name1, name2, name3,
+                                 ylab = "filler-offloading effect estimate (surprisal)",
+                                 palette = "Set1") {
+  
+  em1 <- emmeans(model1, pairwise ~ gap | wh*embed)
+  em2 <- emmeans(model2, pairwise ~ gap | wh*embed)
+  em3 <- emmeans(model3, pairwise ~ gap | wh*embed)
+  
+  d1 <- emmip(em1$contrasts, wh ~ embed, CIs = TRUE, plotit = FALSE) %>% mutate(model = name1)
+  d2 <- emmip(em2$contrasts, wh ~ embed, CIs = TRUE, plotit = FALSE) %>% mutate(model = name2)
+  d3 <- emmip(em3$contrasts, wh ~ embed, CIs = TRUE, plotit = FALSE) %>% mutate(model = name3)
+  
+  plot_df <- bind_rows(d1, d2, d3)
+  
+  bars <- ggplot(plot_df, aes(x = embed, y = yvar, fill = interaction(wh, model))) +
+    geom_col(position = position_dodge(width = 0.9)) +
+    geom_errorbar(aes(ymin = LCL, ymax = UCL),
+                  position = position_dodge(width = 0.9), width = 0.2) +
+    theme_minimal() +
+    labs(x = "Embedding level", y = ylab, fill = "Gap x Model")
+  
+  bars + scale_fill_brewer(palette = palette)
+}
+```
+
+```{r}
+plot = fo_plot_three_models(surprisals.gpt_mean.model, surprisals.grnn_mean.model, surprisals.ngram_mean.model, "GPT2", "GRNN", "NGRAM", ylab="filler-offloading effect estimate (surprisal)")
+
+ggsave("fo_effect_plot_all_models_mean_bars.png", plot = plot, 
+       width = dev.size()[1], height = dev.size()[2], dpi = 300)
+
+plot
+```
+
+```{r}
+plot_two_models_by_type <- function(model1, model2, name1, name2,
+                            ylab = "wh effect estimate (surprisal)",
+                            palette = "Set1") {
+  
+  em1 <- emmeans(model1, pairwise ~ wh | gap*embed*gap_type)
+  em2 <- emmeans(model2, pairwise ~ wh | gap*embed*gap_type)
+  
+  d1 <- emmip(em1$contrasts, gap ~ embed*gap_type, CIs = TRUE, plotit = FALSE) %>% mutate(model = name1)
+  d2 <- emmip(em2$contrasts, gap ~ embed*gap_type, CIs = TRUE, plotit = FALSE) %>% mutate(model = name2)
+  
+  plot_df <- bind_rows(d1, d2)
+  plot_df <- plot_df %>% filter(embed == 0)
+  
+  bars <- ggplot(plot_df, aes(x = embed, y = yvar, fill = interaction(gap, model, gap_type))) +
+    geom_col(position = position_dodge(width = 0.9)) +
+    geom_errorbar(aes(ymin = LCL, ymax = UCL),
+                  position = position_dodge(width = 0.9), width = 0.2) +
+    theme_minimal() +
+    labs(x = "Embedding level", y = ylab, fill = "Gap x Model x Gap_type")
+  
+  bars + scale_fill_brewer(palette = palette)
+}
+```
+
+```{r}
+plot_two_models_by_type(surprisals.ngram_first_token.model, surprisals.ngram_mean.model, "first_token", "mean", ylab="wh effect estimate (surprisal) for ngram")
+```
